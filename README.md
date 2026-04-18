@@ -1,4 +1,4 @@
-# Geometric AI: Alignment, Safety, and the Manifold Structure of Machine Values
+# Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence
 
 **Andrew H. Bond**
 Senior Member, IEEE | San Jose State University
@@ -36,7 +36,7 @@ Outline stage. See `OUTLINE.md` for the chapter plan.
 | [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Outline |
 | [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Outline |
 | [Geometric Education](https://github.com/ahb-sjsu/geometric-education) | Outline |
-| **Geometric AI: Alignment, Safety, and the Manifold Structure of Machine Values** | **Outline** |
+| **Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence** | **Outline** |
 
 ## License
 
