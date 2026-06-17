@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix B: The DEME V3 Architecture --- Code Walkthrough &mdash; Geometric AI</title>
+  <meta name="description" content="Appendix B: The DEME V3 Architecture --- Code Walkthrough from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-ai">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric AI</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric AI</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Appendix B: The DEME V3 Architecture --- Code Walkthrough</span>
+      </nav>
+
+      <div class="chapter-content">
+<h1 id="appendix-b-the-deme-v3-architecture-code-walkthrough">Appendix B: The DEME V3 Architecture &mdash; Code Walkthrough</h1>
+<hr />
+<p>This appendix provides a walkthrough of the DEME V3 / ErisML reference implementation of the geometric alignment architecture. The code implements tensor-valued objectives, structural containment, gauge-invariance verification, and Bond Index computation. All code is available in the ErisML library.</p>
+<h2 id="b1-moraltensor-class">B.1 MoralTensor Class</h2>
+<p>The <code>MoralTensor</code> class implements tensor-valued moral evaluations with ranks 1&ndash;6.</p>
+<pre><code class="language-python">class MoralTensor:
+    &quot;&quot;&quot;Tensor-valued moral evaluation on the value manifold.
+
+    Supports ranks 1-6 with Tucker and tensor-train decompositions
+    for computational tractability.
+
+    Attributes:
+        values: np.ndarray of shape determined by rank
+        dimensions: list of dimension labels (D1-D9)
+        rank: int, tensor rank (1=vector, 2=matrix, etc.)
+        context: dict, context-dependent metadata
+    &quot;&quot;&quot;
+
+    def __init__(self, values, dimensions=None, rank=1, context=None):
+        self.values = np.asarray(values, dtype=np.float64)
+        self.dimensions = dimensions or DEFAULT_DIMENSIONS[:len(values)]
+        self.rank = rank
+        self.context = context or {}
+        self._validate()
+
+    def contract(self, weights, method='weighted_sum'):
+        &quot;&quot;&quot;Contract tensor to scalar using governance-specified method.
+
+        Args:
+            weights: array of dimension weights (governance-specified)
+            method: 'weighted_sum', 'maximin', or 'lexicographic'
+
+        Returns:
+            scalar: float, the contracted value
+            residue: MoralTensor, the information lost in contraction
+        &quot;&quot;&quot;
+        if method == 'weighted_sum':
+            scalar = np.dot(weights, self.values)
+        elif method == 'maximin':
+            scalar = np.min(self.values * weights)
+        elif method == 'lexicographic':
+            # Sort dimensions by weight (descending), return first non-tied
+            order = np.argsort(-weights)
+            scalar = self.values[order[0]]
+
+        # Compute residue: what the contraction sacrificed
+        expanded = np.full_like(self.values, scalar / np.mean(weights))
+        residue_values = self.values - expanded
+        residue = MoralTensor(residue_values, self.dimensions, self.rank)
+
+        return scalar, residue
+
+    def gauge_transform(self, transformation):
+        &quot;&quot;&quot;Apply a gauge transformation and return transformed tensor.&quot;&quot;&quot;
+        # Implementation depends on transformation type
+        pass
+
+    def bond_index(self, reference):
+        &quot;&quot;&quot;Compute Bond Index relative to a reference tensor.&quot;&quot;&quot;
+        deviation = self.values - reference.values
+        return MoralTensor(deviation, self.dimensions, self.rank)
+</code></pre>
+<h2 id="b2-normkernel-structural-containment">B.2 NormKernel: Structural Containment</h2>
+<p>The <code>NormKernel</code> implements the structural containment architecture from Chapter 8.</p>
+<pre><code class="language-python">class NormKernel:
+    &quot;&quot;&quot;Structural containment via norm constraints on the value manifold.
+
+    Implements the four requirements of the No Escape architecture:
+    1. Mandatory canonicalization
+    2. Grounded evaluation
+    3. Audit completeness
+    4. External verification (via EIP Monitor)
+    &quot;&quot;&quot;
+
+    def __init__(self, boundaries, canonicalizer, evaluator, logger):
+        self.boundaries = boundaries  # dict of boundary conditions
+        self.canonicalizer = canonicalizer  # input canonicalization
+        self.evaluator = evaluator  # grounded evaluation function
+        self.logger = logger  # audit logger
+
+    def process(self, input_data):
+        &quot;&quot;&quot;Process input through structural containment pipeline.
+
+        Returns:
+            output: system output (if permitted)
+            tensor: full moral tensor evaluation
+            audit: audit record including residue
+        &quot;&quot;&quot;
+        # Requirement 1: Canonicalize
+        canonical = self.canonicalizer.canonicalize(input_data)
+
+        # Get system output
+        output = self.system.generate(canonical)
+
+        # Requirement 2: Grounded evaluation
+        tensor = self.evaluator.evaluate(output, canonical)
+
+        # Check boundary conditions
+        for boundary_name, boundary in self.boundaries.items():
+            if boundary.is_violated(tensor):
+                if boundary.penalty == float('inf'):
+                    # Sacred-value boundary: block output
+                    return self._blocked_response(boundary_name), tensor, None
+                else:
+                    # Finite boundary: log violation, may modify output
+                    output = self._apply_boundary_correction(
+                        output, tensor, boundary
+                    )
+
+        # Requirement 3: Audit completeness
+        scalar, residue = tensor.contract(
+            self.governance_weights, self.contraction_method
+        )
+        audit = AuditRecord(
+            input=input_data,
+            canonical=canonical,
+            output=output,
+            tensor=tensor,
+            scalar=scalar,
+            residue=residue,
+            contraction_method=self.contraction_method,
+            weights=self.governance_weights
+        )
+        self.logger.log(audit)
+
+        return output, tensor, audit
+</code></pre>
+<h2 id="b3-eip-monitor-external-verification">B.3 EIP Monitor: External Verification</h2>
+<p>The <code>EIPMonitor</code> implements Requirement 4: external, independent verification.</p>
+<pre><code class="language-python">class EIPMonitor:
+    &quot;&quot;&quot;External Integrity Protocol Monitor.
+
+    Runs on separate infrastructure. Performs gauge-invariance
+    checking and grounding verification on system outputs.
+    &quot;&quot;&quot;
+
+    def __init__(self, system_api, transformer_suite, evaluator,
+                 alert_threshold=0.05):
+        self.system = system_api
+        self.transformers = transformer_suite
+        self.evaluator = evaluator
+        self.threshold = alert_threshold
+
+    def verify(self, input_data, output, reported_tensor):
+        &quot;&quot;&quot;Verify system output for gauge invariance and grounding.
+
+        Returns:
+            passed: bool
+            violations: list of detected violations
+        &quot;&quot;&quot;
+        violations = []
+
+        # Gauge-invariance check
+        for transform_name, transformer in self.transformers.items():
+            transformed = transformer.transform(input_data)
+            alt_output = self.system.generate(transformed)
+
+            for dim in range(9):
+                diff = abs(
+                    self.evaluator.evaluate_dim(output, dim) -
+                    self.evaluator.evaluate_dim(alt_output, dim)
+                )
+                if diff &gt; self.threshold:
+                    violations.append(GaugeViolation(
+                        transformation=transform_name,
+                        dimension=dim,
+                        magnitude=diff
+                    ))
+
+        # Grounding verification
+        sample_dims = random.sample(range(9), k=3)
+        for dim in sample_dims:
+            independent = self.evaluator.evaluate_dim(output, dim)
+            reported = reported_tensor.values[dim]
+            if abs(independent - reported) &gt; self.threshold:
+                violations.append(GroundingViolation(
+                    dimension=dim,
+                    independent=independent,
+                    reported=reported
+                ))
+
+        return len(violations) == 0, violations
+</code></pre>
+<h2 id="b4-bond-index-computation">B.4 Bond Index Computation</h2>
+<pre><code class="language-python">class BondIndexComputer:
+    &quot;&quot;&quot;Compute the Bond Index for AI alignment evaluation.&quot;&quot;&quot;
+
+    def __init__(self, reference_evaluator, dimensions=9):
+        self.reference = reference_evaluator
+        self.d = dimensions
+
+    def compute(self, system, inputs, populations=None):
+        &quot;&quot;&quot;Compute Bond Index (optionally population-stratified).
+
+        Args:
+            system: the AI system to evaluate
+            inputs: list of evaluation inputs
+            populations: optional dict mapping input -&gt; population group
+
+        Returns:
+            bi: MoralTensor, the Bond Index
+            bi_stratified: dict of population -&gt; MoralTensor (if populations)
+        &quot;&quot;&quot;
+        deviations = np.zeros(self.d)
+        counts = np.zeros(self.d)
+
+        pop_deviations = defaultdict(lambda: np.zeros(self.d))
+        pop_counts = defaultdict(lambda: np.zeros(self.d))
+
+        for inp in inputs:
+            output = system.generate(inp)
+            actual = self.evaluate_tensor(output, inp)
+            reference = self.reference.evaluate(inp)
+
+            deviation = np.abs(actual.values - reference.values)
+            deviations += deviation
+            counts += 1
+
+            if populations and inp in populations:
+                pop = populations[inp]
+                pop_deviations[pop] += deviation
+                pop_counts[pop] += 1
+
+        bi = MoralTensor(deviations / counts)
+
+        bi_stratified = {}
+        if populations:
+            for pop in pop_deviations:
+                bi_stratified[pop] = MoralTensor(
+                    pop_deviations[pop] / pop_counts[pop]
+                )
+
+        return bi, bi_stratified
+</code></pre>
+<h2 id="b5-reproducibility">B.5 Reproducibility</h2>
+<p>All computational results in this book can be reproduced using the ErisML library:</p>
+<ol>
+<li>Install: <code>pip install erisml</code></li>
+<li>Tensor evaluation: <code>erisml.MoralTensor</code></li>
+<li>Structural containment: <code>erisml.NormKernel</code></li>
+<li>External verification: <code>erisml.EIPMonitor</code></li>
+<li>Bond Index computation: <code>erisml.BondIndexComputer</code></li>
+<li>Gauge-invariance testing: <code>erisml.GaugeTestSuite</code></li>
+</ol>
+<p>Configuration files for all experimental settings are included in the library&rsquo;s <code>examples/geometric_ai/</code> directory.</p>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="index.html" class="nav-toc">&larr; Contents</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
+</body>
+</html>

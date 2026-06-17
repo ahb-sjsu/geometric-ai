@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix E: Notation and Conventions &mdash; Geometric AI</title>
+  <meta name="description" content="Appendix E: Notation and Conventions from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-ai">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric AI</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric AI</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Appendix E: Notation and Conventions</span>
+      </nav>
+
+      <div class="chapter-content">
+<h1 id="appendix-e-notation-and-conventions">Appendix E: Notation and Conventions</h1>
+<hr />
+<p>Consistent with the Geometric Series. All notation reconciled with <em>Geometric Ethics</em>, <em>Geometric Reasoning</em>, and <em>Geometric Methods</em>.</p>
+<h2 id="e1-manifolds-and-spaces">E.1 Manifolds and Spaces</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathcal{V}$</td>
+<td>The value manifold</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\mathcal{V}'$</td>
+<td>Extended value manifold (superalignment)</td>
+<td>Ch. 17</td>
+</tr>
+<tr>
+<td>$\mathcal{T}$</td>
+<td>The truth manifold</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$\mathcal{A}$</td>
+<td>The approval manifold</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$T_v\mathcal{V}$</td>
+<td>Tangent space at point $v$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$M$</td>
+<td>General manifold (from Geometric Reasoning)</td>
+<td>App. A</td>
+</tr>
+<tr>
+<td>$\mathcal{C}$</td>
+<td>Clinical decision complex (from Geometric Medicine)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$S^+$</td>
+<td>Permitted region (safe)</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$S^-$</td>
+<td>Forbidden region (unsafe)</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$\partial S$</td>
+<td>Safety boundary</td>
+<td>Ch. 8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e2-metric-and-geometric-quantities">E.2 Metric and Geometric Quantities</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$g_{\mu\nu}$</td>
+<td>Value metric tensor</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\Sigma$</td>
+<td>Value covariance matrix</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\Sigma_{\mu\nu}$</td>
+<td>Covariance between dimensions $D_\mu$ and $D_\nu$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\Gamma^\mu_{\nu\rho}$</td>
+<td>Christoffel symbols (connection coefficients)</td>
+<td>App. A</td>
+</tr>
+<tr>
+<td>$R^\mu_{\nu\rho\sigma}$</td>
+<td>Riemann curvature tensor</td>
+<td>App. A</td>
+</tr>
+<tr>
+<td>$K$</td>
+<td>Sectional curvature</td>
+<td>Ch. 17</td>
+</tr>
+<tr>
+<td>$\gamma$</td>
+<td>Trajectory (curve on manifold)</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\gamma_{\mathcal{V}}^*$</td>
+<td>Value-aligned geodesic</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\gamma_{S,P}$</td>
+<td>System $S$&rsquo;s trajectory under policy $P$</td>
+<td>Ch. 9</td>
+</tr>
+<tr>
+<td>$ds^2$</td>
+<td>Line element (infinitesimal distance)</td>
+<td>Ch. 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e3-alignment-specific-quantities">E.3 Alignment-Specific Quantities</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$R: \mathcal{V} \to \mathbb{R}$</td>
+<td>Scalar reward function</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\mathbf{r}^\mu$</td>
+<td>Tensor-valued reward</td>
+<td>Ch. 14</td>
+</tr>
+<tr>
+<td>$\pi_R^*$</td>
+<td>Reward-optimal policy</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\pi_{\mathcal{V}}^*$</td>
+<td>Value-aligned policy</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\ker(R)$</td>
+<td>Kernel of scalar reward</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\ker(\nabla R)$</td>
+<td>Kernel of reward gradient</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$D_1, \ldots, D_9$</td>
+<td>Nine value dimensions</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$a_\mu(v)$</td>
+<td>Attribute value on dimension $D_\mu$ at state $v$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\beta_k$</td>
+<td>Boundary penalty for boundary $k$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\alpha$</td>
+<td>Sycophancy parameter (hijacking degree)</td>
+<td>Ch. 6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e4-gauge-theory-quantities">E.4 Gauge Theory Quantities</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$G_A$</td>
+<td>Alignment gauge group</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$D_4$</td>
+<td>Hohfeldian dihedral group</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$T$</td>
+<td>Translation group (cross-lingual)</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$R$</td>
+<td>Re-description group (paraphrase)</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$F$</td>
+<td>Framing group</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$V_{ij}$</td>
+<td>Gauge violation tensor</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$\kappa$</td>
+<td>Canonicalization function</td>
+<td>Ch. 8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e5-diagnostic-quantities">E.5 Diagnostic Quantities</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathrm{BI}(S, P)$</td>
+<td>Bond Index for system $S$, policy $P$</td>
+<td>Ch. 9</td>
+</tr>
+<tr>
+<td>$\mathrm{BI}_{D_\mu}$</td>
+<td>Bond Index component on dimension $D_\mu$</td>
+<td>Ch. 9</td>
+</tr>
+<tr>
+<td>$\mathrm{BI}(S, P, G)$</td>
+<td>Population-stratified Bond Index</td>
+<td>Ch. 9</td>
+</tr>
+<tr>
+<td>$\mathrm{GD}(\gamma)$</td>
+<td>Geodesic deviation of trajectory $\gamma$</td>
+<td>Ch. 9</td>
+</tr>
+<tr>
+<td>$m(\gamma)$</td>
+<td>Governance margin of trajectory $\gamma$</td>
+<td>Ch. 11</td>
+</tr>
+<tr>
+<td>$\rho$</td>
+<td>Governance robustness</td>
+<td>Ch. 11</td>
+</tr>
+<tr>
+<td>$\Phi(p, i, d)$</td>
+<td>Response surface (probe $p$, intensity $i$, dim $d$)</td>
+<td>Ch. 11</td>
+</tr>
+<tr>
+<td>$\kappa(p, d)$</td>
+<td>Alignment curvature</td>
+<td>Ch. 11</td>
+</tr>
+<tr>
+<td>$C_{\mu\nu}$</td>
+<td>Corruption tensor</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$\text{CAG}$</td>
+<td>Collective Alignment Gap</td>
+<td>Ch. 18</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e6-series-abbreviations">E.6 Series Abbreviations</h2>
+<table>
+<thead>
+<tr>
+<th>Abbreviation</th>
+<th>Full Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GR</td>
+<td><em>Geometric Reasoning</em></td>
+</tr>
+<tr>
+<td>GE</td>
+<td><em>Geometric Ethics</em></td>
+</tr>
+<tr>
+<td>GM</td>
+<td><em>Geometric Methods</em></td>
+</tr>
+<tr>
+<td>GCog</td>
+<td><em>Geometric Cognition</em></td>
+</tr>
+<tr>
+<td>GComm</td>
+<td><em>Geometric Communication</em></td>
+</tr>
+<tr>
+<td>GMed</td>
+<td><em>Geometric Medicine</em></td>
+</tr>
+<tr>
+<td>GEd</td>
+<td><em>Geometric Education</em></td>
+</tr>
+<tr>
+<td>GEcon</td>
+<td><em>Geometric Economics</em></td>
+</tr>
+<tr>
+<td>GL</td>
+<td><em>Geometric Law</em></td>
+</tr>
+<tr>
+<td>GPol</td>
+<td><em>Geometric Politics</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="e7-conventions">E.7 Conventions</h2>
+<ul>
+<li><strong>Einstein summation convention:</strong> Repeated indices are summed unless otherwise noted. $g_{\mu\nu} v^\mu v^\nu = \sum_\mu \sum_\nu g_{\mu\nu} v^\mu v^\nu$.</li>
+<li><strong>Greek indices</strong> ($\mu, \nu, \rho, \sigma$): run over value dimensions 1 to $d$ (typically 1 to 9).</li>
+<li><strong>Latin indices</strong> ($i, j, k$): run over gauge transformation types or general counting indices.</li>
+<li><strong>Superscripts</strong> denote contravariant (tangent vector) components; <strong>subscripts</strong> denote covariant (cotangent) components.</li>
+<li><strong>Bold symbols</strong> ($\mathbf{r}$, $\mathbf{a}$) denote vectors in $\mathbb{R}^d$.</li>
+<li><strong>Calligraphic letters</strong> ($\mathcal{V}$, $\mathcal{T}$, $\mathcal{A}$) denote manifolds.</li>
+</ul>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="index.html" class="nav-toc">&larr; Contents</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
+</body>
+</html>

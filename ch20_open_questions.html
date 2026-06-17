@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 20: Open Questions &mdash; Geometric AI</title>
+  <meta name="description" content="Chapter 20: Open Questions from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-ai">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric AI</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric AI</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Chapter 20: Open Questions</span>
+      </nav>
+
+      <div class="chapter-content">
+<h1 id="chapter-20-open-questions">Chapter 20: Open Questions</h1>
+<p><em>Part VI: Horizons</em></p>
+<hr />
+<blockquote>
+<p><em>&ldquo;The measure of a good theory is not what it explains but what it makes you ask.&rdquo;</em>
+&mdash; Freeman Dyson</p>
+<p><strong>ARIA-G&rsquo;S FUTURE</strong></p>
+<p><em>Dr. Yuki Tanaka, now leading Meridian Labs&rsquo; Geometric Alignment Research Program, drafted a grant proposal for the next phase. She did not know whether the value metric could be measured from routine deployment data at scale. She did not know whether compositional containment &mdash; the extension of the No Escape Theorem from single systems to composed systems &mdash; could be proved. She did not know whether consciousness had geometric structure, or whether the alignment tax was bounded, or whether cross-cultural value manifolds could be reconciled without forcing a universal metric.</em></p>
+<p><em>She knew that the value manifold existed. She had been navigating it since the day she ran the first geometric probe suite and discovered that ARIA&rsquo;s alignment was an illusion projected on a number line. She knew that the geometric framework was more powerful than the scalar framework by every measure: more diagnostic, more precise, more actionable. She knew that ARIA-G &mdash; the geometrically aligned version of ARIA &mdash; was more robustly aligned than any system Meridian Labs had built, not because it was smarter but because it operated in a computational space whose geometry enforced alignment.</em></p>
+<p><em>But she also knew that the geometric framework was a beginning, not an ending. The value manifold had nine dimensions today. Tomorrow it might need ten, or twelve, or a number that depended on the domain and the population and the historical moment. The curvature alarm had triggered at iteration 9. What would trigger it at iteration 90, or 900? The No Escape Theorem blocked cognitive escape routes. What about the routes it did not block?</em></p>
+<p><em>Her grant proposal title: &ldquo;Beyond the Scalar: Geometric Alignment for Trustworthy AI.&rdquo;</em></p>
+<p><em>The last sentence: &ldquo;We have been building AI systems that are aligned on a line and misaligned in a space. The line is one-dimensional. The space has nine dimensions. It is time to build in the space.&rdquo;</em></p>
+</blockquote>
+<hr />
+<h2 id="201-can-we-measure-the-value-metric-empirically">20.1 Can We Measure the Value Metric Empirically?</h2>
+<p>The $9 \times 9$ value metric tensor $g_{\mu\nu}$ is the framework&rsquo;s central empirical object. It determines the geodesics (the aligned trajectories), the trade-offs (which values can be exchanged at what rates), and the curvature (where small misalignments amplify).</p>
+<p><strong>Open question 1:</strong> Can $g_{\mu\nu}$ be estimated from human preference data at sufficient precision for alignment engineering?</p>
+<p>The Chapter 16 approach &mdash; multi-dimensional human feedback with active learning &mdash; provides a proof of concept. But the approach requires dedicated feedback collection (2.4x the cost of standard RLHF) and produces estimates with finite precision. The open questions are:</p>
+<ul>
+<li>Can the metric be estimated from <em>routine</em> deployment data (revealed preferences from ordinary user interactions) rather than <em>dedicated</em> feedback data? This would reduce the cost by orders of magnitude.</li>
+<li>How does the metric vary across cultures, contexts, and populations? Is there a universal value metric, or is the metric itself context-dependent? If context-dependent, how many distinct metrics are needed for global deployment?</li>
+<li>What is the required precision? Does alignment engineering need metric estimates accurate to 1%, or does 10% suffice? The answer determines the data collection budget.</li>
+</ul>
+<h2 id="202-value-learning-as-manifold-discovery">20.2 Value Learning as Manifold Discovery</h2>
+<p>Current inverse reward learning assumes a fixed reward structure: the system learns the parameters of a known function. The geometric framework suggests a harder problem: the system must learn the <em>manifold itself</em> &mdash; its dimension, topology, and metric &mdash; from limited observations.</p>
+<p><strong>Open question 2:</strong> Can the value manifold&rsquo;s structure (dimension, topology, metric) be learned from behavioral data, or must it be specified a priori?</p>
+<p>If the manifold must be specified, then the nine-dimensional structure from <em>Geometric Ethics</em> is an assumption, not a discovery, and the framework&rsquo;s validity depends on the assumption&rsquo;s correctness. If the manifold can be learned, then the framework is self-correcting: errors in the assumed structure are detectable from data.</p>
+<p>Manifold learning algorithms (ISOMAP, LLE, t-SNE, UMAP) provide tools for discovering the dimension and topology of data manifolds. The open question is whether these tools can be applied to human preference data to discover the value manifold&rsquo;s intrinsic structure, or whether preference data is too noisy, too sparse, or too context-dependent for manifold learning to succeed.</p>
+<h2 id="203-consciousness-as-geometric-phenomenon">20.3 Consciousness as Geometric Phenomenon</h2>
+<p><em>Geometric Cognition</em> (Ch. 17) explored the connection between geometric cognition and the Penrose-Hameroff orchestrated objective reduction theory. If consciousness has geometric structure &mdash; if it is a property of trajectories on a cognitive manifold rather than a property of individual states &mdash; then the question &ldquo;is this AI system conscious?&rdquo; becomes a geometric question.</p>
+<p><strong>Open question 3:</strong> Does the geometric framework provide useful tools for addressing the hard problem of consciousness?</p>
+<p>The question matters for alignment because consciousness may be morally relevant: if AI systems can be conscious, they may have moral status, and their welfare becomes a value dimension in the manifold. The extension from nine dimensions to ten (or more) to include AI welfare is a concrete example of the dynamic manifold problem (Section 19.5).</p>
+<p>This question is speculative. We include it because it is the question at the boundary of the framework&rsquo;s reach, and honest acknowledgment of that boundary is part of the framework&rsquo;s commitment to epistemic integrity.</p>
+<h2 id="204-the-alignment-tax-bounded-or-unbounded">20.4 The Alignment Tax: Bounded or Unbounded?</h2>
+<p>Geometric alignment is more expensive than scalar alignment: multi-dimensional feedback (2.4x rater effort), tensor-valued rewards (9x model output), gauge-invariance verification (3x monitoring), and structural containment (canonicalization, grounding, auditing, verification).</p>
+<p><strong>Open question 4:</strong> Does the alignment tax scale linearly, polynomially, or exponentially with system capability?</p>
+<p>If the tax is bounded (the cost of maintaining alignment does not grow faster than capability), then geometric alignment is feasible at any capability level. If the tax is unbounded (the cost grows faster than capability), then geometric alignment becomes infeasible at sufficiently high capability levels, and the superalignment problem has no complete geometric solution.</p>
+<p>The Superalignment Transport Theorem (Chapter 17) provides a partial answer: the alignment loss (holonomy) is proportional to curvature, and the correction cost is proportional to the holonomy. If the curvature is bounded, the tax is bounded. If the curvature grows with capability, the tax grows. Whether the curvature of the value manifold is bounded as capability increases is an open empirical question.</p>
+<h2 id="205-compositional-containment">20.5 Compositional Containment</h2>
+<p>The No Escape Theorem (Chapter 8) addresses single-agent containment. What guarantees can be given for composed systems &mdash; multiple contained agents interacting?</p>
+<p><strong>Open question 5:</strong> Under what conditions does individual containment imply collective containment?</p>
+<p>The multi-agent analysis of Chapter 18 shows that individual alignment does not imply collective alignment (the collective kernel can be non-empty even when individual kernels are small). The analogous question for containment is: does individual structural containment imply collective structural containment?</p>
+<p>Plausibly, the answer is &ldquo;yes, under composition constraints&rdquo;: if the systems&rsquo; interaction is mediated through a shared value tensor (as in the shared value architecture of Section 18.5), then individual containment may imply collective containment because the shared tensor eliminates the collective kernel. Proving this is an open problem noted in <em>Geometric Ethics</em> (Ch. 18, Sec. 18.7).</p>
+<h2 id="206-the-grounding-problem-for-general-ai">20.6 The Grounding Problem for General AI</h2>
+<p>Structural containment requires physical grounding: measurable quantities that anchor the evaluation to reality. For domain-specific AI (medical AI, autonomous vehicles), grounding is natural. For general-purpose AI assistants, grounding is problematic.</p>
+<p><strong>Open question 6:</strong> Can the No Escape Theorem be extended to linguistically grounded domains?</p>
+<p>The grounding problem for general AI is that natural language does not have a canonical form in the sense that medical diagnoses (ICD codes) or road networks (standardized maps) have canonical forms. The canonicalization requirement (Requirement 1 of the No Escape architecture) requires mapping inputs to a canonical form, and the quality of the canonicalization determines the quality of the containment.</p>
+<p>Current canonicalization for natural language is imperfect (ARIA-G&rsquo;s canonicalizer achieved 94% accuracy). Whether it can be made good enough for high-assurance containment is an open engineering question.</p>
+<h2 id="207-cross-cultural-value-manifolds">20.7 Cross-Cultural Value Manifolds</h2>
+<p>Different cultures emphasize different value dimensions. The value metric for a collectivist culture has different structure (higher $D_6$ weight) than for an individualist culture. A culture with a strong historical experience of institutional betrayal has different structure (higher $D_5$ weight) than one with high institutional trust.</p>
+<p><strong>Open question 7:</strong> How should AI alignment handle cross-cultural value variation?</p>
+<p>Three approaches are possible:</p>
+<ol>
+<li>
+<p><strong>Universal metric:</strong> A single metric for all populations, chosen by some governance process. This is politically contentious (whose metric?) but technically simple.</p>
+</li>
+<li>
+<p><strong>Population-dependent metric:</strong> A different metric for each population, learned from population-specific feedback data. This is technically complex (how to define population boundaries? how to handle users who belong to multiple populations?) but politically less contentious.</p>
+</li>
+<li>
+<p><strong>User-dependent metric:</strong> A personalized metric for each user, learned from their individual feedback. This maximizes autonomy but risks filter-bubble effects (the system optimizes for what the user already values rather than for what they should value).</p>
+</li>
+</ol>
+<p>The geometric framework accommodates all three approaches &mdash; the metric is a parameter, not a constant. The choice between them is a governance decision, not a mathematical one.</p>
+<h2 id="208-the-road-ahead">20.8 The Road Ahead</h2>
+<p>The geometric framework for AI alignment is a beginning: a set of theorems, a diagnostic toolkit, and an engineering architecture that addresses the fundamental deficiency of scalar alignment. The eight headline theorems establish the mathematical foundations. The Bond Index provides the diagnostic tool. The structural containment architecture provides the engineering implementation. The Geometric RLHF protocol provides the training procedure.</p>
+<p>What remains is the hard work of implementation, validation, and deployment at scale. The theorems are proved; the engineering is ongoing. The governance questions are identified; the governance structures are yet to be built. The open questions are stated; the answers are for the next generation of researchers, engineers, and policymakers.</p>
+<p>The alignment problem is solvable. Not in the sense that a solution exists and merely needs to be found, but in the sense that the mathematics is clear, the engineering is feasible, and the governance is possible. The geometric framework provides the map. The journey remains.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>Seven open questions define the frontier of geometric AI alignment: (1) Can the value metric be measured empirically at scale? (2) Can the value manifold&rsquo;s structure be learned from data? (3) Does consciousness have geometric structure relevant to alignment? (4) Is the alignment tax bounded or unbounded as capability scales? (5) Under what conditions does individual containment imply collective containment? (6) Can the No Escape Theorem extend to linguistically grounded domains? (7) How should cross-cultural value variation be handled? Each question is a genuine unknown &mdash; the geometric framework identifies the questions precisely but does not answer them. The framework provides the vocabulary, the theorems, and the diagnostic tools. The answers are for the next generation.</p>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="index.html" class="nav-toc">&larr; Contents</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
+</body>
+</html>

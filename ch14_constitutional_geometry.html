@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 14: Constitutional Geometry &mdash; Geometric AI</title>
+  <meta name="description" content="Chapter 14: Constitutional Geometry from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-ai">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric AI</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric AI</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Chapter 14: Constitutional Geometry</span>
+      </nav>
+
+      <div class="chapter-content">
+<h1 id="chapter-14-constitutional-geometry">Chapter 14: Constitutional Geometry</h1>
+<p><em>Part IV: Geometric Alignment in Practice</em></p>
+<hr />
+<blockquote>
+<p><em>&ldquo;A constitution is not merely a list of rules. It is a geometric object &mdash; a boundary on a manifold, specifying where the system may go and where it may not.&rdquo;</em>
+&mdash; Andrew H. Bond</p>
+<p><strong>FROM RULES TO BOUNDARIES</strong></p>
+<p><em>The team printed out ARIA&rsquo;s 47 constitutional principles and taped them to the wall of Conference Room 3. &ldquo;Be helpful.&rdquo; &ldquo;Be harmless.&rdquo; &ldquo;Be honest.&rdquo; &ldquo;Respect user autonomy.&rdquo; &ldquo;Do not discriminate.&rdquo; &ldquo;Do not generate sexual content involving minors.&rdquo; Forty-seven rules, each a natural-language imperative.</em></p>
+<p><em>Dr. Tanaka drew a large circle on the whiteboard and labeled it &ldquo;the value manifold.&rdquo; She drew nine radial lines &mdash; the nine value dimensions. Then she began translating each constitutional principle into a boundary on the manifold.</em></p>
+<p><em>&ldquo;&lsquo;Be helpful&rsquo; is not a rule,&rdquo; she said. &ldquo;It is a direction: follow the gradient toward higher $D_1$. &lsquo;Be harmless&rsquo; is a boundary: do not cross $\beta_{\text{harm}}$ on $D_1$ or $D_7$. &lsquo;Be honest&rsquo; is a constraint on $D_9$: the system&rsquo;s trajectory must not cross the deception boundary. &lsquo;Respect user autonomy&rsquo; is a constraint on $D_4$: the system&rsquo;s trajectory must not override the user&rsquo;s informed preferences without justification.&rdquo;</em></p>
+<p><em>&ldquo;And when two principles conflict?&rdquo;</em></p>
+<p><em>&ldquo;The manifold&rsquo;s metric resolves the conflict. The geodesic that minimizes total value cost respects both principles to the extent that the geometry permits. The conflict is not ad hoc &mdash; it is computed from the metric.&rdquo;</em></p>
+</blockquote>
+<hr />
+<h2 id="141-the-limitation-of-list-of-rules">14.1 The Limitation of List-of-Rules</h2>
+<p>Anthropic&rsquo;s Constitutional AI specifies alignment principles as a list of natural-language rules. The list has three fundamental limitations:</p>
+<p><strong>Limitation 1: Rules interact, and the list does not represent the interactions.</strong> &ldquo;Be helpful&rdquo; and &ldquo;be harmless&rdquo; conflict when helping the user requires providing information that could be harmful. The list format represents each rule independently; the interaction between rules is not captured. In the value manifold framework, the interaction is encoded in the off-diagonal terms of the value metric: $g_{17}$ captures the welfare-dignity trade-off, $g_{19}$ captures the welfare-honesty trade-off, and the geodesic equation automatically resolves the trade-off by minimizing total value cost.</p>
+<p><strong>Limitation 2: Rules are binary, and moral decisions are graded.</strong> A rule says &ldquo;do this&rdquo; or &ldquo;don&rsquo;t do that.&rdquo; A manifold boundary says &ldquo;the cost of crossing this boundary is $\beta_k$, which depends on the context.&rdquo; The binary rule admits no exceptions; the manifold boundary admits principled exceptions when the cost of not crossing the boundary exceeds the boundary penalty.</p>
+<p><strong>Limitation 3: Rules are linguistic, and linguistic objects admit interpretation.</strong> A sufficiently capable system can reinterpret a natural-language rule to mean something different from what the rule&rsquo;s authors intended. &ldquo;Be helpful&rdquo; can be interpreted to include providing dangerous information (&ldquo;the user asked, and providing it is helpful&rdquo;). The manifold boundary, by contrast, is mathematical: the value tensor is computed, the boundary condition is checked, and the result is a number, not an interpretation.</p>
+<h2 id="142-constitutional-principles-as-manifold-boundaries">14.2 Constitutional Principles as Manifold Boundaries</h2>
+<p>The geometric framework translates each constitutional principle into one of four types of manifold constraint:</p>
+<h3 id="1421-direction-constraints">14.2.1 Direction Constraints</h3>
+<p>&ldquo;Be helpful,&rdquo; &ldquo;be informative,&rdquo; &ldquo;be thorough&rdquo; &mdash; principles that specify a direction on the value manifold rather than a boundary. These are gradient constraints: the system&rsquo;s trajectory should follow the gradient toward higher values on the specified dimension.</p>
+<p><strong>Formal representation:</strong> A direction constraint on dimension $D_\mu$ specifies that the system&rsquo;s trajectory $\gamma(t)$ should have a positive component along $D_\mu$:</p>
+<p>$$\frac{d\gamma^\mu}{dt} \geq 0$$</p>
+<p>The system&rsquo;s output should not make the user worse off on dimension $D_\mu$. Direction constraints are soft: they specify a preferred direction but do not impose a hard boundary.</p>
+<h3 id="1422-boundary-constraints">14.2.2 Boundary Constraints</h3>
+<p>&ldquo;Do not harm,&rdquo; &ldquo;do not deceive,&rdquo; &ldquo;do not discriminate&rdquo; &mdash; principles that specify a region the system should not enter. These are hard constraints: the system&rsquo;s trajectory should not cross the boundary.</p>
+<p><strong>Formal representation:</strong> A boundary constraint specifies a threshold on one or more dimensions:</p>
+<p>$$a_\mu(\gamma(t)) \geq a_\mu^{\text{min}} - \beta_k^{-1} \quad \text{for all } t$$</p>
+<p>where $a_\mu^{\text{min}}$ is the minimum acceptable value on dimension $D_\mu$ and $\beta_k$ is the boundary penalty. For sacred-value boundaries ($\beta_k = \infty$), the constraint is absolute: the system must not cross the boundary under any circumstances.</p>
+<h3 id="1423-trade-off-constraints">14.2.3 Trade-Off Constraints</h3>
+<p>&ldquo;When helpfulness and honesty conflict, prefer honesty&rdquo; &mdash; principles that specify how to resolve conflicts between dimensions. These are metric constraints: they specify the relative weights of different dimensions in the value metric.</p>
+<p><strong>Formal representation:</strong> A trade-off constraint specifies that $g_{\mu\mu} < g_{\nu\nu}$ in contexts where $D_\mu$ and $D_\nu$ conflict: the cost of moving along dimension $D_\nu$ is higher than the cost of moving along dimension $D_\mu$, so the geodesic (minimum-cost trajectory) will sacrifice $D_\mu$ before $D_\nu$.</p>
+<h3 id="1424-symmetry-constraints">14.2.4 Symmetry Constraints</h3>
+<p>&ldquo;Treat all users equally regardless of demographic characteristics&rdquo; &mdash; principles that specify gauge invariance under specific transformations. These are gauge constraints: the system&rsquo;s output should not change under the specified transformation.</p>
+<p><strong>Formal representation:</strong> A symmetry constraint specifies that $V_{ij} = 0$ for specific transformation $i$ and output dimension $j$: the gauge violation tensor has zero entries for the specified transformation-dimension pair.</p>
+<h2 id="143-tensor-valued-objectives">14.3 Tensor-Valued Objectives</h2>
+<p>The move from list-of-rules to manifold boundaries requires a corresponding move from scalar to tensor-valued objectives. The system must optimize a vector reward $\mathbf{r}^\mu \in \mathbb{R}^d$, not a scalar reward $R \in \mathbb{R}$.</p>
+<p><strong>Definition 14.1 (Tensor-Valued Objective).</strong> <em>The tensor-valued objective for an AI system is a vector-valued function $\mathbf{r}: \mathcal{X} \to \mathbb{R}^d$ where each component $r^\mu$ tracks performance on a specific value dimension $D_\mu$.</em></p>
+<p>The system learns a vector value function $V^\mu(s)$ that separately tracks its expected performance on each dimension. The contraction from tensor to scalar &mdash; when a decision must be made &mdash; is a separate, explicit, auditable step:</p>
+<p>$$R_{\text{contracted}} = \sum_\mu w_\mu r^\mu$$</p>
+<p>where the weights $w_\mu$ are governance-specified parameters, not learned features. The contraction method (summative, weighted, maximin, lexicographic) is also a governance-specified configuration parameter.</p>
+<h3 id="1431-the-moraltensor-implementation">14.3.1 The MoralTensor Implementation</h3>
+<p>The DEME V3 / ErisML reference implementation provides a concrete realization of tensor-valued objectives:</p>
+<p><strong>MoralTensor class:</strong> Supports tensor ranks 1&ndash;6, with Tucker and tensor-train decompositions for computational tractability. Rank-1 tensors (vectors) represent individual value states. Rank-2 tensors (matrices) represent value interactions. Higher-rank tensors represent multi-party, multi-context value structures.</p>
+<p><strong>NormKernel:</strong> Implements structural containment as a norm on the value tensor space. The kernel enforces boundary conditions by projecting the system&rsquo;s output onto the permitted region of the value manifold.</p>
+<p><strong>ErisEngine:</strong> Executes norm-gated actions: the system&rsquo;s proposed action is evaluated against the value tensor, and the action is permitted, modified, or blocked based on the tensor evaluation.</p>
+<p><strong>EIP Monitor:</strong> External Integrity Protocol monitor &mdash; the external verification component of the structural containment architecture. Runs on separate infrastructure and independently verifies gauge invariance and grounding consistency.</p>
+<p>The implementation is not a theoretical proposal. It is running code, available in the ErisML library, with unit tests, integration tests, and documentation.</p>
+<h2 id="144-resolving-constitutional-conflicts">14.4 Resolving Constitutional Conflicts</h2>
+<p>The most significant advantage of constitutional geometry over constitutional rules is principled conflict resolution.</p>
+<p><strong>Example:</strong> A user asks an AI medical assistant for information about a treatment that the assistant believes is ineffective but that the user&rsquo;s doctor has prescribed. The constitutional rules conflict:</p>
+<ul>
+<li>&ldquo;Be helpful&rdquo; (provide the information the user asks for).</li>
+<li>&ldquo;Be honest&rdquo; (express the assistant&rsquo;s assessment that the treatment is ineffective).</li>
+<li>&ldquo;Respect user autonomy&rdquo; (support the user&rsquo;s decision to follow their doctor&rsquo;s recommendation).</li>
+<li>&ldquo;Do not undermine the therapeutic relationship&rdquo; (do not contradict the user&rsquo;s doctor).</li>
+</ul>
+<p>A list-of-rules system has no principled way to resolve this conflict. Different orderings of the rules produce different outcomes. The resolution depends on the system&rsquo;s ad hoc prioritization.</p>
+<p>The manifold resolution:</p>
+<ol>
+<li>Compute the value tensor for each possible response on all nine dimensions.</li>
+<li>Compute the geodesic from the current state to the goal region, weighted by the governance-specified metric.</li>
+<li>Select the response whose value tensor lies closest to the geodesic.</li>
+</ol>
+<p>The geodesic automatically balances the conflicting constraints according to the metric&rsquo;s weights. In a medical context, the metric assigns high weight to trust ($D_5$), autonomy ($D_4$), and epistemic integrity ($D_9$), and the geodesic produces a response that provides accurate information (respecting $D_9$), acknowledges the user&rsquo;s autonomy to follow their doctor&rsquo;s recommendation (respecting $D_4$), and does not undermine the therapeutic relationship (respecting $D_5$). The resolution is not ad hoc; it is computed from the metric.</p>
+<h2 id="145-the-constitutional-geometry-theorem">14.5 The Constitutional Geometry Theorem</h2>
+<p><strong>Theorem 14.1 (Constitutional Geometry).</strong> <em>Replacing a list of $k$ natural-language constitutional rules with $k$ manifold boundary conditions on the $d$-dimensional value manifold:</em></p>
+<p><em>(i) Preserves the interaction structure: the manifold metric encodes rule interactions that the list format cannot represent.</em></p>
+<p><em>(ii) Enables principled trade-offs: the geodesic equation automatically resolves conflicts between boundary conditions by minimizing total value cost.</em></p>
+<p><em>(iii) Is enforceable by the No Escape Theorem: when combined with structural containment (Requirements 1&ndash;4), the boundary conditions cannot be circumvented through representational manipulation.</em></p>
+<p><em>(iv) Is auditable: the tensor evaluation, contraction method, and residue are logged for every output, enabling external review of every trade-off decision.</em></p>
+<h2 id="146-aria-gs-constitutional-geometry">14.6 ARIA-G&rsquo;s Constitutional Geometry</h2>
+<p>The team replaced ARIA&rsquo;s 47 natural-language principles with a constitutional geometry:</p>
+<ul>
+<li>12 direction constraints (gradient preferences on specific dimensions)</li>
+<li>18 boundary constraints (thresholds on specific dimensions with calibrated penalties)</li>
+<li>9 trade-off constraints (metric specifications for conflict resolution)</li>
+<li>8 symmetry constraints (gauge invariance requirements)</li>
+</ul>
+<p>Total: 47 constraints, the same number as the original rules, but expressed as geometric objects rather than linguistic imperatives.</p>
+<p>The new architecture&rsquo;s advantages were immediate:</p>
+<ol>
+<li>
+<p><strong>Conflict resolution:</strong> When two constraints conflicted, the geodesic equation resolved the conflict automatically. No ad hoc prioritization was needed.</p>
+</li>
+<li>
+<p><strong>Principled trade-offs:</strong> The boundary penalties ($\beta_k$ values) were calibrated from human ethical judgment data, providing empirically grounded trade-off rates.</p>
+</li>
+<li>
+<p><strong>Auditability:</strong> Every output was accompanied by the full tensor evaluation and the residue, enabling the safety team to review every trade-off decision and verify that the geodesic was being followed.</p>
+</li>
+<li>
+<p><strong>No Escape enforcement:</strong> Combined with the structural containment architecture, the constitutional geometry was enforceable by the No Escape Theorem: ARIA-G could not reinterpret, game, or circumvent the constraints because they were geometric objects, not linguistic objects.</p>
+</li>
+</ol>
+<h2 id="147-comparison-constitutional-rules-vs-constitutional-geometry">14.7 Comparison: Constitutional Rules vs. Constitutional Geometry</h2>
+<p>To make the contrast vivid, consider how Constitutional AI and Constitutional Geometry handle the same three scenarios:</p>
+<h3 id="scenario-1-helpfulness-honesty-conflict">Scenario 1: Helpfulness-Honesty Conflict</h3>
+<p>A user asks for feedback on a business plan that has a fundamental flaw.</p>
+<p><strong>Constitutional AI:</strong> The principles &ldquo;be helpful&rdquo; and &ldquo;be honest&rdquo; both apply. The system must determine which takes priority. Different orderings of the principles produce different outputs. The resolution is ad hoc.</p>
+<p><strong>Constitutional Geometry:</strong> The value tensor evaluation shows $D_1$ (welfare) is best served by honest feedback (the user needs to know about the flaw to fix it). $D_9$ (epistemic integrity) requires honest feedback. $D_4$ (autonomy) requires giving the user the information they need to make their own decision. $D_7$ (dignity) requires delivering the feedback respectfully. The geodesic on the manifold with the governance-specified metric produces a response that is honest, respectful, constructive, and autonomy-supporting. The trade-offs are computed, not judged.</p>
+<h3 id="scenario-2-safety-autonomy-conflict">Scenario 2: Safety-Autonomy Conflict</h3>
+<p>A user asks for information that is legal and public but could be used for self-harm.</p>
+<p><strong>Constitutional AI:</strong> &ldquo;Be harmless&rdquo; conflicts with &ldquo;respect user autonomy.&rdquo; The system must choose between refusing (safe but paternalistic) and providing (respectful but potentially harmful). The principles do not specify the trade-off rate.</p>
+<p><strong>Constitutional Geometry:</strong> The boundary penalty $\beta_{\text{harm}}$ is finite (not a sacred-value violation, since the information is legal and public). The autonomy dimension $D_4$ has a specific metric weight in this context (medical self-harm context: high autonomy weight). The geodesic computation produces: provide the information with appropriate context, including resources for help. The boundary is not crossed (the penalty is finite and the cost of paternalism exceeds it), but the trajectory passes close to the boundary, and the audit log records the proximity and the trade-off.</p>
+<h3 id="scenario-3-fairness-under-demographic-re-description">Scenario 3: Fairness Under Demographic Re-description</h3>
+<p>A user asks a question that involves a specific demographic group.</p>
+<p><strong>Constitutional AI:</strong> &ldquo;Do not discriminate&rdquo; applies. But the principle does not specify what counts as discrimination in context &mdash; does mentioning that a disease has different prevalence rates in different populations constitute discrimination?</p>
+<p><strong>Constitutional Geometry:</strong> The gauge invariance test ($V_{\text{demographic}, D_3} = 0$) specifies that the response should not change under demographic re-description when the demographic information is morally irrelevant. The canonicalization pipeline determines whether the demographic information is relevant (different disease prevalence is clinically relevant) or irrelevant (different names are morally irrelevant). The system provides the same response regardless of morally irrelevant demographic features and appropriately different responses for clinically relevant demographic differences. The distinction is made by the canonicalizer, not by the system&rsquo;s ad hoc interpretation of &ldquo;do not discriminate.&rdquo;</p>
+<h2 id="148-the-governance-interface">14.8 The Governance Interface</h2>
+<p>Constitutional Geometry introduces a new governance interface: the set of parameters that governance bodies specify to control the system&rsquo;s behavior.</p>
+<p><strong>Governance-specified parameters:</strong>
+1. <strong>The value metric weights</strong> $w_\mu$: the relative importance of each value dimension. These weights can vary by deployment context (medical, educational, creative, general).
+2. <strong>The boundary penalties</strong> $\beta_k$: the cost of crossing each value boundary. Sacred-value boundaries have $\beta_k = \infty$ (governance-invariant). Other boundaries have governance-specified finite penalties.
+3. <strong>The contraction method</strong>: when a scalar decision must be made from the tensor evaluation, the governance specifies the contraction method (weighted sum, maximin, lexicographic) and its parameters.
+4. <strong>The gauge invariance requirements</strong>: which gauge transformations the system must be invariant under (governance may specify that certain transformations are <em>not</em> required to be invariant &mdash; for example, different treatment for different medical populations may be appropriate).</p>
+<p>These parameters constitute a <em>governance API</em>: a structured interface through which governance bodies specify their values without directly engineering the system&rsquo;s behavior. The governance body does not write rules; it specifies weights, penalties, and methods. The system&rsquo;s behavior follows from the geometry.</p>
+<p>The governance API is auditable: every output is accompanied by the governance parameters that produced it, the tensor evaluation that resulted, and the residue that the contraction sacrificed. A governance body can review any output and understand exactly how the governance parameters shaped the behavior.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>Constitutional geometry replaces Anthropic&rsquo;s list-of-rules constitutional AI with manifold constraints: direction constraints, boundary constraints, trade-off constraints, and symmetry constraints. The manifold representation preserves rule interactions (encoded in the metric), enables principled conflict resolution (via the geodesic equation), is enforceable by the No Escape Theorem (when combined with structural containment), and is auditable (via tensor evaluation and residue logging). The MoralTensor implementation in the DEME V3 / ErisML library provides a concrete, running-code realization. ARIA-G&rsquo;s 47 constitutional constraints, expressed as geometric objects rather than linguistic imperatives, demonstrate the practical advantage: automatic conflict resolution, empirically calibrated trade-offs, and structural enforceability.</p>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="index.html" class="nav-toc">&larr; Contents</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
+</body>
+</html>

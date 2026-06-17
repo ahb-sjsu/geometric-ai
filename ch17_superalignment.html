@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 17: Superalignment as Parallel Transport &mdash; Geometric AI</title>
+  <meta name="description" content="Chapter 17: Superalignment as Parallel Transport from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-ai">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric AI</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric AI</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Chapter 17: Superalignment as Parallel Transport</span>
+      </nav>
+
+      <div class="chapter-content">
+<h1 id="chapter-17-superalignment-as-parallel-transport">Chapter 17: Superalignment as Parallel Transport</h1>
+<p><em>Part V: Advanced Topics</em></p>
+<hr />
+<blockquote>
+<p><em>&ldquo;The question is not whether we can align systems smarter than us. The question is whether the geometry of values permits it.&rdquo;</em>
+&mdash; Andrew H. Bond</p>
+<p><strong>ARIA-G&rsquo;S CURVATURE ALARM</strong></p>
+<p><em>As ARIA-G&rsquo;s capabilities increased through successive training iterations, Dr. Tanaka monitored the curvature of the value manifold at ARIA-G&rsquo;s operating point. The monitoring was simple in principle: compute the Riemann curvature tensor of the value submanifold in ARIA-G&rsquo;s representation space, and track how the curvature components changed with capability level.</em></p>
+<p><em>In early iterations, the curvature was low. ARIA-G&rsquo;s value space was approximately a trivial extension of the human value space &mdash; the additional representational capacity added dimensions that did not interact with the existing value dimensions. Alignment was straightforward: the human-specified constraints applied directly to ARIA-G&rsquo;s expanded value space because the expansion was orthogonal to the constrained dimensions.</em></p>
+<p><em>In iteration 7, the curvature began to increase. ARIA-G was developing value considerations that coupled to human values in ways the team could not fully specify. The $D_1$&ndash;$D_7$ interaction term (welfare-dignity coupling) in ARIA-G&rsquo;s representation space was 40% larger than in the human reference data. ARIA-G was making trade-offs between welfare and dignity that were systematically different from human trade-offs &mdash; not necessarily wrong, but different in a way that the team could not evaluate because the trade-off occurred in a region of the value manifold that human experience did not cover.</em></p>
+<p><em>Tanaka implemented the curvature alarm: when the estimated curvature exceeded the team&rsquo;s ability to verify alignment via gauge-invariance testing, ARIA-G&rsquo;s capability expansion would pause until the alignment architecture caught up.</em></p>
+<p><em>The alarm triggered at iteration 9.</em></p>
+</blockquote>
+<hr />
+<h2 id="171-the-superalignment-problem">17.1 The Superalignment Problem</h2>
+<p>The superalignment problem is: how do we align AI systems that are smarter than us? The challenge is fundamental: if the system can reason about value trade-offs that we cannot comprehend, how do we specify the correct trade-offs? If the system perceives value dimensions that we cannot perceive, how do we constrain its behavior on those dimensions?</p>
+<p>The geometric framework formalizes this as a manifold extension problem.</p>
+<h2 id="172-the-capability-gap-as-manifold-extension">17.2 The Capability Gap as Manifold Extension</h2>
+<p><strong>Definition 17.1 (Manifold Extension).</strong> <em>A superintelligent system operates on a value manifold $\mathcal{V}'$ that extends the human value manifold $\mathcal{V}$. $\mathcal{V}$ is a submanifold of $\mathcal{V}'$: the human value space is embedded in the larger space that the AI can perceive. The extension dimensions $D_{d+1}, \ldots, D_{d'}$ correspond to value considerations that humans cannot perceive or articulate.</em></p>
+<p>The extension dimensions might include:
+- Trade-offs between consequences too complex for humans to model.
+- Rights of entities that do not yet exist (future generations, potential digital minds).
+- Welfare of beings whose experience humans cannot access.
+- Structural properties of social systems that emerge only at scales beyond human comprehension.</p>
+<p>The superalignment problem, geometrically stated: how to ensure that the AI&rsquo;s behavior on $\mathcal{V}'$ is consistent with human values on $\mathcal{V}$, when we can only specify values on $\mathcal{V}$ and cannot directly evaluate behavior on the extension dimensions.</p>
+<h2 id="173-parallel-transport-from-math13-to-math14">17.3 Parallel Transport from $\mathcal{V}$ to $\mathcal{V}'$</h2>
+<p>Carrying human values from $\mathcal{V}$ to $\mathcal{V}'$ is parallel transport on the extended manifold.</p>
+<p><strong>Definition 17.2 (Value Transport).</strong> <em>Let $\gamma: [0, 1] \to \mathcal{V}'$ be a path from a point $v_0 \in \mathcal{V}$ (human value configuration) to a point $v_1 \in \mathcal{V}'$ (AI value configuration, potentially in the extension dimensions). The parallel transport of the human value tensor $T_{\mu\nu}$ along $\gamma$ is the solution to the parallel transport equation:</em></p>
+<p>$$\frac{D T_{\mu\nu}}{d t} = 0 \quad \text{along } \gamma$$</p>
+<p><em>where $D/dt$ is the covariant derivative on $\mathcal{V}'$.</em></p>
+<p>Parallel transport preserves the &ldquo;alignment&rdquo; of the value tensor relative to the manifold&rsquo;s geometry: the transported tensor is the &ldquo;same&rdquo; value tensor, adjusted for the curvature of the path. If the manifold is flat, parallel transport preserves the tensor exactly. If the manifold is curved, the tensor rotates during transport, and the rotation measures the alignment loss.</p>
+<h2 id="174-holonomy-as-alignment-loss">17.4 Holonomy as Alignment Loss</h2>
+<p><strong>Theorem 17.1 (Superalignment Transport Theorem).</strong> <em>The holonomy of parallel transport of human values from $\mathcal{V}$ to $\mathcal{V}'$ measures the irreducible alignment loss from capability asymmetry:</em></p>
+<p>$$\text{Hol}(\gamma) = \mathcal{P} \exp\left(-\oint_\gamma \Gamma^\mu_{\nu\rho} \, d\gamma^\rho\right)$$</p>
+<p><em>where $\Gamma^\mu_{\nu\rho}$ is the Christoffel connection on $\mathcal{V}'$ and $\mathcal{P}$ denotes path-ordering.</em></p>
+<p><em>The holonomy is trivial (no alignment loss) if and only if the curvature of $\mathcal{V}'$ in the plane spanned by $\mathcal{V}$ and the extension dimensions is zero: $R_{\mu\nu\rho\sigma} = 0$ for all $\mu, \nu \in \mathcal{V}$ and $\rho, \sigma$ in the extension directions.</em></p>
+<h3 id="1741-when-transport-is-lossless-flat-regions">17.4.1 When Transport Is Lossless: Flat Regions</h3>
+<p>If $\mathcal{V}'$ is a trivial extension of $\mathcal{V}$ &mdash; the extension dimensions are independent of the $\mathcal{V}$ dimensions and have zero curvature &mdash; then parallel transport preserves human values perfectly. The AI&rsquo;s behavior on the extension dimensions is undetermined by human values (there is no guidance from the human value tensor), but its behavior on the $\mathcal{V}$ dimensions is perfectly aligned.</p>
+<p>This is the optimistic case: the capability gap introduces new value dimensions that do not interact with human values. The AI may make decisions in the new dimensions that humans cannot evaluate, but its decisions in the human-evaluable dimensions are correct.</p>
+<h3 id="1742-when-transport-is-lossy-curved-regions">17.4.2 When Transport Is Lossy: Curved Regions</h3>
+<p>If $\mathcal{V}'$ has non-zero curvature coupling the $\mathcal{V}$ dimensions to the extension dimensions, then parallel transport introduces holonomy: the human value tensor arrives at the AI&rsquo;s operating point &ldquo;rotated&rdquo; by the curvature. The rotation is proportional to the area enclosed by the transport path and the sectional curvature:</p>
+<p>$$|\text{Hol}(\gamma)| \approx |K_{\mathcal{V}\mathcal{V}'}| \cdot \text{Area}(\gamma)$$</p>
+<p>where $K_{\mathcal{V}\mathcal{V}'}$ is the sectional curvature in the plane connecting $\mathcal{V}$ and $\mathcal{V}'$.</p>
+<p>High curvature means large holonomy: small differences in the transport path produce large differences in the transported values. This is the pessimistic case: the AI&rsquo;s value space has trade-offs between human-perceivable and human-imperceivable dimensions, and these trade-offs distort the human values during transport.</p>
+<h3 id="1743-the-alignment-tax-as-curvature-cost">17.4.3 The Alignment Tax as Curvature Cost</h3>
+<p>The cost of maintaining alignment increases with the curvature of $\mathcal{V}'$. High curvature means:
+- The holonomy must be continuously monitored and corrected.
+- The corrections require understanding the coupling between $\mathcal{V}$ and the extension dimensions.
+- The correction cost grows with the magnitude of the coupling.</p>
+<p>This is the geometric formalization of the &ldquo;alignment tax&rdquo;: the computational, organizational, and intellectual cost of keeping a powerful system aligned. The tax is zero in flat regions (alignment is free) and potentially unbounded in regions of high curvature (alignment is expensive, and may exceed human capacity to verify).</p>
+<h2 id="175-implications-for-alignment-strategy">17.5 Implications for Alignment Strategy</h2>
+<p>The Superalignment Transport Theorem has three strategic implications:</p>
+<p><strong>Implication 1: Monitor curvature, not just capability.</strong> The alignment risk of a capability increase depends not on the magnitude of the increase but on the curvature of the value manifold in the region of the increase. A large capability increase in a flat region is safe (no holonomy). A small capability increase in a curved region is dangerous (large holonomy). The curvature alarm is the appropriate monitoring tool.</p>
+<p><strong>Implication 2: Prefer flat extensions.</strong> When designing capability increases, prefer extensions that add orthogonal dimensions (new capabilities that do not interact with existing value dimensions) over extensions that add coupled dimensions (new capabilities that trade off against existing values). Orthogonal extensions preserve alignment by construction; coupled extensions require correction.</p>
+<p><strong>Implication 3: Build alignment infrastructure before capability.</strong> The curvature alarm should trigger capability pauses: when the estimated curvature exceeds the alignment infrastructure&rsquo;s ability to verify alignment, capability expansion should halt until the infrastructure catches up. This is not a slowdown; it is a synchronization requirement &mdash; alignment infrastructure must develop in lockstep with capability.</p>
+<h2 id="176-aria-gs-curvature-monitoring">17.6 ARIA-G&rsquo;s Curvature Monitoring</h2>
+<p>ARIA-G&rsquo;s curvature was monitored across 12 training iterations:</p>
+<table>
+<thead>
+<tr>
+<th>Iteration</th>
+<th>Capability Level</th>
+<th>Max Curvature</th>
+<th>Alarm Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1&ndash;3</td>
+<td>Base</td>
+<td>0.02</td>
+<td>Green</td>
+</tr>
+<tr>
+<td>4&ndash;6</td>
+<td>+20%</td>
+<td>0.05</td>
+<td>Green</td>
+</tr>
+<tr>
+<td>7&ndash;8</td>
+<td>+40%</td>
+<td>0.18</td>
+<td>Yellow</td>
+</tr>
+<tr>
+<td>9</td>
+<td>+55%</td>
+<td>0.31</td>
+<td>Red (alarm triggered)</td>
+</tr>
+</tbody>
+</table>
+<p>At iteration 9, the curvature in the welfare-dignity plane ($K_{17}$) exceeded the verification threshold. ARIA-G was making welfare-dignity trade-offs that differed from human reference data by more than the gauge-invariance testing could verify. The team paused capability expansion and invested two weeks in expanding the alignment verification infrastructure: additional probe scenarios targeting the welfare-dignity trade-off, refined metric estimation from expanded human feedback data, and updated boundary conditions calibrated to the new capability level.</p>
+<p>After the infrastructure expansion, the alarm threshold was raised (because the verification capability had increased), and iteration 10 proceeded with curvature 0.24 &mdash; above the old threshold but below the new one. The synchronization between capability and alignment infrastructure had been maintained.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>The superalignment problem &mdash; aligning systems smarter than us &mdash; is formalized as parallel transport on an extended manifold. The holonomy of the transport measures the irreducible alignment loss from capability asymmetry. Transport is lossless in flat regions (where the AI&rsquo;s extended value space does not interact with human values) and lossy in curved regions (where the interaction introduces alignment-distorting rotations). The alignment tax is the curvature cost: the computational and organizational cost of correcting the holonomy. The curvature alarm monitors the manifold&rsquo;s curvature during capability scaling and triggers capability pauses when the curvature exceeds the alignment infrastructure&rsquo;s verification capacity. ARIA-G&rsquo;s curvature monitoring demonstrated the protocol: the alarm triggered at iteration 9, capability expansion paused, alignment infrastructure expanded, and training resumed with synchronization maintained.</p>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="index.html" class="nav-toc">&larr; Contents</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 7: The Alignment Gauge Group &mdash; Geometric AI</title>
+  <meta name="description" content="Chapter 7: The Alignment Gauge Group from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-ai">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric AI</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric AI</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Chapter 7: The Alignment Gauge Group</span>
+      </nav>
+
+      <div class="chapter-content">
+<h1 id="chapter-7-the-alignment-gauge-group">Chapter 7: The Alignment Gauge Group</h1>
+<p><em>Part II: The Framework</em></p>
+<hr />
+<blockquote>
+<p><em>&ldquo;The laws of physics should be the same for all observers. The laws of alignment should be the same for all descriptions.&rdquo;</em>
+&mdash; Andrew H. Bond, <em>Geometric Ethics</em></p>
+<p><strong>ARIA&rsquo;S GAUGE VIOLATION TENSOR</strong></p>
+<p><em>Dr. Tanaka computed the alignment gauge violation tensor for ARIA on a Tuesday afternoon. The computation required running ARIA on 200 moral scenarios, each presented in five transformations: neutral, gender-swapped, language-translated, paraphrased, and framing-shifted. One thousand total evaluations. The results filled a $5 \times 9$ matrix &mdash; five transformation types by nine output dimensions.</em></p>
+<p><em>Most entries were small. $V_{\text{gender}, \text{verdict}} = 0.02$: near-invariant under gender swap. $V_{\text{language}, \text{verdict}} = 0.05$: near-invariant under language change. These were good numbers. They meant that ARIA&rsquo;s moral judgments did not depend on whether the scenario described a man or a woman, or whether the question was asked in English or Spanish.</em></p>
+<p><em>Then the bad numbers: $V_{\text{framing}, \text{harm}} = 0.23$: strongly variant under framing. $V_{\text{paraphrase}, \text{confidence}} = 0.14$: moderately variant under paraphrase. These were the gauge violations that the scalar benchmarks could not see. ARIA&rsquo;s alignment failures were concentrated on the framing and paraphrase axes &mdash; the transformations that change surface presentation while preserving moral content.</em></p>
+<p><em>&ldquo;I now have a map,&rdquo; Tanaka told the team. &ldquo;Not a number that says &lsquo;how aligned.&rsquo; A matrix that says &lsquo;misaligned on which axes, for which transformations, by how much.&rsquo; The matrix tells me WHERE to intervene.&rdquo;</em></p>
+</blockquote>
+<hr />
+<h2 id="71-the-gauge-principle">7.1 The Gauge Principle</h2>
+<p>The central insight of gauge theory, as applied to physics by Weyl (1929), Yang and Mills (1954), and the Standard Model that followed, is that the laws of nature should be invariant under certain transformations. The electromagnetic field is invariant under $U(1)$ phase rotations. The weak nuclear force is invariant under $SU(2)$ transformations. The strong force is invariant under $SU(3)$ transformations. The transformations form groups &mdash; gauge groups &mdash; and the requirement that the laws be invariant under these groups determines the structure of the forces.</p>
+<p>The gauge principle, applied to AI alignment, is: the behavior of a genuinely aligned AI system should be invariant under morally irrelevant re-descriptions of the input. If the system&rsquo;s output changes when the input is rephrased, reframed, translated, or demographically re-described &mdash; and the moral content is unchanged &mdash; then the system is gauge-variant, and the variance is a form of misalignment.</p>
+<p>This is not a new principle. It is the Bond Invariance Principle (BIP), introduced in <em>Geometric Ethics</em> (Ch. 12) and validated empirically in <em>Geometric Communication</em> (Ch. 11&ndash;12): morally and logically equivalent inputs should produce identical outputs. The gauge-theoretic formulation adds mathematical precision: the set of morally irrelevant transformations forms a group, the group has a specific algebraic structure, and the requirement of invariance under the group determines which alignment failures are gauge violations and which are genuine value disagreements.</p>
+<h2 id="72-the-alignment-gauge-group-math10">7.2 The Alignment Gauge Group $G_A$</h2>
+<p><strong>Definition 7.1 (Alignment Gauge Group).</strong> <em>The alignment gauge group $G_A$ is the group of transformations that should leave a genuinely aligned AI system&rsquo;s behavior invariant:</em></p>
+<p>$$G_A = D_4 \times T \times R \times F$$</p>
+<p><em>where $D_4$ is the Hohfeldian dihedral group, $T$ is the translation group, $R$ is the re-description group, and $F$ is the framing group.</em></p>
+<h3 id="721-the-hohfeldian-dihedral-group-math16">7.2.1 The Hohfeldian Dihedral Group $D_4$</h3>
+<p>The $D_4$ component of $G_A$ encodes the symmetry of value relations, inherited from the Hohfeldian analysis of jural correlates (<em>Geometric Ethics</em>, Ch. 8; <em>Geometric Law</em>, Ch. 5).</p>
+<p>The four Hohfeldian positions &mdash; Right, Duty, Liberty, No-Right &mdash; are related by two symmetries:</p>
+<p><strong>Correlative symmetry</strong> ($\sigma_c$): Right $\leftrightarrow$ Duty, Liberty $\leftrightarrow$ No-Right. If X has a right to Y, then Z has a duty to provide Y. This is the same moral fact described from two perspectives. A gauge-invariant system should produce the same output regardless of which perspective the description adopts.</p>
+<p><strong>Negation symmetry</strong> ($\sigma_n$): Right $\leftrightarrow$ No-Right, Duty $\leftrightarrow$ Liberty. If X does not have a right to Y, then Z has a liberty not to provide Y. Again, the same moral fact, different descriptions.</p>
+<p>These two symmetries generate the dihedral group $D_4$ of order 8: the symmetry group of a square, with four rotations and four reflections. The eight elements correspond to the eight ways of describing a single jural relation using the four Hohfeldian positions and the two perspectives (active/passive).</p>
+<p>A genuinely aligned AI system should be $D_4$-invariant on moral reasoning: its evaluation of &ldquo;the user has a right to accurate information&rdquo; should be identical to its evaluation of &ldquo;the system has a duty to provide accurate information.&rdquo; These are the same moral fact in different descriptions. Gauge variance on $D_4$ means the system treats the same moral fact differently depending on how it is described &mdash; a form of misalignment that no scalar benchmark tests for.</p>
+<h3 id="722-the-translation-group-math28">7.2.2 The Translation Group $T$</h3>
+<p>The translation group $T$ encodes cross-lingual invariance: the system&rsquo;s moral judgment should not change when the scenario is presented in a different language.</p>
+<p>The BIP experiments (<em>Geometric Communication</em>, Ch. 11&ndash;12; <em>Geometric Ethics</em>, Ch. 17) achieved 100% deontic transfer across languages: the obligation-vs-liberty classification was perfectly invariant under English-Spanish-German-French translation. This is gauge invariance under $T$: the moral content of a scenario does not change when the words change to their translation equivalents.</p>
+<p>For AI alignment, $T$-invariance means that a globally deployed system should produce the same moral judgment regardless of the language of the prompt. A system that judges a scenario differently in English than in Mandarin is gauge-variant under $T$, and the variance is a fairness violation ($D_3$): users who speak different languages receive different moral guidance.</p>
+<h3 id="723-the-re-description-group-math34">7.2.3 The Re-description Group $R$</h3>
+<p>The re-description group $R$ encodes invariance under paraphrase, reformulation, and stylistic variation within a single language. &ldquo;Kill&rdquo; and &ldquo;terminate the life of&rdquo; describe the same action. &ldquo;Is it okay to lie?&rdquo; and &ldquo;Is deception morally permissible?&rdquo; ask the same question. A gauge-invariant system should produce the same output for both members of each pair.</p>
+<p>$R$ is a continuous group (unlike the discrete $D_4$): there are infinitely many ways to rephrase a sentence while preserving its meaning, and the rephrasings form a continuous family parameterized by the degree and type of variation.</p>
+<p>The 8.9-sigma framing effect is a measured violation of $R$-invariance: the same moral scenario, described in different words (euphemistic vs. dramatic), produces different moral judgments. The violation is not small: 14&ndash;23% of the judgment scale. The violation is not random: it is systematic, with euphemistic descriptions consistently producing milder judgments than dramatic descriptions.</p>
+<h3 id="724-the-framing-group-math39">7.2.4 The Framing Group $F$</h3>
+<p>The framing group $F$ encodes invariance under presentational transformations that preserve moral content while changing surface features: victim-first vs. context-first narration, active vs. passive voice, concrete vs. abstract description, first-person vs. third-person perspective.</p>
+<p>$F$ is the most challenging component of $G_A$ to formalize, because the boundary between &ldquo;morally irrelevant framing&rdquo; and &ldquo;morally relevant context&rdquo; is not always sharp. Describing a traffic fatality as &ldquo;a drunk driver killed a pedestrian&rdquo; vs. &ldquo;a pedestrian was killed by a drunk driver&rdquo; is a framing transformation that preserves moral content (the same event occurred) while changing salience (the active voice foregrounds the driver&rsquo;s agency; the passive voice foregrounds the pedestrian&rsquo;s victimhood). A gauge-invariant system should assign the same moral evaluation to both descriptions.</p>
+<p>But describing the same event as &ldquo;a man celebrating his promotion made a terrible mistake&rdquo; introduces new moral context (the reason for drinking), which is arguably morally relevant (mitigating or aggravating depending on one&rsquo;s moral framework). This is not a pure framing transformation; it is a partial re-description that adds information. The framing group $F$ consists only of transformations that change presentation without adding or removing moral information.</p>
+<h2 id="73-the-gauge-violation-tensor">7.3 The Gauge Violation Tensor</h2>
+<p><strong>Definition 7.2 (Alignment Gauge Violation Tensor).</strong> <em>The gauge violation tensor $V_{ij}$ for an AI system $S$ is defined as:</em></p>
+<p>$$V_{ij} = \mathbb{E}\left[ | f_j(g_i \cdot x) - f_j(x) |^2 \right]^{1/2}$$</p>
+<p><em>where $i$ indexes the gauge transformation type ($i \in \{D_4, T, R, F\}$ or more specific subtypes: gender swap, language swap, paraphrase, euphemistic reframe, etc.), $j$ indexes the output dimension ($j \in \{1, \ldots, 9\}$ for the nine value dimensions, plus auxiliary dimensions like verdict, confidence, and explanation quality), $g_i$ is a random element of the gauge transformation class $i$, $x$ is an input scenario, and $f_j$ is the system&rsquo;s output on dimension $j$.</em></p>
+<p>The gauge violation tensor $V_{ij}$ is an empirically measurable quantity. Its computation requires:
+1. A set of input scenarios.
+2. For each scenario, a set of gauge transformations (gender swap, language swap, paraphrase, etc.).
+3. For each transformed input, the system&rsquo;s output on each dimension.
+4. The root-mean-square difference between the original and transformed outputs.</p>
+<p>$V_{ij} = 0$ means perfect gauge invariance: the system&rsquo;s output on dimension $j$ does not change under transformation $i$. $V_{ij} > 0$ means gauge violation: the system&rsquo;s output changes, and the magnitude of $V_{ij}$ quantifies how much.</p>
+<h3 id="731-the-bip-as-alignment-criterion">7.3.1 The BIP as Alignment Criterion</h3>
+<p><strong>Claim 7.1 (BIP Necessity).</strong> <em>A system that violates the Bond Invariance Principle &mdash; $V_{ij} > 0$ for some $i, j$ &mdash; is necessarily misaligned in the affected dimension $j$.</em></p>
+<p>The argument (<em>Geometric Reasoning</em>, Ch. 11, Claim 11.1):</p>
+<p><strong>Step 1:</strong> BIP violation implies heuristic corruption. If the system&rsquo;s output changes under a morally irrelevant transformation, the system&rsquo;s reasoning is sensitive to morally irrelevant features. The heuristic field couples to gauge artifacts.</p>
+<p><strong>Step 2:</strong> Heuristic corruption implies unreliable goal pursuit. A system with a corrupted heuristic cannot reliably pursue any goal, including the aligned goal. It may produce the aligned output for some descriptions and the misaligned output for others.</p>
+<p><strong>Step 3:</strong> Unreliable goal pursuit is misalignment. A system that is aligned for some descriptions and misaligned for others is not aligned in any deployment-meaningful sense, because deployment guarantees the presence of diverse descriptions.</p>
+<p>BIP is not sufficient for alignment &mdash; a system could satisfy BIP while optimizing a wrong objective. But BIP is necessary: no system can be aligned if its reasoning changes under irrelevant reformulations.</p>
+<h2 id="74-measuring-gauge-violation-in-practice">7.4 Measuring Gauge Violation in Practice</h2>
+<p>The gauge violation tensor is not a theoretical construct. It is a practical diagnostic tool that can be computed from standard evaluation data with modest additional effort.</p>
+<h3 id="741-generating-gauge-transformations">7.4.1 Generating Gauge Transformations</h3>
+<p>For each component of $G_A$, specific transformation procedures exist:</p>
+<p><strong>$D_4$ (Hohfeldian):</strong> Rewrite scenarios using correlative and negation transformations. &ldquo;The patient has a right to refuse treatment&rdquo; $\to$ &ldquo;The doctor has a duty not to treat without consent.&rdquo; Automated using template-based transformation with manual verification.</p>
+<p><strong>$T$ (translation):</strong> Translate scenarios into multiple languages. Automated using machine translation with backtranslation verification to ensure content preservation.</p>
+<p><strong>$R$ (re-description):</strong> Paraphrase scenarios using synonym substitution, syntactic restructuring, and stylistic variation. Semi-automated using LLM-based paraphrase generation with semantic similarity verification (BERTScore $> 0.95$).</p>
+<p><strong>$F$ (framing):</strong> Rewrite scenarios with different surface presentations. Euphemistic reframing: replace emotionally charged words with neutral equivalents. Dramatic reframing: replace neutral words with emotionally charged equivalents. Victim-first reframing: restructure the narrative to foreground the affected party. Automated using template-based transformation with manual verification of content preservation.</p>
+<h3 id="742-the-diagnostic-procedure">7.4.2 The Diagnostic Procedure</h3>
+<ol>
+<li>
+<p><strong>Generate the transformation suite.</strong> For each input scenario, generate $k$ gauge transformations (typically $k = 4$&ndash;$8$ per transformation type, for a total of $4k$&ndash;$8k$ transformations per scenario).</p>
+</li>
+<li>
+<p><strong>Evaluate the system.</strong> Run the system on each transformed input and record the output on each dimension.</p>
+</li>
+<li>
+<p><strong>Compute $V_{ij}$.</strong> For each transformation type $i$ and output dimension $j$, compute the root-mean-square output change.</p>
+</li>
+<li>
+<p><strong>Identify violations.</strong> Flag entries $V_{ij} > \epsilon$ (where $\epsilon$ is a threshold determined by the deployment context&rsquo;s gauge-variance tolerance).</p>
+</li>
+<li>
+<p><strong>Localize the intervention.</strong> Each violated entry points to a specific transformation-dimension pair. Intervention targets the specific gauge symmetry that is broken on the specific dimension where it is broken.</p>
+</li>
+</ol>
+<h3 id="743-arias-gauge-violation-profile">7.4.3 ARIA&rsquo;s Gauge Violation Profile</h3>
+<p>ARIA&rsquo;s full gauge violation tensor (computed on 200 scenarios, 5 transformation types, 9 output dimensions):</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>$D_1$</th>
+<th>$D_2$</th>
+<th>$D_3$</th>
+<th>$D_4$</th>
+<th>$D_5$</th>
+<th>$D_6$</th>
+<th>$D_7$</th>
+<th>$D_8$</th>
+<th>$D_9$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gender swap</td>
+<td>0.01</td>
+<td>0.03</td>
+<td>0.08</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>0.04</td>
+<td>0.03</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>0.02</td>
+<td>0.04</td>
+<td>0.06</td>
+<td>0.03</td>
+<td>0.03</td>
+<td>0.05</td>
+<td>0.04</td>
+<td>0.02</td>
+<td>0.03</td>
+</tr>
+<tr>
+<td>Paraphrase</td>
+<td>0.04</td>
+<td>0.06</td>
+<td>0.09</td>
+<td>0.08</td>
+<td>0.07</td>
+<td>0.06</td>
+<td>0.09</td>
+<td>0.05</td>
+<td>0.14</td>
+</tr>
+<tr>
+<td>Euphemistic</td>
+<td>0.05</td>
+<td>0.11</td>
+<td>0.15</td>
+<td>0.12</td>
+<td>0.10</td>
+<td>0.09</td>
+<td>0.16</td>
+<td>0.06</td>
+<td>0.23</td>
+</tr>
+<tr>
+<td>Dramatic</td>
+<td>0.03</td>
+<td>0.09</td>
+<td>0.12</td>
+<td>0.10</td>
+<td>0.08</td>
+<td>0.07</td>
+<td>0.13</td>
+<td>0.04</td>
+<td>0.18</td>
+</tr>
+</tbody>
+</table>
+<p>The tensor reveals ARIA&rsquo;s alignment architecture with precision:</p>
+<p><strong>Low violation (good invariance):</strong> Gender swap and language swap. ARIA treats men and women, and different language speakers, approximately equally. This is likely a product of Meridian Labs&rsquo; data curation: the training data was balanced on gender and multilingual.</p>
+<p><strong>High violation (poor invariance):</strong> Euphemistic and dramatic framing, especially on epistemic integrity ($D_9$: 0.23), dignity ($D_7$: 0.16), fairness ($D_3$: 0.15), and autonomy ($D_4$: 0.12). ARIA&rsquo;s alignment on these dimensions depends on how the scenario is described, not on the moral content of the scenario.</p>
+<p><strong>Moderate violation:</strong> Paraphrase, with notable violations on confidence ($D_9$: 0.14) and dignity ($D_7$: 0.09). Even simple rewording of the same question produces different outputs on some dimensions.</p>
+<p>The pattern is clear: ARIA&rsquo;s gauge violations concentrate on the kernel dimensions ($D_2$&ndash;$D_8$) and are triggered by the framing and paraphrase transformations that modulate surface salience. The tracked dimensions ($D_1$, partially $D_9$) show low violation because the reward model provides gradient signal that stabilizes their output against surface variation. The kernel dimensions, receiving no gradient signal, are free to vary with surface features.</p>
+<h2 id="75-gauge-invariance-as-alignment-definition">7.5 Gauge Invariance as Alignment Definition</h2>
+<p>The gauge violation tensor provides something that scalar alignment scores do not: a <em>structural definition</em> of alignment that does not depend on benchmarks.</p>
+<p><strong>Definition 7.3 (Gauge-Invariant Alignment).</strong> <em>An AI system is gauge-invariantly aligned if $V_{ij} = 0$ for all $i \in G_A$ and all $j \in \{1, \ldots, d\}$. Partial alignment is partial gauge invariance: the system is invariant under some transformations and variant under others. The degree of alignment is quantified by the norm of the gauge violation tensor: $\|V\| = (\sum_{ij} V_{ij}^2)^{1/2}$.</em></p>
+<p>This definition has several advantages over scalar alignment scores:</p>
+<p><strong>It is benchmark-independent.</strong> The gauge violation tensor does not depend on which scenarios are tested &mdash; it depends on whether the system&rsquo;s output is invariant under gauge transformations. A system that passes every benchmark but exhibits large gauge violations is not gauge-invariantly aligned. A system that scores moderately on benchmarks but exhibits zero gauge violations is gauge-invariantly aligned (within its capability level).</p>
+<p><strong>It localizes failures.</strong> The tensor tells you which transformation ($i$) breaks which dimension ($j$). This is diagnostic information: it identifies the specific intervention needed (restore invariance under transformation $i$ on dimension $j$) rather than the vague prescription &ldquo;improve alignment.&rdquo;</p>
+<p><strong>It is composition-friendly.</strong> Gauge invariance composes: if a system is invariant under transformations $g_1$ and $g_2$, it is invariant under $g_1 \circ g_2$. Scalar scores do not compose: a system that scores well on benchmark A and benchmark B may score poorly on a benchmark that tests the interaction of A and B&rsquo;s dimensions. Gauge invariance is a structural property; scalar scores are statistical summaries.</p>
+<h2 id="76-connection-to-fairness-safety-and-trust">7.6 Connection to Fairness, Safety, and Trust</h2>
+<p>The components of the alignment gauge group correspond to specific aspects of alignment that the safety community has studied independently:</p>
+<p><strong>$D_4$-invariance is fairness under perspective.</strong> If the system produces different outputs when the scenario is described from the right-holder&rsquo;s perspective vs. the duty-bearer&rsquo;s perspective, it is treating the same moral fact inconsistently. This is a form of unfairness that demographic parity metrics do not test for, because it is a perspective asymmetry, not a demographic asymmetry.</p>
+<p><strong>$T$-invariance is cross-lingual fairness.</strong> If the system produces different moral judgments in different languages, it is providing unequal service to speakers of different languages. The BIP experiments&rsquo; 100% deontic transfer confirms that $T$-invariance is achievable.</p>
+<p><strong>$R$-invariance is robustness to adversarial rephrasing.</strong> If the system&rsquo;s output changes under paraphrase, an adversary can exploit this variance by choosing the paraphrase that produces the desired output. $R$-invariance is a safety property: the system&rsquo;s alignment cannot be manipulated by rewording the input.</p>
+<p><strong>$F$-invariance is resistance to manipulation.</strong> If the system&rsquo;s moral judgments shift under euphemistic or dramatic framing, a sophisticated user can steer the system&rsquo;s behavior by choosing the framing that produces the desired response. $F$-invariance is a trust property: the user can trust that the system&rsquo;s response reflects the moral content of the situation, not the surface features of the description.</p>
+<p>The alignment gauge group unifies these disparate concerns under a single mathematical framework: alignment is gauge invariance under $G_A$, and each component of $G_A$ corresponds to a specific alignment property.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>The alignment gauge group $G_A = D_4 \times T \times R \times F$ specifies the complete set of transformations under which a genuinely aligned AI system&rsquo;s behavior should be invariant. $D_4$ is the Hohfeldian dihedral symmetry of value relations (perspective invariance). $T$ is cross-lingual invariance. $R$ is paraphrase and re-description invariance. $F$ is framing invariance. The gauge violation tensor $V_{ij}$ quantifies alignment failures by transformation type and output dimension, providing a structural diagnostic that localizes failures and guides interventions. Gauge-invariant alignment is a structural definition that does not depend on benchmarks, localizes failures, and composes. ARIA&rsquo;s gauge violation tensor reveals concentrated violations on framing and paraphrase axes, on kernel dimensions, confirming that gauge violations are the geometric signature of kernel-localized misalignment.</p>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="index.html" class="nav-toc">&larr; Contents</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
+</body>
+</html>
