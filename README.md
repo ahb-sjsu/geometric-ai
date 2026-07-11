@@ -21,7 +21,7 @@ It inherits the heuristic field formalism, geodesic deviation measure, failure t
 
 ## Status
 
-Outline stage. See `OUTLINE.md` for the chapter plan.
+Draft. See `OUTLINE.md` for the chapter plan.
 
 ## The Geometric Series
 
@@ -30,13 +30,13 @@ Outline stage. See `OUTLINE.md` for the chapter plan.
 | [Geometric Methods](https://github.com/ahb-sjsu/agi-hpc) | Published |
 | [Geometric Reasoning](https://github.com/ahb-sjsu/geometric-reasoning) | Draft complete |
 | [Geometric Ethics](https://github.com/ahb-sjsu/geometric-ethics) | Published (v1.23) |
-| [Geometric Economics](https://github.com/ahb-sjsu/geometric-economics) | Outline |
-| [Geometric Law](https://github.com/ahb-sjsu/geometric-law) | Outline |
-| [Geometric Cognition](https://github.com/ahb-sjsu/geometric-cognition) | Outline |
-| [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Outline |
-| [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Outline |
-| [Geometric Education](https://github.com/ahb-sjsu/geometric-education) | Outline |
-| **Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence** | **Outline** |
+| [Geometric Economics](https://github.com/ahb-sjsu/geometric-economics) | Draft |
+| [Geometric Law](https://github.com/ahb-sjsu/geometric-law) | Draft |
+| [Geometric Cognition](https://github.com/ahb-sjsu/geometric-cognition) | Draft |
+| [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Draft |
+| [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Draft |
+| [Geometric Education](https://github.com/ahb-sjsu/geometric-education) | Draft |
+| **Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence** | **Draft** |
 
 ## License
 
