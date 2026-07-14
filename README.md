@@ -3,6 +3,14 @@
 **Andrew H. Bond**
 Senior Member, IEEE | San Jose State University
 
+> **Epistemic status (2026-07-14): posited framework — speculative theory awaiting instruments.**
+> The Geometric Series distinguishes *posited* structure from *measured* structure; this volume is
+> posited. The shipped artifacts it draws on (ErisML/DEME, the Moral Spectrum Analyzer, the xbse
+> gate) are real and separately validated, but the book's alignment thesis is theory at licensed
+> strength, not validated measurement. Admission-filter status
+> ([xbse](https://github.com/ahb-sjsu/xbse)): no "alignment" instrument has been evaluated;
+> only the moral-dimension encoders (MoBSE, 8/9 dimensions gated) are instrumented.
+
 ---
 
 ## Part of the Geometric Series
