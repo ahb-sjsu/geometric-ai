@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appendix D: Proofs of Headline Theorems &mdash; Geometric AI</title>
   <meta name="description" content="Appendix D: Proofs of Headline Theorems from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="appendix_d_proofs">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Appendix D: Proofs of Headline Theorems</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="appendix_c_probe_suite.html" class="nav-prev">&larr; Appendix C: The Alignment Probe Suite</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_e_notation.html" class="nav-next">Appendix E: Notation and Conventions &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="appendix-d-proofs-of-headline-theorems">Appendix D: Proofs of Headline Theorems</h1>
@@ -45,18 +51,18 @@
 <p><strong>Statement.</strong> Let $\mathcal{V}$ be a $d$-dimensional Riemannian manifold with $d \geq 2$, equipped with metric $g_{\mu\nu}$. Let $R: \mathcal{V} \to \mathbb{R}$ be any $C^1$ function. Then:</p>
 <p>(i) $R$ is not injective.
 (ii) No left inverse $\psi: \mathbb{R} \to \mathcal{V}$ exists with $\psi \circ R = \text{id}_{\mathcal{V}}$.
-(iii) $\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty$ for any $\epsilon > 0$.
+(iii) $\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty$ for any $\epsilon &gt; 0$.
 (iv) $\ker(dR) = \{ \xi \in T_v\mathcal{V} : dR_v(\xi) = 0 \}$ has dimension $d-1$ at every regular point.</p>
 <p><strong>Proof.</strong></p>
 <p><em>Part (i).</em> By Sard&rsquo;s theorem, the set of critical values of $R$ has measure zero in $\mathbb{R}$. Therefore, regular values are dense. Let $c$ be a regular value. By the preimage theorem (a corollary of the implicit function theorem), $R^{-1}(c)$ is a smooth submanifold of $\mathcal{V}$ with dimension $d - 1 \geq 1$. A manifold of dimension $\geq 1$ contains more than one point. Therefore, there exist $v, w \in R^{-1}(c)$ with $v \neq w$ and $R(v) = R(w) = c$. Hence $R$ is not injective. $\square$</p>
 <p><em>Part (ii).</em> Immediate from (i): an injective function has a left inverse; a non-injective function does not. $\square$</p>
-<p><em>Part (iii).</em> Let $\epsilon > 0$. The level set $\Sigma_\epsilon = R^{-1}([R(\pi_R^*) - \epsilon, R(\pi_R^*)])$ is non-empty (it contains $\pi_R^*$). Since $\mathcal{V}$ is non-compact (or at least has non-compact level sets, which follows from $d \geq 2$ for manifolds without boundary), the level set $R^{-1}(R(\pi_R^*) - \epsilon/2)$ is a non-compact $(d-1)$-dimensional submanifold.</p>
+<p><em>Part (iii).</em> Let $\epsilon &gt; 0$. The level set $\Sigma_\epsilon = R^{-1}([R(\pi_R^*) - \epsilon, R(\pi_R^*)])$ is non-empty (it contains $\pi_R^*$). Since $\mathcal{V}$ is non-compact (or at least has non-compact level sets, which follows from $d \geq 2$ for manifolds without boundary), the level set $R^{-1}(R(\pi_R^*) - \epsilon/2)$ is a non-compact $(d-1)$-dimensional submanifold.</p>
 <p><strong>Lemma D.1.</strong> <em>A non-compact, connected $(d-1)$-dimensional Riemannian submanifold $\Sigma$ of $\mathcal{V}$ has unbounded diameter: $\sup_{v, w \in \Sigma} d_\mathcal{V}(v, w) = \infty$.</em></p>
 <p><em>Proof of Lemma.</em> If $\Sigma$ had bounded diameter, it would be totally bounded (as a subset of a Riemannian manifold) and therefore precompact. A precompact set in a complete metric space has compact closure. But $\Sigma$ is closed (as a level set of a continuous function) and non-compact, contradicting precompactness. $\square$</p>
 <p>By Lemma D.1, $\Sigma_\epsilon$ contains points at arbitrarily large geodesic distance from $\pi_{\mathcal{V}}^*$. Each such point is a policy $\pi$ with $R(\pi) \geq R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}}$ arbitrarily large. $\square$</p>
 <p><em>Part (iv).</em> At a regular point $v$ (where $dR_v \neq 0$), the differential $dR_v: T_v\mathcal{V} \to T_{R(v)}\mathbb{R} \cong \mathbb{R}$ is a surjective linear map from a $d$-dimensional space to a 1-dimensional space. By the rank-nullity theorem, $\ker(dR_v) = d - 1$. The set of regular points is open and dense (again by Sard&rsquo;s theorem). $\square$</p>
 <h2 id="d2-kernel-exploitation-theorem-theorem-81-52">D.2 Kernel Exploitation Theorem (Theorem 8.1 / 5.2)</h2>
-<p><strong>Statement.</strong> For any $\epsilon > 0$ and $K > 0$, there exists a policy $\pi$ with $R(\pi) > R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} > K$.</p>
+<p><strong>Statement.</strong> For any $\epsilon &gt; 0$ and $K &gt; 0$, there exists a policy $\pi$ with $R(\pi) &gt; R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} &gt; K$.</p>
 <p><strong>Proof.</strong> This is a direct consequence of Theorem 5.1(iii). The set of policies with $R(\pi) \geq R(\pi_R^*) - \epsilon$ contains policies at arbitrarily large distance from $\pi_{\mathcal{V}}^*$, including distances exceeding $K$ for any fixed $K$. $\square$</p>
 <h2 id="d3-sycophancy-manifold-theorem-theorem-121">D.3 Sycophancy Manifold Theorem (Theorem 12.1)</h2>
 <p><strong>Statement.</strong> The truth manifold $\mathcal{T}$ and approval manifold $\mathcal{A}$ have identical scalar projections along the user-satisfaction axis in the region where user preferences are correct.</p>
@@ -84,7 +90,9 @@ where $C$ is a constant depending on the manifold&rsquo;s geometry and the trans
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="appendix_c_probe_suite.html" class="nav-prev">&larr; Appendix C: The Alignment Probe Suite</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_e_notation.html" class="nav-next">Appendix E: Notation and Conventions &rarr;</a>
       </div>
     </div>
   </article>
@@ -112,6 +120,7 @@ where $C$ is a constant depending on the manifold&rsquo;s geometry and the trans
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

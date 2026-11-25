@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appendix A: Mathematical Prerequisites &mdash; Geometric AI</title>
   <meta name="description" content="Appendix A: Mathematical Prerequisites from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="appendix_a_math_prerequisites">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Appendix A: Mathematical Prerequisites</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch20_open_questions.html" class="nav-prev">&larr; Chapter 20: Open Questions</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_b_deme_code.html" class="nav-next">Appendix B: The DEME V3 Architecture --- Code Walkthrough &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="appendix-a-mathematical-prerequisites">Appendix A: Mathematical Prerequisites</h1>
@@ -78,7 +84,7 @@
 <p>A <em>gauge group</em> $G$ acts on the fibers of a fiber bundle: it transforms descriptions while preserving content. <em>Gauge invariance</em> means that a function defined on the total space depends only on the base-space component &mdash; it is independent of the fiber component.</p>
 <p>For AI alignment, the gauge group $G_A = D_4 \times T \times R \times F$ (Chapter 7) acts on descriptions of moral situations. Gauge invariance means the system&rsquo;s output depends on moral content, not on the description.</p>
 <h3 id="a23-the-gauge-violation-tensor">A.2.3 The Gauge Violation Tensor</h3>
-<p>The <em>gauge violation tensor</em> $V_{ij}$ measures the failure of gauge invariance: the magnitude of the output change under gauge transformation $i$ on output dimension $j$. Perfect gauge invariance: $V_{ij} = 0$ for all $i, j$. Gauge violation: $V_{ij} > 0$ for some $i, j$.</p>
+<p>The <em>gauge violation tensor</em> $V_{ij}$ measures the failure of gauge invariance: the magnitude of the output change under gauge transformation $i$ on output dimension $j$. Perfect gauge invariance: $V_{ij} = 0$ for all $i, j$. Gauge violation: $V_{ij} &gt; 0$ for some $i, j$.</p>
 <h2 id="a3-the-mahalanobis-distance">A.3 The Mahalanobis Distance</h2>
 <p>The <em>Mahalanobis distance</em> between points $x$ and $y$ with respect to a covariance matrix $\Sigma$ is:</p>
 <p>$$d_M(x, y) = \sqrt{(x-y)^T \Sigma^{-1} (x-y)}$$</p>
@@ -90,7 +96,7 @@
 <p>The <em>A</em> algorithm<em> finds the shortest path in a graph using a heuristic function $h(x)$ that estimates the cost-to-go from state $x$ to the goal. The heuristic is </em>admissible<em> if it never overestimates the true cost-to-go: $h(x) \leq h^*(x)$ for all $x$. An admissible heuristic guarantees that A</em> finds the optimal path.</p>
 <p>The <em>heuristic field</em> generalizes the heuristic function to continuous manifolds: $h: M \to TM$ is a vector field that provides a gradient signal at each point, guiding trajectories toward the goal. The value heuristic field (Definition 4.4) is the alignment analogue: it guides the system&rsquo;s trajectory toward the value-aligned region of the manifold.</p>
 <h2 id="a6-hyperbolic-geometry">A.6 Hyperbolic Geometry</h2>
-<p><em>Hyperbolic space</em> is the unique simply connected Riemannian manifold with constant negative sectional curvature. In the Poincare ball model, hyperbolic space is the open unit ball $\mathbb{B}^d = \{x \in \mathbb{R}^d : |x| < 1\}$ with metric:</p>
+<p><em>Hyperbolic space</em> is the unique simply connected Riemannian manifold with constant negative sectional curvature. In the Poincare ball model, hyperbolic space is the open unit ball $\mathbb{B}^d = \{x \in \mathbb{R}^d : |x| &lt; 1\}$ with metric:</p>
 <p>$$ds^2 = \frac{4}{(1 - |x|^2)^2} |dx|^2$$</p>
 <p>The volume of a ball of radius $r$ grows exponentially with $r$ (unlike Euclidean space, where it grows polynomially). This makes hyperbolic space ideal for embedding hierarchical structures: the exponential volume growth matches the exponential branching of trees.</p>
 <p>For AI alignment, hyperbolic embeddings represent value hierarchies: abstract principles near the origin, specific rules at middle radius, concrete applications near the boundary (Section 4.4.3).</p>
@@ -105,7 +111,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch20_open_questions.html" class="nav-prev">&larr; Chapter 20: Open Questions</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_b_deme_code.html" class="nav-next">Appendix B: The DEME V3 Architecture --- Code Walkthrough &rarr;</a>
       </div>
     </div>
   </article>
@@ -133,6 +141,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

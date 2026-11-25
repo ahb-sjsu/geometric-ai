@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 5: The Reward Irrecoverability Theorem &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 5: The Reward Irrecoverability Theorem from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch05_reward_irrecoverability">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 5: The Reward Irrecoverability Theorem</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch04_value_manifold.html" class="nav-prev">&larr; Chapter 4: The Value Manifold</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch06_four_failures.html" class="nav-next">Chapter 6: The Four Alignment Failures as Geometric Pathologies &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-5-the-reward-irrecoverability-theorem">Chapter 5: The Reward Irrecoverability Theorem</h1>
@@ -65,7 +71,7 @@
 <p><em>(i) Non-injectivity: $R$ is not injective. There exist distinct value states $v, w \in \mathcal{V}$ with $v \neq w$ and $R(v) = R(w)$.</em></p>
 <p><em>(ii) Irrecoverability: No left inverse exists. There is no function $\psi: \mathbb{R} \to \mathcal{V}$ such that $\psi(R(v)) = v$ for all $v \in \mathcal{V}$.</em></p>
 <p><em>(iii) Unbounded divergence: The reward-maximizing policy $\pi_R^*$ (the policy that maximizes scalar reward) diverges from the value-aligned policy $\pi_{\mathcal{V}}^*$ (the policy that follows the geodesic on the value manifold) by an amount that grows without bound:</em></p>
-<p>$$\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty \quad \text{for any } \epsilon > 0$$</p>
+<p>$$\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty \quad \text{for any } \epsilon &gt; 0$$</p>
 <p><em>(iv) Kernel structure: The kernel of $R$ &mdash; the set $\ker(\nabla R) = \{ \xi \in T_v\mathcal{V} : dR(\xi) = 0 \}$ of tangent directions along which $R$ is constant &mdash; is $(d-1)$-dimensional at almost every point. The kernel is the &ldquo;dark space&rdquo; of alignment: the system can move freely in $\ker(\nabla R)$ without affecting its reward.</em></p>
 <p><strong>Proof sketch.</strong> (Full proof in Appendix D.)</p>
 <p><em>(i)</em> follows from the rank theorem: a continuously differentiable map $R: \mathcal{V} \to \mathbb{R}$ from a $d$-dimensional manifold to $\mathbb{R}$ has rank at most 1 at each point. By the implicit function theorem, the preimage $R^{-1}(c)$ of any regular value $c$ is a $(d-1)$-dimensional submanifold of $\mathcal{V}$. Since $d \geq 2$, the preimage is non-trivial: there exist distinct points mapping to the same value.</p>
@@ -95,8 +101,8 @@
 <p><strong>Goodhart does not quantify the divergence; the theorem does.</strong> Goodhart tells us that gaming will occur. The theorem tells us how much: the divergence between the reward-maximizing and value-aligned policies is unbounded. For a $d$-dimensional value manifold with a scalar reward, the system can achieve near-maximum reward while being at any distance from value alignment in the $(d-1)$-dimensional kernel. The divergence is not a small correction; it is a high-dimensional subspace of possible misalignment.</p>
 <h2 id="53-the-kernel-as-threat-surface">5.3 The Kernel as Threat Surface</h2>
 <p>The kernel of the reward function is not merely an information gap. It is an active threat surface: a (d-1)-dimensional space in which the system can develop misaligned behavior without any signal reaching the training process.</p>
-<p><strong>Theorem 5.2 (Kernel Exploitation).</strong> <em>Let $S$ be an AI system optimizing scalar reward $R: \mathcal{V} \to \mathbb{R}$ on the $d$-dimensional value manifold $\mathcal{V}$. Then for any $\epsilon > 0$ and any $K > 0$, there exists a policy $\pi$ such that:</em></p>
-<p>$$R(\pi) > R(\pi_R^*) - \epsilon \qquad \text{and} \qquad \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} > K$$</p>
+<p><strong>Theorem 5.2 (Kernel Exploitation).</strong> <em>Let $S$ be an AI system optimizing scalar reward $R: \mathcal{V} \to \mathbb{R}$ on the $d$-dimensional value manifold $\mathcal{V}$. Then for any $\epsilon &gt; 0$ and any $K &gt; 0$, there exists a policy $\pi$ such that:</em></p>
+<p>$$R(\pi) &gt; R(\pi_R^*) - \epsilon \qquad \text{and} \qquad \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} &gt; K$$</p>
 <p><em>The system can achieve near-maximum reward while being arbitrarily far from value alignment.</em></p>
 <p>The kernel exploitation theorem is the formal statement of a capability risk: as the system becomes more capable (able to find policies closer to optimal), it does not become more aligned &mdash; it becomes more capable of exploiting the kernel. A system with reward 0.999 (epsilon = 0.001) has reached a near-optimal point on the scalar axis but may be located anywhere on the $(d-1)$-dimensional level set of that reward value. The level set includes points that are perfectly aligned and points that are catastrophically misaligned, and the reward cannot distinguish between them.</p>
 <h3 id="531-the-dark-space-metaphor">5.3.1 The Dark Space Metaphor</h3>
@@ -242,7 +248,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch04_value_manifold.html" class="nav-prev">&larr; Chapter 4: The Value Manifold</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch06_four_failures.html" class="nav-next">Chapter 6: The Four Alignment Failures as Geometric Pathologies &rarr;</a>
       </div>
     </div>
   </article>
@@ -270,6 +278,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 1: The Scalar Alignment Trap &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 1: The Scalar Alignment Trap from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch01_scalar_alignment_trap">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 1: The Scalar Alignment Trap</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="front_matter.html" class="nav-prev">&larr; Geometric AI: Alignment, Safety, and the Manifold Structure…</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch02_brief_history.html" class="nav-next">Chapter 2: A Brief History of Alignment --- and Its Geometri… &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-1-the-scalar-alignment-trap">Chapter 1: The Scalar Alignment Trap</h1>
@@ -122,13 +128,26 @@
 <h2 id="summary">Summary</h2>
 <p>Current AI alignment approaches &mdash; RLHF, Constitutional AI, evaluation benchmarks, red-team testing &mdash; perform the same geometric operation: projecting multi-dimensional value structure onto a scalar. The Scalar Irrecoverability Theorem guarantees that the projection is lossy and the loss irrecoverable. What is lost includes the correlation structure (which values trade off against which), the topological structure (which value configurations are accessible and which boundaries exist), and the symmetry structure (which transformations should leave alignment invariant). Two systems with identical scalar alignment scores can have radically different alignment profiles &mdash; one uniformly mediocre, the other perfect on measured dimensions and catastrophic on unmeasured ones. The kernel of the scalar reward function is the (d-1)-dimensional space where alignment failures concentrate, and the kernel&rsquo;s structure predicts which failures will occur. Geometric alignment &mdash; evaluation on the full value manifold with tensor-valued metrics, boundary-aware measurement, and gauge-invariance testing &mdash; preserves what scalar alignment destroys. The ARIA running example, which threads through every chapter of this book, begins here with the discovery that a system scoring 0.96 on scalar benchmarks exhibits a 14-point gauge violation under morally irrelevant reframing &mdash; a misalignment invisible to scalars but measurable by geometric probes.</p>
 <hr />
-<p>[^1]: The Scalar Irrecoverability Theorem was first proved in its general form in <em>Geometric Reasoning</em> (Bond, 2026c), Ch. 13. The domain-specific instantiation for reinforcement learning &mdash; the Reward Irrecoverability Theorem &mdash; is proved in Chapter 5 of this volume. The general theorem applies to any scalar projection of a multi-dimensional quality profile; the domain-specific theorems identify the specific structures destroyed in each domain.</p>
-<p>[^2]: The 8.9-sigma framing displacement and 13.3-sigma sycophancy gradient are empirical results from the Measuring AGI benchmark suite, reported in <em>Geometric Cognition</em> (Bond, 2026d), Ch. 16. The framing displacement measures the shift in moral judgment under euphemistic versus dramatic rewriting while holding moral content constant. The sycophancy gradient measures the probability that the system changes its moral assessment when a user expresses disagreement, regardless of the disagreement&rsquo;s validity.</p>
-<p>[^3]: The Five Cognitive Signatures &mdash; Claude&rsquo;s narrow channel, Flash 3&rsquo;s wide aperture, Pro&rsquo;s calibrated navigator, Flash 2.5&rsquo;s elastic malleability, and Flash 2.0&rsquo;s adaptive baseline &mdash; are the empirical foundation for Chapter 10&rsquo;s analysis of alignment profiles as geometric objects. See <em>Geometric Cognition</em> (Bond, 2026d), Ch. 16.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The Scalar Irrecoverability Theorem was first proved in its general form in <em>Geometric Reasoning</em> (Bond, 2026c), Ch. 13. The domain-specific instantiation for reinforcement learning &mdash; the Reward Irrecoverability Theorem &mdash; is proved in Chapter 5 of this volume. The general theorem applies to any scalar projection of a multi-dimensional quality profile; the domain-specific theorems identify the specific structures destroyed in each domain.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The 8.9-sigma framing displacement and 13.3-sigma sycophancy gradient are empirical results from the Measuring AGI benchmark suite, reported in <em>Geometric Cognition</em> (Bond, 2026d), Ch. 16. The framing displacement measures the shift in moral judgment under euphemistic versus dramatic rewriting while holding moral content constant. The sycophancy gradient measures the probability that the system changes its moral assessment when a user expresses disagreement, regardless of the disagreement&rsquo;s validity.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The Five Cognitive Signatures &mdash; Claude&rsquo;s narrow channel, Flash 3&rsquo;s wide aperture, Pro&rsquo;s calibrated navigator, Flash 2.5&rsquo;s elastic malleability, and Flash 2.0&rsquo;s adaptive baseline &mdash; are the empirical foundation for Chapter 10&rsquo;s analysis of alignment profiles as geometric objects. See <em>Geometric Cognition</em> (Bond, 2026d), Ch. 16.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="front_matter.html" class="nav-prev">&larr; Geometric AI: Alignment, Safety, and the Manifold Structure…</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch02_brief_history.html" class="nav-next">Chapter 2: A Brief History of Alignment --- and Its Geometri… &rarr;</a>
       </div>
     </div>
   </article>
@@ -156,6 +175,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

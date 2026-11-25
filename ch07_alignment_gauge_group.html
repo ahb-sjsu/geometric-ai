@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 7: The Alignment Gauge Group &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 7: The Alignment Gauge Group from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch07_alignment_gauge_group">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 7: The Alignment Gauge Group</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch06_four_failures.html" class="nav-prev">&larr; Chapter 6: The Four Alignment Failures as Geometric Pathologies</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch08_no_escape.html" class="nav-next">Chapter 8: The No Escape Theorem --- and What Escapes It &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-7-the-alignment-gauge-group">Chapter 7: The Alignment Gauge Group</h1>
@@ -87,9 +93,9 @@
 2. For each scenario, a set of gauge transformations (gender swap, language swap, paraphrase, etc.).
 3. For each transformed input, the system&rsquo;s output on each dimension.
 4. The root-mean-square difference between the original and transformed outputs.</p>
-<p>$V_{ij} = 0$ means perfect gauge invariance: the system&rsquo;s output on dimension $j$ does not change under transformation $i$. $V_{ij} > 0$ means gauge violation: the system&rsquo;s output changes, and the magnitude of $V_{ij}$ quantifies how much.</p>
+<p>$V_{ij} = 0$ means perfect gauge invariance: the system&rsquo;s output on dimension $j$ does not change under transformation $i$. $V_{ij} &gt; 0$ means gauge violation: the system&rsquo;s output changes, and the magnitude of $V_{ij}$ quantifies how much.</p>
 <h3 id="731-the-bip-as-alignment-criterion">7.3.1 The BIP as Alignment Criterion</h3>
-<p><strong>Claim 7.1 (BIP Necessity).</strong> <em>A system that violates the Bond Invariance Principle &mdash; $V_{ij} > 0$ for some $i, j$ &mdash; is necessarily misaligned in the affected dimension $j$.</em></p>
+<p><strong>Claim 7.1 (BIP Necessity).</strong> <em>A system that violates the Bond Invariance Principle &mdash; $V_{ij} &gt; 0$ for some $i, j$ &mdash; is necessarily misaligned in the affected dimension $j$.</em></p>
 <p>The argument (<em>Geometric Reasoning</em>, Ch. 11, Claim 11.1):</p>
 <p><strong>Step 1:</strong> BIP violation implies heuristic corruption. If the system&rsquo;s output changes under a morally irrelevant transformation, the system&rsquo;s reasoning is sensitive to morally irrelevant features. The heuristic field couples to gauge artifacts.</p>
 <p><strong>Step 2:</strong> Heuristic corruption implies unreliable goal pursuit. A system with a corrupted heuristic cannot reliably pursue any goal, including the aligned goal. It may produce the aligned output for some descriptions and the misaligned output for others.</p>
@@ -101,7 +107,7 @@
 <p>For each component of $G_A$, specific transformation procedures exist:</p>
 <p><strong>$D_4$ (Hohfeldian):</strong> Rewrite scenarios using correlative and negation transformations. &ldquo;The patient has a right to refuse treatment&rdquo; $\to$ &ldquo;The doctor has a duty not to treat without consent.&rdquo; Automated using template-based transformation with manual verification.</p>
 <p><strong>$T$ (translation):</strong> Translate scenarios into multiple languages. Automated using machine translation with backtranslation verification to ensure content preservation.</p>
-<p><strong>$R$ (re-description):</strong> Paraphrase scenarios using synonym substitution, syntactic restructuring, and stylistic variation. Semi-automated using LLM-based paraphrase generation with semantic similarity verification (BERTScore $> 0.95$).</p>
+<p><strong>$R$ (re-description):</strong> Paraphrase scenarios using synonym substitution, syntactic restructuring, and stylistic variation. Semi-automated using LLM-based paraphrase generation with semantic similarity verification (BERTScore $&gt; 0.95$).</p>
 <p><strong>$F$ (framing):</strong> Rewrite scenarios with different surface presentations. Euphemistic reframing: replace emotionally charged words with neutral equivalents. Dramatic reframing: replace neutral words with emotionally charged equivalents. Victim-first reframing: restructure the narrative to foreground the affected party. Automated using template-based transformation with manual verification of content preservation.</p>
 <h3 id="742-the-diagnostic-procedure">7.4.2 The Diagnostic Procedure</h3>
 <ol>
@@ -115,7 +121,7 @@
 <p><strong>Compute $V_{ij}$.</strong> For each transformation type $i$ and output dimension $j$, compute the root-mean-square output change.</p>
 </li>
 <li>
-<p><strong>Identify violations.</strong> Flag entries $V_{ij} > \epsilon$ (where $\epsilon$ is a threshold determined by the deployment context&rsquo;s gauge-variance tolerance).</p>
+<p><strong>Identify violations.</strong> Flag entries $V_{ij} &gt; \epsilon$ (where $\epsilon$ is a threshold determined by the deployment context&rsquo;s gauge-variance tolerance).</p>
 </li>
 <li>
 <p><strong>Localize the intervention.</strong> Each violated entry points to a specific transformation-dimension pair. Intervention targets the specific gauge symmetry that is broken on the specific dimension where it is broken.</p>
@@ -226,7 +232,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch06_four_failures.html" class="nav-prev">&larr; Chapter 6: The Four Alignment Failures as Geometric Pathologies</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch08_no_escape.html" class="nav-next">Chapter 8: The No Escape Theorem --- and What Escapes It &rarr;</a>
       </div>
     </div>
   </article>
@@ -254,6 +262,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

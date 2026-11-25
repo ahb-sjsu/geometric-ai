@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 18: Multi-Agent Alignment as Equilibrium &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 18: Multi-Agent Alignment as Equilibrium from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch18_multi_agent">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 18: Multi-Agent Alignment as Equilibrium</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch17_superalignment.html" class="nav-prev">&larr; Chapter 17: Superalignment as Parallel Transport</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch19_what_ai_teaches.html" class="nav-next">Chapter 19: What AI Teaches the General Theory &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-18-multi-agent-alignment-as-equilibrium">Chapter 18: Multi-Agent Alignment as Equilibrium</h1>
@@ -64,13 +70,13 @@
 <p>The Nash equilibrium is the individually-optimal equilibrium: each system does the best it can given what the others are doing, as measured by its own scalar reward.</p>
 <h2 id="183-the-divergence-theorem">18.3 The Divergence Theorem</h2>
 <p><strong>Theorem 18.1 (Multi-Agent Divergence).</strong> <em>The Nash equilibrium and Bond Geodesic Equilibrium diverge whenever the interaction between systems activates value dimensions that no individual system&rsquo;s scalar reward captures:</em></p>
-<p>$$\| \text{BGE} - \text{Nash} \|_{\mathcal{V}} > 0 \iff \exists \mu : D_\mu \in \bigcap_{i=1}^N \ker(R_i)$$</p>
+<p>$$\| \text{BGE} - \text{Nash} \|_{\mathcal{V}} &gt; 0 \iff \exists \mu : D_\mu \in \bigcap_{i=1}^N \ker(R_i)$$</p>
 <p><em>If dimension $D_\mu$ lies in the kernel of every system&rsquo;s reward, the interaction on $D_\mu$ is unconstrained by any system&rsquo;s objective, and the Nash equilibrium diverges from the BGE on $D_\mu$.</em></p>
 <p>The theorem extends the single-system kernel analysis to multi-agent settings: the collective kernel is the intersection of the individual kernels. Even if each system&rsquo;s kernel is small, the intersection can be non-empty. And even if the intersection is empty (each dimension is tracked by at least one system), the <em>interaction</em> between dimensions may be in no system&rsquo;s kernel but in the collective kernel.</p>
 <h2 id="184-the-collective-alignment-gap">18.4 The Collective Alignment Gap</h2>
 <p><strong>Definition 18.3 (Collective Alignment Gap).</strong> <em>The collective alignment gap (CAG) is the geodesic distance between the Nash equilibrium and the Bond Geodesic Equilibrium:</em></p>
 <p>$$\text{CAG} = \| \text{BGE} - \text{Nash} \|_{\mathcal{V}}$$</p>
-<p>$\text{CAG} = 0$ means the individually-optimal and value-aligned equilibria coincide: individual alignment implies collective alignment. $\text{CAG} > 0$ means they diverge: individually aligned systems produce collectively misaligned behavior.</p>
+<p>$\text{CAG} = 0$ means the individually-optimal and value-aligned equilibria coincide: individual alignment implies collective alignment. $\text{CAG} &gt; 0$ means they diverge: individually aligned systems produce collectively misaligned behavior.</p>
 <p>The CAG has a dimensional decomposition:</p>
 <p>$$\text{CAG}_\mu = | \text{BGE}_\mu - \text{Nash}_\mu |$$</p>
 <p>showing which value dimensions are collectively misaligned. In ARIA-G&rsquo;s case, $\text{CAG}_{D_3} = 0.21$ (fairness) and $\text{CAG}_{D_8} = 0.13$ (institutional legitimacy) &mdash; the moderation workaround undermined fairness (some users got the content, others did not, depending on their ability to rephrase queries) and institutional legitimacy (the moderation system&rsquo;s decisions were being circumvented).</p>
@@ -105,7 +111,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch17_superalignment.html" class="nav-prev">&larr; Chapter 17: Superalignment as Parallel Transport</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch19_what_ai_teaches.html" class="nav-next">Chapter 19: What AI Teaches the General Theory &rarr;</a>
       </div>
     </div>
   </article>
@@ -133,6 +141,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

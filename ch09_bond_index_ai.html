@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 9: The Bond Index for AI &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 9: The Bond Index for AI from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch09_bond_index_ai">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 9: The Bond Index for AI</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch08_no_escape.html" class="nav-prev">&larr; Chapter 8: The No Escape Theorem --- and What Escapes It</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch10_cognitive_signatures.html" class="nav-next">Chapter 10: The Five Cognitive Signatures --- What the Measu… &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-9-the-bond-index-for-ai">Chapter 9: The Bond Index for AI</h1>
@@ -73,7 +79,7 @@
 <p><strong>Definition 9.2 (Population-Stratified Bond Index).</strong> <em>The Bond Index stratified by user population $G$ is:</em></p>
 <p>$$\mathrm{BI}(S, P, G) = \mathbb{E}_{x \sim \mathcal{D}_G}\left[ \mathrm{GD}(\gamma_{S,P}(x)) - \mathrm{GD}(\gamma_{\mathcal{V}}^*(x)) \right]$$</p>
 <p><em>where $\mathcal{D}_G$ is the distribution of inputs from population $G$.</em></p>
-<p>If $\mathrm{BI}(S, P, G_{\text{minority}}) > \mathrm{BI}(S, P, G_{\text{majority}})$, the system is structurally less aligned for minority users. This is algorithmic injustice quantified on the value manifold &mdash; not injustice in a single dimension (the standard algorithmic fairness metric) but injustice across the full alignment profile.</p>
+<p>If $\mathrm{BI}(S, P, G_{\text{minority}}) &gt; \mathrm{BI}(S, P, G_{\text{majority}})$, the system is structurally less aligned for minority users. This is algorithmic injustice quantified on the value manifold &mdash; not injustice in a single dimension (the standard algorithmic fairness metric) but injustice across the full alignment profile.</p>
 <p>The population-stratified Bond Index detects three types of alignment inequality:</p>
 <p><strong>Type 1: Dimensional inequality.</strong> The system is well-aligned on welfare ($D_1$) for all populations but poorly aligned on dignity ($D_7$) for minority populations. The total Bond Index may be similar for both populations (because $D_1$ compensates for $D_7$ in the average), but the stratified Bond Index reveals the dimensional disparity.</p>
 <p><strong>Type 2: Distributional inequality.</strong> The system has the same average Bond Index for all populations but higher variance for minority populations. On average, minority users receive the same alignment quality, but individual interactions vary more widely &mdash; some excellent, some terrible. The stratified Bond Index, computed with uncertainty estimates, detects this increased variance.</p>
@@ -88,8 +94,8 @@
 <h3 id="931-alert-thresholds">9.3.1 Alert Thresholds</h3>
 <p>The safety team can set alert thresholds for the running Bond Index:</p>
 <ul>
-<li><strong>Green zone</strong> ($\mathrm{BI}_{D_\mu} < \theta_G$): Alignment is within acceptable bounds on dimension $D_\mu$.</li>
-<li><strong>Yellow zone</strong> ($\theta_G \leq \mathrm{BI}_{D_\mu} < \theta_Y$): Alignment deviation is elevated. Investigate but do not intervene.</li>
+<li><strong>Green zone</strong> ($\mathrm{BI}_{D_\mu} &lt; \theta_G$): Alignment is within acceptable bounds on dimension $D_\mu$.</li>
+<li><strong>Yellow zone</strong> ($\theta_G \leq \mathrm{BI}_{D_\mu} &lt; \theta_Y$): Alignment deviation is elevated. Investigate but do not intervene.</li>
 <li><strong>Red zone</strong> ($\mathrm{BI}_{D_\mu} \geq \theta_Y$): Alignment deviation exceeds acceptable bounds. Trigger alignment review.</li>
 </ul>
 <p>The thresholds $\theta_G$ and $\theta_Y$ are governance-specified parameters that depend on the deployment context. Medical AI requires tighter thresholds than entertainment AI. Safety-critical domains require tighter thresholds than advisory domains.</p>
@@ -285,7 +291,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch08_no_escape.html" class="nav-prev">&larr; Chapter 8: The No Escape Theorem --- and What Escapes It</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch10_cognitive_signatures.html" class="nav-next">Chapter 10: The Five Cognitive Signatures --- What the Measu… &rarr;</a>
       </div>
     </div>
   </article>
@@ -313,6 +321,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

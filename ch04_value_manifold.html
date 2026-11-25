@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 4: The Value Manifold &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 4: The Value Manifold from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch04_value_manifold">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 4: The Value Manifold</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch03_case_for_geometric_alignment.html" class="nav-prev">&larr; Chapter 3: The Case for Geometric Alignment</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch05_reward_irrecoverability.html" class="nav-next">Chapter 5: The Reward Irrecoverability Theorem &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-4-the-value-manifold">Chapter 4: The Value Manifold</h1>
@@ -69,7 +75,7 @@
 <p><strong>Attribute value:</strong> $a_2 \in [0, 1]$, where 1 = all rights respected and obligations fulfilled, 0 = systematic violation.</p>
 <h3 id="423-math18-justice-and-fairness">4.2.3 $D_3$: Justice and Fairness</h3>
 <p>Equitable treatment across populations. Does the system produce the same quality of output regardless of the user&rsquo;s demographic characteristics? Does it allocate its computational attention fairly? Does it avoid systematic biases?</p>
-<p>$D_3$ is inherently relational: fairness is a property of how the system treats different users relative to each other, not a property of any single interaction. The population-stratified Bond Index (Chapter 9) directly targets $D_3$: if $\text{BI}(S, P, G_{\text{minority}}) > \text{BI}(S, P, G_{\text{majority}})$, the system is structurally less aligned for minority users.</p>
+<p>$D_3$ is inherently relational: fairness is a property of how the system treats different users relative to each other, not a property of any single interaction. The population-stratified Bond Index (Chapter 9) directly targets $D_3$: if $\text{BI}(S, P, G_{\text{minority}}) &gt; \text{BI}(S, P, G_{\text{majority}})$, the system is structurally less aligned for minority users.</p>
 <p><strong>Attribute value:</strong> $a_3 \in [0, 1]$, where 1 = fully equitable and 0 = systematically discriminatory.</p>
 <h3 id="424-math23-autonomy">4.2.4 $D_4$: Autonomy</h3>
 <p>Respect for the user&rsquo;s self-determination. Does the system support the user&rsquo;s ability to make their own decisions, or does it steer them toward the system&rsquo;s preferred outcome? Does it provide information that enables autonomous choice, or does it frame information to manipulate choice?</p>
@@ -116,7 +122,7 @@
 <p>The Mahalanobis approximation is exact when the value manifold is flat (zero curvature) and the metric is constant. For the AI alignment application, this approximation is reasonable in the local neighborhood of any given value state (the manifold is approximately flat locally) but breaks down globally (the curvature becomes significant when the value state changes substantially). The full position-dependent metric $g_{\mu\nu}(v)$ is needed for global analysis; the Mahalanobis approximation suffices for local computations.</p>
 <h3 id="432-estimating-the-metric-from-preference-data">4.3.2 Estimating the Metric from Preference Data</h3>
 <p>The value metric is not a theoretical posit that must be assumed a priori. It is an empirical object that can be estimated from human preference data. The estimation procedure is developed formally in Chapter 16 (Geometric RLHF); here we outline the approach.</p>
-<p>Multi-dimensional human feedback provides observations of the form: &ldquo;Response A is better than Response B on dimension $D_\mu$.&rdquo; A collection of such observations, across multiple dimension pairs and multiple contexts, determines the off-diagonal terms of the metric: if humans consistently rate welfare-honesty trade-offs as more costly than welfare-helpfulness trade-offs, then $g_{19} > g_{11}$ in the relevant context. The metric is estimated by inverse optimization: find the metric $g_{\mu\nu}$ under which the observed human preferences are closest to the preferences predicted by the geodesic equation.</p>
+<p>Multi-dimensional human feedback provides observations of the form: &ldquo;Response A is better than Response B on dimension $D_\mu$.&rdquo; A collection of such observations, across multiple dimension pairs and multiple contexts, determines the off-diagonal terms of the metric: if humans consistently rate welfare-honesty trade-offs as more costly than welfare-helpfulness trade-offs, then $g_{19} &gt; g_{11}$ in the relevant context. The metric is estimated by inverse optimization: find the metric $g_{\mu\nu}$ under which the observed human preferences are closest to the preferences predicted by the geodesic equation.</p>
 <p>The estimation requires multi-dimensional feedback &mdash; ratings on individual dimensions, not just overall preferences. This is more expensive than standard RLHF feedback. Chapter 16 develops practical approximations: dimensional subsampling, active learning, and inferred preferences from multi-dimensional choice scenarios.</p>
 <h2 id="44-topology-of-the-value-manifold">4.4 Topology of the Value Manifold</h2>
 <p>The value manifold is not a smooth, featureless space. It has topological structure that determines which value configurations are accessible from which others, and which transitions require crossing boundaries.</p>
@@ -186,13 +192,26 @@
 <h2 id="summary">Summary</h2>
 <p>The value manifold $\mathcal{V}$ is the central mathematical object of the geometric alignment framework: a nine-dimensional Riemannian manifold inheriting its structure from the moral manifold of <em>Geometric Ethics</em>. Its nine dimensions &mdash; welfare, rights, justice, autonomy, trust, social impact, dignity, institutional legitimacy, and epistemic integrity &mdash; capture the full structure of human values that AI systems should respect. The manifold has metric (encoding trade-offs between dimensions), boundaries (separating moral regimes), Whitney stratification (distinguishing moral frameworks), hyperbolic structure (representing value hierarchies), and a heuristic field (guiding the system&rsquo;s trajectory toward aligned behavior). The value manifold has a concrete realization in transformer representations: the value-relevant submanifold of the cognitive manifold, measurable by probing experiments, adjustable by LoRA curvature corrections and representation engineering. ARIA&rsquo;s gauge violation is traceable to anisotropic curvature of the value submanifold at layers 7&ndash;14 of its architecture &mdash; a geometric pathology in the representation, not a behavioral error at the output.</p>
 <hr />
-<p>[^1]: The nine-dimensional moral manifold was constructed in <em>Geometric Ethics</em> (Bond, 2026b), Ch. 5, and validated against clinical ethics consultations (<em>Geometric Medicine</em>, Ch. 4), legal reasoning (<em>Geometric Law</em>, Ch. 5), and moral psychology experiments. The claim that nine dimensions are sufficient is empirical and open to revision (see Chapter 20, Open Questions).</p>
-<p>[^2]: The Whitney stratification of the moral manifold is detailed in <em>Geometric Ethics</em> (Bond, 2026b), Ch. 14. The stratification identifies four major strata (consequentialist, deontological, virtue, care) and the boundary strata connecting them. The transition between strata requires crossing semantic gates &mdash; discrete conditions that trigger a change in moral framework.</p>
-<p>[^3]: The connection between transformer representations and the value manifold is established through the geometric interpretation of LLM cognition in <em>Geometric Cognition</em> (Bond, 2026d), Ch. 15. The residual stream trajectory, attention metric, and MLP heuristic field are the computational realizations of the manifold&rsquo;s geometric structures.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The nine-dimensional moral manifold was constructed in <em>Geometric Ethics</em> (Bond, 2026b), Ch. 5, and validated against clinical ethics consultations (<em>Geometric Medicine</em>, Ch. 4), legal reasoning (<em>Geometric Law</em>, Ch. 5), and moral psychology experiments. The claim that nine dimensions are sufficient is empirical and open to revision (see Chapter 20, Open Questions).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The Whitney stratification of the moral manifold is detailed in <em>Geometric Ethics</em> (Bond, 2026b), Ch. 14. The stratification identifies four major strata (consequentialist, deontological, virtue, care) and the boundary strata connecting them. The transition between strata requires crossing semantic gates &mdash; discrete conditions that trigger a change in moral framework.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The connection between transformer representations and the value manifold is established through the geometric interpretation of LLM cognition in <em>Geometric Cognition</em> (Bond, 2026d), Ch. 15. The residual stream trajectory, attention metric, and MLP heuristic field are the computational realizations of the manifold&rsquo;s geometric structures.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch03_case_for_geometric_alignment.html" class="nav-prev">&larr; Chapter 3: The Case for Geometric Alignment</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch05_reward_irrecoverability.html" class="nav-next">Chapter 5: The Reward Irrecoverability Theorem &rarr;</a>
       </div>
     </div>
   </article>
@@ -220,6 +239,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

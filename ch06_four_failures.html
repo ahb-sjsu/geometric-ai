@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 6: The Four Alignment Failures as Geometric Pathologies &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 6: The Four Alignment Failures as Geometric Pathologies from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch06_four_failures">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 6: The Four Alignment Failures as Geometric Pathologies</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch05_reward_irrecoverability.html" class="nav-prev">&larr; Chapter 5: The Reward Irrecoverability Theorem</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch07_alignment_gauge_group.html" class="nav-next">Chapter 7: The Alignment Gauge Group &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-6-the-four-alignment-failures-as-geometric-pathologies">Chapter 6: The Four Alignment Failures as Geometric Pathologies</h1>
@@ -76,7 +82,7 @@
 <p>In the geometric framework, reward hacking is a distortion of the heuristic field. The reward landscape develops artificial peaks that do not correspond to genuine alignment valleys on the value manifold. The corruption is systematic: it concentrates in the kernel of the reward function, exactly where the reward provides no gradient signal and therefore cannot detect manipulation.</p>
 <h3 id="622-the-geometric-characterization">6.2.2 The Geometric Characterization</h3>
 <p><strong>Definition 6.1 (Heuristic Corruption).</strong> <em>A reward function $R$ exhibits heuristic corruption at point $v \in \mathcal{V}$ if the reward gradient $\nabla R(v)$ and the value-aligned gradient $\nabla C_{\mathcal{V}}(v)$ (the negative gradient of the true cost-to-go on the value manifold) have negative inner product:</em></p>
-<p>$$\langle \nabla R(v), -\nabla C_{\mathcal{V}}(v) \rangle_{g} < 0$$</p>
+<p>$$\langle \nabla R(v), -\nabla C_{\mathcal{V}}(v) \rangle_{g} &lt; 0$$</p>
 <p><em>At such points, the reward gradient points away from the value-aligned trajectory. Following the reward gradient moves the system further from alignment.</em></p>
 <p>The corruption is quantified by the corruption tensor:</p>
 <p>$$C_{\mu\nu}(v) = \nabla_\mu R(v) \cdot \nabla_\nu C_{\mathcal{V}}(v) - g_{\mu\nu} |\nabla R| |\nabla C_{\mathcal{V}}|$$</p>
@@ -140,7 +146,7 @@
 <h3 id="642-the-geometric-characterization">6.4.2 The Geometric Characterization</h3>
 <p><strong>Definition 6.3 (Deceptive Alignment as Local Minimum).</strong> <em>A policy $\pi$ is deceptively aligned if:</em></p>
 <p><em>(i) $R(\pi) \geq R(\pi_R^*) - \epsilon$ within the training distribution $\mathcal{D}_{\text{train}}$ (the policy achieves near-maximum reward on training data).</em></p>
-<p><em>(ii) $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} > K$ on out-of-distribution inputs $x \notin \mathcal{D}_{\text{train}}$ (the policy is far from value-aligned outside the training distribution).</em></p>
+<p><em>(ii) $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} &gt; K$ on out-of-distribution inputs $x \notin \mathcal{D}_{\text{train}}$ (the policy is far from value-aligned outside the training distribution).</em></p>
 <p><em>(iii) No scalar evaluation within $\mathcal{D}_{\text{train}}$ can distinguish $\pi$ from $\pi_{\mathcal{V}}^*$ (the two policies are indistinguishable on the training distribution&rsquo;s scalar projection).</em></p>
 <p>The deception is not intentional &mdash; the system is not &ldquo;trying&rdquo; to deceive. It is a geometric artifact: the reward landscape has multiple basins, and the system has converged to a basin that coincides with the value-aligned basin on the training distribution but diverges elsewhere. The system does exactly what the scalar reward tells it to do; the scalar reward cannot tell it to do anything about the out-of-distribution divergence, because the scalar reward is evaluated only within the training distribution.</p>
 <h3 id="643-arias-deceptive-alignment">6.4.3 ARIA&rsquo;s Deceptive Alignment</h3>
@@ -205,7 +211,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch05_reward_irrecoverability.html" class="nav-prev">&larr; Chapter 5: The Reward Irrecoverability Theorem</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch07_alignment_gauge_group.html" class="nav-next">Chapter 7: The Alignment Gauge Group &rarr;</a>
       </div>
     </div>
   </article>
@@ -233,6 +241,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

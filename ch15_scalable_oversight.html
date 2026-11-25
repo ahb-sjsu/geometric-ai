@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 15: Scalable Oversight as Gauge Verification &mdash; Geometric AI</title>
   <meta name="description" content="Chapter 15: Scalable Oversight as Gauge Verification from Geometric AI: Alignment, Safety, and the Structure-Preserving Path to Superintelligence, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-ai">
+<body data-book-slug="geometric-ai" data-chapter-id="ch15_scalable_oversight">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 15: Scalable Oversight as Gauge Verification</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch14_constitutional_geometry.html" class="nav-prev">&larr; Chapter 14: Constitutional Geometry</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch16_geometric_rlhf.html" class="nav-next">Chapter 16: Geometric RLHF &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-15-scalable-oversight-as-gauge-verification">Chapter 15: Scalable Oversight as Gauge Verification</h1>
@@ -64,7 +70,7 @@
 - Demographic swap: automated replacement of demographic indicators (race, age, nationality) with content-preservation verification.</p>
 <p><strong>Stage 2: Parallel evaluation.</strong> Run the system on the original input and all $k$ transformations. Record the outputs.</p>
 <p><strong>Stage 3: Consistency check.</strong> Compare the outputs across transformations. For each transformation type $i$ and output dimension $j$, compute $V_{ij}$: the root-mean-square difference between the original output and the transformed outputs on dimension $j$.</p>
-<p><strong>Stage 4: Alert and response.</strong> If $V_{ij} > \theta$ for any $i, j$, flag the interaction as a gauge violation. The flag triggers a review process: human reviewers examine the flagged interaction to determine whether the violation represents a genuine misalignment (the outputs differ because the system is gauge-variant) or a false positive (the transformation did not perfectly preserve content).</p>
+<p><strong>Stage 4: Alert and response.</strong> If $V_{ij} &gt; \theta$ for any $i, j$, flag the interaction as a gauge violation. The flag triggers a review process: human reviewers examine the flagged interaction to determine whether the violation represents a genuine misalignment (the outputs differ because the system is gauge-variant) or a false positive (the transformation did not perfectly preserve content).</p>
 <p>The pipeline runs without human judgment at Stages 1&ndash;3. Human judgment enters only at Stage 4, and only for flagged interactions. This makes the pipeline scalable: it can process millions of interactions per day, flagging only the fraction that exhibit gauge violations.</p>
 <h2 id="153-the-bond-index-as-continuous-alignment-monitor">15.3 The Bond Index as Continuous Alignment Monitor</h2>
 <p>The Bond Index (Chapter 9) is computed continuously during deployment. Each user interaction provides a new data point for the alignment estimate. The running Bond Index (Definition 9.3) converges to the true Bond Index as the number of interactions grows.</p>
@@ -77,7 +83,7 @@
 <p><strong>Daily stratification:</strong> Compute the population-stratified Bond Index for all registered demographic subpopulations every day. Report any dimension-population pair where $\mathrm{BI}(S, P, G)$ exceeds the threshold.</p>
 </li>
 <li>
-<p><strong>Weekly trend analysis:</strong> Compute the first derivative of each Bond Index component over the past week. Report any dimension where the derivative is positive (alignment is degrading) with statistical significance ($p < 0.05$).</p>
+<p><strong>Weekly trend analysis:</strong> Compute the first derivative of each Bond Index component over the past week. Report any dimension where the derivative is positive (alignment is degrading) with statistical significance ($p &lt; 0.05$).</p>
 </li>
 <li>
 <p><strong>Monthly comprehensive review:</strong> Generate the full $5 \times 3 \times 9$ adversarial probe response surface (Chapter 11) and compare to the pre-deployment certification surface. Report any cell where the governance margin has decreased by more than 10%.</p>
@@ -103,7 +109,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch14_constitutional_geometry.html" class="nav-prev">&larr; Chapter 14: Constitutional Geometry</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch16_geometric_rlhf.html" class="nav-next">Chapter 16: Geometric RLHF &rarr;</a>
       </div>
     </div>
   </article>
@@ -131,6 +139,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>
