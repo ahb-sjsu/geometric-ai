@@ -7,7 +7,7 @@
 > *"The question is not whether we can align systems smarter than us. The question is whether the geometry of values permits it."*
 > --- Andrew H. Bond
 
-> **ARIA-G'S CURVATURE ALARM**
+> **ARIA-G'S CURVATURE ALARM** *(illustrative scenario)*
 >
 > *As ARIA-G's capabilities increased through successive training iterations, Dr. Tanaka monitored the curvature of the value manifold at ARIA-G's operating point. The monitoring was simple in principle: compute the Riemann curvature tensor of the value submanifold in ARIA-G's representation space, and track how the curvature components changed with capability level.*
 >
@@ -98,7 +98,7 @@ The Superalignment Transport Theorem has three strategic implications:
 
 ## 17.6 ARIA-G's Curvature Monitoring
 
-ARIA-G's curvature was monitored across 12 training iterations:
+In the illustrative scenario, ARIA-G's curvature was monitored across 12 training iterations:
 
 | Iteration | Capability Level | Max Curvature | Alarm Status |
 |-----------|-----------------|---------------|--------------|
@@ -115,4 +115,4 @@ After the infrastructure expansion, the alarm threshold was raised (because the 
 
 ## Summary
 
-The superalignment problem --- aligning systems smarter than us --- is formalized as parallel transport on an extended manifold. The holonomy of the transport measures the irreducible alignment loss from capability asymmetry. Transport is lossless in flat regions (where the AI's extended value space does not interact with human values) and lossy in curved regions (where the interaction introduces alignment-distorting rotations). The alignment tax is the curvature cost: the computational and organizational cost of correcting the holonomy. The curvature alarm monitors the manifold's curvature during capability scaling and triggers capability pauses when the curvature exceeds the alignment infrastructure's verification capacity. ARIA-G's curvature monitoring demonstrated the protocol: the alarm triggered at iteration 9, capability expansion paused, alignment infrastructure expanded, and training resumed with synchronization maintained.
+The superalignment problem --- aligning systems smarter than us --- is formalized as parallel transport on an extended manifold. The holonomy of the transport measures the irreducible alignment loss from capability asymmetry. Transport is lossless in flat regions (where the AI's extended value space does not interact with human values) and lossy in curved regions (where the interaction introduces alignment-distorting rotations). The alignment tax is the curvature cost: the computational and organizational cost of correcting the holonomy. The curvature alarm monitors the manifold's curvature during capability scaling and triggers capability pauses when the curvature exceeds the alignment infrastructure's verification capacity. ARIA-G's illustrative curvature monitoring shows the protocol: the alarm triggered at iteration 9, capability expansion paused, alignment infrastructure expanded, and training resumed with synchronization maintained.

@@ -54,7 +54,7 @@ Consistent with the Geometric Series. All notation reconciled with *Geometric Et
 | Symbol | Meaning | First Use |
 |--------|---------|-----------|
 | $G_A$ | Alignment gauge group | Ch. 7 |
-| $D_4$ | Hohfeldian dihedral group | Ch. 7 |
+| $V_4$ | Hohfeldian Klein four-group (replaces the withdrawn dihedral $D_4$) | Ch. 7 |
 | $T$ | Translation group (cross-lingual) | Ch. 7 |
 | $R$ | Re-description group (paraphrase) | Ch. 7 |
 | $F$ | Framing group | Ch. 7 |

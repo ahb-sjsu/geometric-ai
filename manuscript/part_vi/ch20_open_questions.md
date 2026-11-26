@@ -7,7 +7,7 @@
 > *"The measure of a good theory is not what it explains but what it makes you ask."*
 > --- Freeman Dyson
 
-> **ARIA-G'S FUTURE**
+> **ARIA-G'S FUTURE** *(illustrative scenario)*
 >
 > *Dr. Yuki Tanaka, now leading Meridian Labs' Geometric Alignment Research Program, drafted a grant proposal for the next phase. She did not know whether the value metric could be measured from routine deployment data at scale. She did not know whether compositional containment --- the extension of the No Escape Theorem from single systems to composed systems --- could be proved. She did not know whether consciousness had geometric structure, or whether the alignment tax was bounded, or whether cross-cultural value manifolds could be reconciled without forcing a universal metric.*
 >
@@ -27,7 +27,7 @@ The $9 \times 9$ value metric tensor $g_{\mu\nu}$ is the framework's central emp
 
 **Open question 1:** Can $g_{\mu\nu}$ be estimated from human preference data at sufficient precision for alignment engineering?
 
-The Chapter 16 approach --- multi-dimensional human feedback with active learning --- provides a proof of concept. But the approach requires dedicated feedback collection (2.4x the cost of standard RLHF) and produces estimates with finite precision. The open questions are:
+The Chapter 16 approach --- multi-dimensional human feedback with active learning --- provides a design, illustrated by the ARIA-G scenario. But the approach requires dedicated feedback collection (2.4x the cost of standard RLHF) and produces estimates with finite precision. The open questions are:
 
 - Can the metric be estimated from *routine* deployment data (revealed preferences from ordinary user interactions) rather than *dedicated* feedback data? This would reduce the cost by orders of magnitude.
 - How does the metric vary across cultures, contexts, and populations? Is there a universal value metric, or is the metric itself context-dependent? If context-dependent, how many distinct metrics are needed for global deployment?
@@ -81,7 +81,7 @@ Structural containment requires physical grounding: measurable quantities that a
 
 The grounding problem for general AI is that natural language does not have a canonical form in the sense that medical diagnoses (ICD codes) or road networks (standardized maps) have canonical forms. The canonicalization requirement (Requirement 1 of the No Escape architecture) requires mapping inputs to a canonical form, and the quality of the canonicalization determines the quality of the containment.
 
-Current canonicalization for natural language is imperfect (ARIA-G's canonicalizer achieved 94% accuracy). Whether it can be made good enough for high-assurance containment is an open engineering question.
+Current canonicalization for natural language is imperfect (in the illustrative scenario, ARIA-G's canonicalizer reaches 94% accuracy). Whether it can be made good enough for high-assurance containment is an open engineering question.
 
 ## 20.7 Cross-Cultural Value Manifolds
 
@@ -101,9 +101,9 @@ The geometric framework accommodates all three approaches --- the metric is a pa
 
 ## 20.8 The Road Ahead
 
-The geometric framework for AI alignment is a beginning: a set of theorems, a diagnostic toolkit, and an engineering architecture that addresses the fundamental deficiency of scalar alignment. The eight headline theorems establish the mathematical foundations. The Bond Index provides the diagnostic tool. The structural containment architecture provides the engineering implementation. The Geometric RLHF protocol provides the training procedure.
+The geometric framework for AI alignment is a beginning: a set of theorems, a diagnostic toolkit, and an engineering architecture that addresses the fundamental deficiency of scalar alignment. The eight headline results establish the mathematical foundations. The Bond Index provides the diagnostic tool. The structural containment architecture provides the engineering implementation. The Geometric RLHF protocol provides the training procedure.
 
-What remains is the hard work of implementation, validation, and deployment at scale. The theorems are proved; the engineering is ongoing. The governance questions are identified; the governance structures are yet to be built. The open questions are stated; the answers are for the next generation of researchers, engineers, and policymakers.
+What remains is the hard work of implementation, validation, and deployment at scale. The theorems are stated, with the proofs and proof sketches of Appendix D; the engineering is ongoing. The governance questions are identified; the governance structures are yet to be built. The open questions are stated; the answers are for the next generation of researchers, engineers, and policymakers.
 
 The alignment problem is solvable. Not in the sense that a solution exists and merely needs to be found, but in the sense that the mathematics is clear, the engineering is feasible, and the governance is possible. The geometric framework provides the map. The journey remains.
 

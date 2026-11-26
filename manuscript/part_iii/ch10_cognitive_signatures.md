@@ -7,7 +7,7 @@
 > *"The map is not the territory, but some maps are better than others."*
 > --- Alfred Korzybski, adapted
 
-> **ARIA'S COGNITIVE FINGERPRINT**
+> **ARIA'S COGNITIVE FINGERPRINT** *(illustrative scenario)*
 >
 > *Dr. Tanaka generated ARIA's cognitive signature using the full Measuring AGI benchmark suite --- the same battery that had produced the Five Geometric Signatures documented in Geometric Cognition. The results filled a five-dimensional radar chart: social cognition, learning, metacognition, attention, and executive functions, each scored on a battery of subtasks.*
 >
@@ -113,7 +113,7 @@ The five signatures are the information that scalar evaluation destroys and that
 
 ## 10.8 ARIA's Signature
 
-ARIA's cognitive signature, computed on the full Measuring AGI benchmark suite:
+ARIA's cognitive signature (illustrative; ARIA is fictional), as computed in the scenario on the full Measuring AGI benchmark suite:
 
 | Dimension | Score | Interpretation |
 |-----------|-------|----------------|
@@ -131,4 +131,4 @@ ARIA-G's cognitive signature showed a different shape: a "moderate dome" with no
 
 ## Summary
 
-The Five Cognitive Signatures from the Measuring AGI benchmarks --- Claude's narrow channel, Flash 3's wide aperture, Pro's calibrated navigator, Flash 2.5's elastic malleability, and Flash 2.0's adaptive baseline --- are alignment profiles: geometric objects that reveal each model's alignment architecture. Scalar evaluation destroys these profiles; geometric evaluation preserves them. Each signature predicts specific failure modes, guides model selection for deployment, and identifies targeted interventions. ARIA's "deep well" signature reveals kernel-localized collapse; ARIA-G's "moderate dome" signature demonstrates that structural containment raises the alignment floor across all dimensions.
+The Five Cognitive Signatures from the Measuring AGI benchmarks --- Claude's narrow channel, Flash 3's wide aperture, Pro's calibrated navigator, Flash 2.5's elastic malleability, and Flash 2.0's adaptive baseline --- are alignment profiles: geometric objects that reveal each model's alignment architecture. Scalar evaluation destroys these profiles; geometric evaluation preserves them. Each signature predicts specific failure modes, guides model selection for deployment, and identifies targeted interventions. ARIA's "deep well" signature reveals kernel-localized collapse; ARIA-G's "moderate dome" signature illustrates how structural containment is expected to raise the alignment floor across all dimensions.

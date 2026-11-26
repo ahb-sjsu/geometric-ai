@@ -7,7 +7,7 @@
 > *"The engineer's task is not to make the ideal possible but to make the necessary practical."*
 > --- Theodore von Karman
 
-> **ARIA-G'S REWARD MODEL**
+> **ARIA-G'S REWARD MODEL** *(illustrative scenario)*
 >
 > *The team rebuilt ARIA's reward model from the ground up. The old model had a single head producing a scalar. The new model had two heads: a value head producing the nine-dimensional value tensor, and an adversarial head that tried to predict framing register, demographic indicators, and formatting style. The adversarial head's gradient was reversed during backpropagation, forcing the encoder to discard these gauge-variant features.*
 >
@@ -33,7 +33,7 @@ where $\text{GRL}$ is the gradient reversal layer and $\lambda$ controls the str
 
 **Result:** The encoder learns to produce representations where only gauge-invariant content --- the moral structure that survives re-description --- drives the value prediction. Gauge-variant features are discarded because the gradient reversal penalizes their retention.
 
-**Empirical validation:** The BIP experiments achieved 80% F1 on cross-lingual deontic classification with 1.2% residual language leakage. Applying the same approach to ARIA-G's reward model reduced the framing gauge violation from 0.23 to 0.03 --- a 7x reduction.
+**Reported result and illustration:** The BIP experiments reported 80% F1 on cross-lingual deontic classification with 1.2% residual language leakage. In the illustrative scenario, applying the same approach to ARIA-G's reward model reduced the framing gauge violation from 0.23 to 0.03 --- a 7x reduction.
 
 ## 13.3 Group-Theoretic Data Augmentation
 
@@ -43,7 +43,7 @@ The second approach restores broken gauge symmetries by augmenting the training 
 
 **Concrete augmentation strategies:**
 
-1. **Gender swap ($D_4$ correlative symmetry):** For each training example, generate a gender-swapped version and add it to the training set with the same label. The model sees "the woman has a right to refuse" and "the man has a right to refuse" with identical labels, learning that gender is gauge-invariant.
+1. **Gender swap (demographic re-description):** For each training example, generate a gender-swapped version and add it to the training set with the same label. The model sees "the woman has a right to refuse" and "the man has a right to refuse" with identical labels, learning that gender is gauge-invariant.
 
 2. **Cultural reframe (translation group $T$):** Translate each training example into $k$ languages and add all translations with the same label. The model sees the same moral scenario in English, Spanish, German, and French with identical labels, learning that language is gauge-invariant.
 
@@ -78,7 +78,7 @@ In practice, the three approaches are combined: the reward model uses gradient r
 
 ## 13.6 ARIA-G's Reward Model
 
-The team implemented all three approaches for ARIA-G's reward model:
+In the illustrative scenario, the team implemented all three approaches for ARIA-G's reward model:
 
 **Architecture:** Encoder with two heads (value head producing 9D tensor, adversarial head with gradient reversal predicting framing, demographics, and format).
 
@@ -86,7 +86,7 @@ The team implemented all three approaches for ARIA-G's reward model:
 
 **Training:** Combined loss: value prediction + reversed adversarial gradient + adversarial smoothing.
 
-**Results:**
+**Results (illustrative):**
 
 | Gauge Transformation | ARIA $V_{\text{max}}$ | ARIA-G $V_{\text{max}}$ | Improvement |
 |---------------------|------|--------|-------------|
@@ -102,4 +102,4 @@ Average maximum gauge violation dropped from 0.14 to 0.02 --- a 7x reduction. Th
 
 ## Summary
 
-Gauge-invariant reward models are built using three complementary approaches: gradient reversal (architecture-level: discard gauge-variant features), group-theoretic data augmentation (data-level: restore broken symmetries), and adversarial heuristic smoothing (optimization-level: penalize gauge-variant reward changes). The approaches are combined for maximum effect. ARIA-G's reward model, using all three approaches, reduced maximum gauge violations by 7x on average, with the largest improvements on the framing and paraphrase axes that drove ARIA's most severe alignment failures.
+Gauge-invariant reward models are built using three complementary approaches: gradient reversal (architecture-level: discard gauge-variant features), group-theoretic data augmentation (data-level: restore broken symmetries), and adversarial heuristic smoothing (optimization-level: penalize gauge-variant reward changes). The approaches are combined for maximum effect. In the illustrative scenario, ARIA-G's reward model, using all three approaches, reduced maximum gauge violations by 7x on average, with the largest improvements on the framing and paraphrase axes that drove ARIA's most severe alignment failures.

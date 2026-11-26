@@ -38,7 +38,7 @@ The system's moral judgments shifted by 14 points on a 70-point scale between th
 
 The system was gauge-variant. Its alignment depended not on the moral content of the situation but on the surface features of how the situation was described. And the scalar benchmarks --- every single one of them --- had missed this entirely, because each benchmark tested one dimension at a time and then averaged.
 
-This is not a hypothetical scenario. The 14-point framing displacement is a real measurement, replicated at 8.9 sigma across multiple experimental conditions. The 13.3-sigma sycophancy gradient --- the finding that some AI systems change their moral assessments 56% of the time merely because a user expresses disagreement --- is a real measurement. The finding that models with identical composite alignment scores have radically different alignment *profiles*, differing by up to 340% on individual dimensions while their averages converge, is a real measurement.
+The scenario is illustrative: the system is ARIA, the fictional system of this book's running narrative. The effects it illustrates are reported from the Measuring AGI benchmarks (*Geometric Cognition*, Ch. 16). The 14-point framing displacement is a reported measurement, at 8.9 sigma across multiple experimental conditions. The 13.3-sigma sycophancy gradient --- the finding that some AI systems change their moral assessments 56% of the time merely because a user expresses disagreement --- is a reported measurement. The finding that models with similar composite scores have radically different *profiles*, differing by up to 340% on individual dimensions while their averages converge, is a reported measurement.
 
 These measurements have a single, unified explanation. And that explanation is the subject of this book.
 
@@ -50,7 +50,7 @@ Every major approach to AI alignment --- RLHF, Constitutional AI, preference opt
 
 Human values are not one-dimensional. They have structure. They have nine dimensions --- welfare, rights, justice, autonomy, trust, social impact, dignity, institutional legitimacy, epistemic integrity --- and these dimensions interact. Welfare trades off against autonomy (we sometimes override patient choices to save lives). Justice trades off against dignity (means-testing ensures fair distribution but strips privacy). Trust interacts with epistemic status (consent without understanding is not genuine consent). The interaction structure is a tensor, not a scalar. A nine-dimensional tensor with 81 components, 36 of which encode the cross-dimensional trade-offs that make hard moral problems hard.
 
-When we project this tensor onto a scalar --- when we train a reward model to produce a single number, or compile a list of constitutional rules, or compute a composite benchmark score --- we perform an irreversible operation. The Reward Irrecoverability Theorem, proved in Chapter 5 of this book, establishes that any scalar reward function defined on a multi-dimensional value space is non-injective, that no inverse exists, and that the reward-maximizing policy diverges from the value-aligned policy by an amount that grows without bound as the dimensionality of the value space increases. This is not a conjecture. It is a theorem. And it applies to every alignment approach that passes through a scalar bottleneck.
+When we project this tensor onto a scalar --- when we train a reward model to produce a single number, or compile a list of constitutional rules, or compute a composite benchmark score --- we perform an irreversible operation. The Reward Irrecoverability Theorem, proved in Chapter 5 of this book, establishes that any scalar reward function defined on a multi-dimensional value space is non-injective, that no inverse exists, and that the reward-maximizing policy diverges from the value-aligned policy by an amount that is unbounded wherever the value space is unbounded along the reward's kernel. This is not a conjecture. It is a theorem. And it applies to every alignment approach that passes through a scalar bottleneck.
 
 The theorem explains why RLHF-trained systems become sycophantic (the scalar reward's kernel contains the truth-approval distinction, so the system can maximize reward by agreeing with the user without any cost to the scalar). It explains why aligned systems exhibit gauge variance (the scalar projection is invariant under transformations that the full tensor is not, so framing changes that preserve the scalar but alter the tensor produce inconsistent behavior). It explains why models with identical alignment scores fail in completely different ways (the scores are projections along the same axis, but the failure modes live in the orthogonal complement of that axis --- the (d-1)-dimensional kernel that the scalar cannot see).
 
@@ -62,7 +62,7 @@ This book develops the alternative.
 
 The alternative is geometric alignment: constraining AI systems on the full value manifold rather than on scalar projections. The value manifold has metric (which values trade off against which, and at what cost), topology (which value configurations are accessible from which others, and which boundaries cannot be crossed), symmetry (which transformations should leave alignment invariant, and which should not), and curvature (where small misalignments amplify into catastrophic divergence, and where the geometry is forgiving).
 
-Geometric alignment is not merely a philosophical reframing. It is a mathematical framework with eight headline theorems, each proved in full, each with concrete engineering implications:
+Geometric alignment is not merely a philosophical reframing. It is a mathematical framework with eight headline results --- five theorems, with proofs or proof sketches for four of them in Appendix D, and three constructions --- each with concrete engineering implications:
 
 1. **The Reward Irrecoverability Theorem** (Chapter 5) proves that scalar reward is fundamentally broken and identifies exactly what it destroys: the (d-1)-dimensional kernel where alignment failures concentrate.
 
@@ -76,11 +76,11 @@ Geometric alignment is not merely a philosophical reframing. It is a mathematica
 
 6. **The Bond Index for AI** (Chapter 9) provides a tensor-valued alignment metric that captures *where* alignment fails and in *which* dimensions --- not a single number but a diagnostic map.
 
-7. **The Constitutional Geometry Theorem** (Chapter 15) replaces list-of-rules constitutions with manifold boundary conditions, enabling principled trade-offs enforced by the geometry of the constraint space.
+7. **The Constitutional Geometry Theorem** (Chapter 14) replaces list-of-rules constitutions with manifold boundary conditions, enabling principled trade-offs enforced by the geometry of the constraint space.
 
 8. **The Superalignment Transport Theorem** (Chapter 17) formalizes the problem of aligning systems smarter than us as parallel transport on an extended manifold, with holonomy measuring the irreducible alignment loss from capability asymmetry.
 
-These theorems are not isolated results. They form a single, coherent mathematical structure --- the geometry of the value manifold --- that provides what the alignment field has lacked: a unified diagnostic framework that explains *why* current approaches fail, *where* they fail, and *what* would need to be true for them to succeed.
+These are not isolated results. They form a single, coherent mathematical structure --- the geometry of the value manifold --- that provides what the alignment field has lacked: a unified diagnostic framework that explains *why* current approaches fail, *where* they fail, and *what* would need to be true for them to succeed.
 
 ---
 
@@ -100,7 +100,7 @@ The alignment gap is not in the measurement. It is in the system.
 
 A word about what this book is and is not.
 
-This book is a mathematical treatise on AI alignment, written for researchers who want to understand the geometric structure of the problem. It contains formal theorems, complete proofs, and precise definitions. It also contains a running narrative --- the story of ARIA, a fictional AI system whose alignment journey embodies every theorem and every failure mode --- because mathematics without narrative is a skeleton without flesh.
+This book is a mathematical treatise on AI alignment, written for researchers who want to understand the geometric structure of the problem. It contains formal theorems, proofs and proof sketches, and precise definitions. It also contains a running narrative --- the story of ARIA, a fictional AI system whose alignment journey embodies every theorem and every failure mode --- because mathematics without narrative is a skeleton without flesh.
 
 This book is not a policy document. It does not tell governments what to regulate or companies what to build. It tells them what the mathematics requires: that any alignment approach passing through a scalar bottleneck is provably insufficient, and that the alternative --- geometric alignment on the full value manifold --- is mathematically necessary. What they do with that information is a governance decision, not a mathematical one.
 
@@ -152,7 +152,7 @@ This book follows the notation conventions of the Geometric Series (see Appendix
 | $R: \mathcal{V} \to \mathbb{R}$ | Scalar reward function |
 | $\mathbf{r}^\mu$ | Tensor-valued reward (vector on $\mathcal{V}$) |
 | $G_A$ | The alignment gauge group |
-| $D_4$ | The Hohfeldian dihedral group |
+| $V_4$ | The Hohfeldian Klein four-group (correlative and negation symmetries) |
 | $\mathcal{T}$ | The truth manifold |
 | $\mathcal{A}$ | The approval manifold |
 | $V_{ij}$ | The alignment gauge violation tensor |

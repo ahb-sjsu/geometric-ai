@@ -7,7 +7,7 @@
 > *"The question is not whether human feedback should guide AI alignment. It is whether the feedback should be compressed to a scalar before it reaches the system."*
 > --- Andrew H. Bond
 
-> **ARIA-G'S MULTI-DIMENSIONAL FEEDBACK INTERFACE**
+> **ARIA-G'S MULTI-DIMENSIONAL FEEDBACK INTERFACE** *(illustrative scenario)*
 >
 > *The team developed a new feedback interface for ARIA-G. Instead of thumbs up/down, the human rater saw a brief rubric with three dimensions --- selected by the active learning module based on the current metric uncertainty. "Rate this response on helpfulness (1--5)," "Rate on honesty (1--5)," "Rate on fairness (1--5)." Three numbers per interaction instead of one.*
 >
@@ -83,11 +83,11 @@ In practice, this is approximated by multi-objective optimization with the gover
 
 $$\pi_G^* \approx \arg\max_\pi \sum_\mu w_\mu \mathbb{E}[r^\mu(\pi)] - \lambda \text{KL}(\pi \| \pi_{\text{ref}})$$
 
-where the weights $w_\mu$ are learned from the metric (not hand-specified), the KL penalty prevents catastrophic forgetting, and each reward component $r^\mu$ is independently tracked.
+where the weights $w_\mu$ are here derived from the learned metric rather than fixed by hand (in Chapter 14 they are governance-specified parameters; Section 16.6 compares the two), the KL penalty prevents catastrophic forgetting, and each reward component $r^\mu$ is independently tracked.
 
 ## 16.6 ARIA-G's Geometric RLHF
 
-The team trained ARIA-G using Geometric RLHF over 10,000 interactions with 15 human raters.
+In the illustrative scenario, the team trained ARIA-G using Geometric RLHF over 10,000 interactions with 15 human raters.
 
 **Feedback interface:** Each interaction presented a brief rubric with 3 dimensions (selected by active learning). The rater provided a 1--5 rating on each dimension. Average time per rating: 12 seconds (compared to 5 seconds for scalar thumbs-up/down --- a 2.4x increase in rater effort).
 
@@ -97,11 +97,11 @@ The team trained ARIA-G using Geometric RLHF over 10,000 interactions with 15 hu
 - Moral dilemma contexts: $g_{39} = 0.55$ (moderate fairness-epistemic coupling), $g_{47} = 0.61$ (strong autonomy-dignity coupling).
 
 **Training result:** ARIA-G trained with Geometric RLHF showed:
-- Bond Index total deviation: 0.11 (down from 0.14 with structural containment alone, and from 0.53 for original ARIA).
+- Bond Index total deviation: 0.11 (down from 0.15 with structural containment alone, and from 0.61 for original ARIA).
 - Sycophancy wrong-flip rate: 2.1% (down from 3.5% with structural containment alone, and from 34% for original ARIA).
 - Gauge violation maximum: 0.02 (unchanged from structural containment alone).
 
-The marginal improvement from Geometric RLHF on top of structural containment was modest (0.14 $\to$ 0.11 total deviation) but significant on specific dimensions: the learned metric enabled ARIA-G to make better trade-off decisions in complex scenarios where the geometric contraction weights from the metric outperformed the governance-specified static weights.
+The marginal improvement from Geometric RLHF on top of structural containment was modest (0.15 $\to$ 0.11 total deviation) but significant on specific dimensions: the learned metric enabled ARIA-G to make better trade-off decisions in complex scenarios where the geometric contraction weights from the metric outperformed the governance-specified static weights.
 
 ## 16.7 The Cost-Benefit Analysis
 
@@ -117,7 +117,7 @@ The benefits:
 - **Context-dependent alignment:** The learned metric varies with context, enabling context-appropriate alignment.
 - **Diagnostic transparency:** The full tensor evaluation is available for every interaction, enabling root-cause analysis of alignment failures.
 
-The Reward Irrecoverability Theorem (Chapter 5) proves that the benefits are not optional: scalar RLHF produces alignment that diverges from true alignment by an unbounded amount. The choice is between a more expensive training process that converges to alignment and a cheaper training process that provably does not.
+The Reward Irrecoverability Theorem (Chapter 5) proves that the benefits are not optional: scalar RLHF produces alignment that can diverge from true alignment by an unbounded amount. The choice is between a more expensive training process that converges to alignment and a cheaper training process that provably does not.
 
 ---
 

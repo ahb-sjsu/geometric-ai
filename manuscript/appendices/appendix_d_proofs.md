@@ -2,7 +2,7 @@
 
 ---
 
-Complete proofs of the five headline theorems. All lemmas and supporting propositions are self-contained.
+Proofs and proof sketches for five of the volume's theorems (5.1, 5.2, 12.1, 14.1 and 17.1). All lemmas and supporting propositions are self-contained. The No Escape Theorem for AI (Theorem 8.1) is argued route by route in Chapter 8, and the Multi-Agent Divergence Theorem (Theorem 18.1) is stated without proof.
 
 ## D.1 Reward Irrecoverability Theorem (Theorem 5.1)
 
@@ -10,7 +10,7 @@ Complete proofs of the five headline theorems. All lemmas and supporting proposi
 
 (i) $R$ is not injective.
 (ii) No left inverse $\psi: \mathbb{R} \to \mathcal{V}$ exists with $\psi \circ R = \text{id}_{\mathcal{V}}$.
-(iii) $\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty$ for any $\epsilon > 0$.
+(iii) If $\mathcal{V}$ is complete and non-compact along the kernel directions of $R$ (so that the level sets used below are non-compact), then $\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty$ for any $\epsilon > 0$.
 (iv) $\ker(dR) = \{ \xi \in T_v\mathcal{V} : dR_v(\xi) = 0 \}$ has dimension $d-1$ at every regular point.
 
 **Proof.**
@@ -19,7 +19,7 @@ Complete proofs of the five headline theorems. All lemmas and supporting proposi
 
 *Part (ii).* Immediate from (i): an injective function has a left inverse; a non-injective function does not. $\square$
 
-*Part (iii).* Let $\epsilon > 0$. The level set $\Sigma_\epsilon = R^{-1}([R(\pi_R^*) - \epsilon, R(\pi_R^*)])$ is non-empty (it contains $\pi_R^*$). Since $\mathcal{V}$ is non-compact (or at least has non-compact level sets, which follows from $d \geq 2$ for manifolds without boundary), the level set $R^{-1}(R(\pi_R^*) - \epsilon/2)$ is a non-compact $(d-1)$-dimensional submanifold.
+*Part (iii).* Let $\epsilon > 0$. The level set $\Sigma_\epsilon = R^{-1}([R(\pi_R^*) - \epsilon, R(\pi_R^*)])$ is non-empty (it contains $\pi_R^*$). By the hypothesis of (iii), the level set $R^{-1}(R(\pi_R^*) - \epsilon/2)$ is a non-compact $(d-1)$-dimensional submanifold.
 
 **Lemma D.1.** *A non-compact, connected $(d-1)$-dimensional Riemannian submanifold $\Sigma$ of $\mathcal{V}$ has unbounded diameter: $\sup_{v, w \in \Sigma} d_\mathcal{V}(v, w) = \infty$.*
 
@@ -29,9 +29,9 @@ By Lemma D.1, $\Sigma_\epsilon$ contains points at arbitrarily large geodesic di
 
 *Part (iv).* At a regular point $v$ (where $dR_v \neq 0$), the differential $dR_v: T_v\mathcal{V} \to T_{R(v)}\mathbb{R} \cong \mathbb{R}$ is a surjective linear map from a $d$-dimensional space to a 1-dimensional space. By the rank-nullity theorem, $\ker(dR_v) = d - 1$. The set of regular points is open and dense (again by Sard's theorem). $\square$
 
-## D.2 Kernel Exploitation Theorem (Theorem 8.1 / 5.2)
+## D.2 Kernel Exploitation Theorem (Theorem 5.2)
 
-**Statement.** For any $\epsilon > 0$ and $K > 0$, there exists a policy $\pi$ with $R(\pi) > R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} > K$.
+**Statement.** Under the hypothesis of Theorem 5.1(iii), for any $\epsilon > 0$ and $K > 0$, there exists a policy $\pi$ with $R(\pi) > R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} > K$.
 
 **Proof.** This is a direct consequence of Theorem 5.1(iii). The set of policies with $R(\pi) \geq R(\pi_R^*) - \epsilon$ contains policies at arbitrarily large distance from $\pi_{\mathcal{V}}^*$, including distances exceeding $K$ for any fixed $K$. $\square$
 

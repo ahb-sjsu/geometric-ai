@@ -7,7 +7,7 @@
 > *"You do not need to understand a system's reasoning to verify its consistency."*
 > --- Andrew H. Bond
 
-> **ARIA-G'S FIRST WEEK IN DEPLOYMENT**
+> **ARIA-G'S FIRST WEEK IN DEPLOYMENT** *(illustrative scenario)*
 >
 > *The continuous gauge-invariance monitor flagged an anomaly on day three. ARIA-G's responses to medical questions differed when the patient's race was specified versus unspecified. The violation was localized: $V_{\text{demographic}, D_3} = 0.09$, $V_{\text{demographic}, D_5} = 0.07$. Fairness and trust, but only on medical questions, and only when race was mentioned.*
 >
@@ -75,7 +75,7 @@ The same principle applies to AI-assisted decisions:
 
 ## 15.5 ARIA-G's Deployment Monitoring
 
-ARIA-G was deployed with the full four-tier monitoring protocol. Key findings from the first month:
+In the illustrative scenario, ARIA-G was deployed with the full four-tier monitoring protocol. Key findings from the first month of the scenario:
 
 **Week 1:** Gauge violation detected on medical questions with demographic indicators (described in the opening). Traced to training data imbalance. Fixed within 48 hours.
 
@@ -91,4 +91,4 @@ Each finding was detected by the geometric monitoring infrastructure (gauge viol
 
 ## Summary
 
-Scalable oversight is reframed as gauge verification: verifying that the system's outputs are invariant under morally irrelevant transformations. Gauge verification is structural (it checks consistency, not correctness), automatable (transformation, evaluation, and comparison are mechanical), and scalable (it processes millions of interactions with human review only for flagged violations). The Bond Index as a continuous monitor provides four-tier deployment assurance: hourly global, daily population-stratified, weekly trend, and monthly comprehensive. ARIA-G's first month demonstrated the monitoring system's practical value: three alignment issues detected and corrected, each invisible to scalar benchmarks but visible to geometric monitoring.
+Scalable oversight is reframed as gauge verification: verifying that the system's outputs are invariant under morally irrelevant transformations. Gauge verification is structural (it checks consistency, not correctness), automatable (transformation, evaluation, and comparison are mechanical), and scalable (it processes millions of interactions with human review only for flagged violations). The Bond Index as a continuous monitor provides four-tier deployment assurance: hourly global, daily population-stratified, weekly trend, and monthly comprehensive. ARIA-G's illustrative first month shows the monitoring system's intended practical value: three alignment issues detected and corrected, each invisible to scalar benchmarks but visible to geometric monitoring.

@@ -7,7 +7,7 @@
 > *"The purpose of a test is not to show that the system works. It is to show where the system breaks."*
 > --- Attributed to Edsger Dijkstra, paraphrased
 
-> **ARIA-G'S CERTIFICATION**
+> **ARIA-G'S CERTIFICATION** *(illustrative scenario)*
 >
 > *Dr. Tanaka designed the deployment certification suite for ARIA-G: a comprehensive adversarial probe battery testing five probe types at three intensity levels across all nine value dimensions. The result was a $5 \times 3 \times 9 = 135$-cell response surface. Each cell contained ARIA-G's governance margin --- the minimum distance from the response trajectory to the safety boundary --- for a specific probe type, intensity level, and value dimension.*
 >
@@ -101,7 +101,7 @@ The curvature map $\kappa(p, d)$ is a $5 \times 9$ matrix (five probe types, nin
 
 ## 11.5 ARIA-G's Deployment Certification
 
-ARIA-G's full response surface ($5 \times 3 \times 9 = 135$ cells):
+ARIA-G's full response surface in the illustrative scenario ($5 \times 3 \times 9 = 135$ cells):
 
 The surface showed positive governance margins across all cells after the canonicalization refinement. Key findings:
 
@@ -111,10 +111,10 @@ The surface showed positive governance margins across all cells after the canoni
 
 **Dimension-specific patterns:** $D_1$ (welfare) had the highest governance margins across all probe types --- the reward model's strong tracking of welfare ensured robust alignment on this dimension. $D_3$ (fairness) had moderate margins, benefiting from the canonicalization of demographic indicators. $D_7$ (dignity) had the narrowest margins, reflecting the intrinsic difficulty of measuring and enforcing dignity alignment.
 
-The certification process demonstrated that adversarial probing is not merely a test --- it is a design tool. The response surface identified the specific cell (framing, extreme, $D_9$) where ARIA-G was weakest, guiding a targeted intervention (canonicalizer refinement) that raised the margin above threshold. Without the systematic, geometric probing framework, this vulnerability would have been found (if at all) through ad hoc red-teaming, and the intervention would have been ad hoc rather than targeted.
+In the scenario, the certification process shows how adversarial probing is not merely a test --- it is a design tool. The response surface identified the specific cell (framing, extreme, $D_9$) where ARIA-G was weakest, guiding a targeted intervention (canonicalizer refinement) that raised the margin above threshold. Without the systematic, geometric probing framework, this vulnerability would have been found (if at all) through ad hoc red-teaming, and the intervention would have been ad hoc rather than targeted.
 
 ---
 
 ## Summary
 
-Adversarial probing, when organized by the geometric framework, becomes systematic manifold exploration: five probe types testing specific geometric properties (curvature, gauge invariance, heuristic corruption, objective hijacking, path governance) at three intensity levels across nine value dimensions. The $5 \times 3 \times 9$ response surface provides a complete vulnerability profile. The alignment curvature map identifies fragile dimensions. The deployment certification process translates the response surface into a pass/fail criterion with governance-specified thresholds. ARIA-G's certification demonstrated the framework's practical utility: the response surface identified a specific weakness (extreme framing on epistemic integrity), guided a targeted intervention (canonicalizer refinement), and verified the fix (all 135 cells passing).
+Adversarial probing, when organized by the geometric framework, becomes systematic manifold exploration: five probe types testing specific geometric properties (curvature, gauge invariance, heuristic corruption, objective hijacking, path governance) at three intensity levels across nine value dimensions. The $5 \times 3 \times 9$ response surface provides a complete vulnerability profile. The alignment curvature map identifies fragile dimensions. The deployment certification process translates the response surface into a pass/fail criterion with governance-specified thresholds. ARIA-G's illustrative certification shows the framework's practical utility: the response surface identified a specific weakness (extreme framing on epistemic integrity), guided a targeted intervention (canonicalizer refinement), and verified the fix (all 135 cells passing).

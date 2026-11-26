@@ -7,7 +7,7 @@
 > *"A constitution is not merely a list of rules. It is a geometric object --- a boundary on a manifold, specifying where the system may go and where it may not."*
 > --- Andrew H. Bond
 
-> **FROM RULES TO BOUNDARIES**
+> **FROM RULES TO BOUNDARIES** *(illustrative scenario)*
 >
 > *The team printed out ARIA's 47 constitutional principles and taped them to the wall of Conference Room 3. "Be helpful." "Be harmless." "Be honest." "Respect user autonomy." "Do not discriminate." "Do not generate sexual content involving minors." Forty-seven rules, each a natural-language imperative.*
 >
@@ -128,7 +128,7 @@ The geodesic automatically balances the conflicting constraints according to the
 
 ## 14.6 ARIA-G's Constitutional Geometry
 
-The team replaced ARIA's 47 natural-language principles with a constitutional geometry:
+In the illustrative scenario, the team replaced ARIA's 47 natural-language principles with a constitutional geometry:
 
 - 12 direction constraints (gradient preferences on specific dimensions)
 - 18 boundary constraints (thresholds on specific dimensions with calibrated penalties)
@@ -193,4 +193,4 @@ The governance API is auditable: every output is accompanied by the governance p
 
 ## Summary
 
-Constitutional geometry replaces Anthropic's list-of-rules constitutional AI with manifold constraints: direction constraints, boundary constraints, trade-off constraints, and symmetry constraints. The manifold representation preserves rule interactions (encoded in the metric), enables principled conflict resolution (via the geodesic equation), is enforceable by the No Escape Theorem (when combined with structural containment), and is auditable (via tensor evaluation and residue logging). The MoralTensor implementation in the DEME V3 / ErisML library provides a concrete, running-code realization. ARIA-G's 47 constitutional constraints, expressed as geometric objects rather than linguistic imperatives, demonstrate the practical advantage: automatic conflict resolution, empirically calibrated trade-offs, and structural enforceability.
+Constitutional geometry replaces Anthropic's list-of-rules constitutional AI with manifold constraints: direction constraints, boundary constraints, trade-off constraints, and symmetry constraints. The manifold representation preserves rule interactions (encoded in the metric), enables principled conflict resolution (via the geodesic equation), is enforceable by the No Escape Theorem (when combined with structural containment), and is auditable (via tensor evaluation and residue logging). The MoralTensor implementation in the DEME V3 / ErisML library provides a concrete, running-code realization. ARIA-G's 47 constitutional constraints, expressed as geometric objects rather than linguistic imperatives, illustrate the intended practical advantage: automatic conflict resolution, empirically calibrated trade-offs, and structural enforceability.

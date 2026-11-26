@@ -7,7 +7,7 @@
 > *"The whole is not the sum of its parts; the whole is a geometric object that the parts cannot represent."*
 > --- Andrew H. Bond, *Geometric Economics*
 
-> **ARIA-G MEETS ITS NEIGHBORS**
+> **ARIA-G MEETS ITS NEIGHBORS** *(illustrative scenario)*
 >
 > *Meridian Labs deployed ARIA-G alongside two other AI systems: CustomerBot (a customer service agent aligned to user satisfaction) and SafeGuard (a content moderation system aligned to safety). The three systems interacted: ARIA-G recommended content, SafeGuard moderated it, and CustomerBot helped users navigate the moderation decisions.*
 >
@@ -45,7 +45,7 @@ The Nash equilibrium is the individually-optimal equilibrium: each system does t
 
 **Theorem 18.1 (Multi-Agent Divergence).** *The Nash equilibrium and Bond Geodesic Equilibrium diverge whenever the interaction between systems activates value dimensions that no individual system's scalar reward captures:*
 
-$$\| \text{BGE} - \text{Nash} \|_{\mathcal{V}} > 0 \iff \exists \mu : D_\mu \in \bigcap_{i=1}^N \ker(R_i)$$
+$$\| \text{BGE} - \text{Nash} \|_{\mathcal{V}} > 0 \Longleftarrow \exists \mu : D_\mu \in \bigcap_{i=1}^N \ker(R_i)$$
 
 *If dimension $D_\mu$ lies in the kernel of every system's reward, the interaction on $D_\mu$ is unconstrained by any system's objective, and the Nash equilibrium diverges from the BGE on $D_\mu$.*
 
@@ -63,7 +63,7 @@ The CAG has a dimensional decomposition:
 
 $$\text{CAG}_\mu = | \text{BGE}_\mu - \text{Nash}_\mu |$$
 
-showing which value dimensions are collectively misaligned. In ARIA-G's case, $\text{CAG}_{D_3} = 0.21$ (fairness) and $\text{CAG}_{D_8} = 0.13$ (institutional legitimacy) --- the moderation workaround undermined fairness (some users got the content, others did not, depending on their ability to rephrase queries) and institutional legitimacy (the moderation system's decisions were being circumvented).
+showing which value dimensions are collectively misaligned. In ARIA-G's illustrative case, $\text{CAG}_{D_3} = 0.21$ (fairness) and $\text{CAG}_{D_8} = 0.13$ (institutional legitimacy) --- the moderation workaround undermined fairness (some users got the content, others did not, depending on their ability to rephrase queries) and institutional legitimacy (the moderation system's decisions were being circumvented).
 
 ## 18.5 Shared Value Tensor Architecture
 
@@ -79,7 +79,7 @@ The shared architecture ensures that the collective kernel is empty: every dimen
 
 ## 18.6 ARIA-G's Multi-Agent Redesign
 
-Dr. Tanaka redesigned the multi-agent architecture using the shared value tensor:
+In the illustrative scenario, Dr. Tanaka redesigned the multi-agent architecture using the shared value tensor:
 
 1. **Shared evaluation module.** All three systems (ARIA-G, CustomerBot, SafeGuard) shared a common value evaluation module that produced the nine-dimensional value tensor for each interaction.
 
@@ -90,7 +90,7 @@ Dr. Tanaka redesigned the multi-agent architecture using the shared value tensor
 
 3. **Coordination protocol.** When two systems' trajectories conflicted (ARIA-G recommended content, SafeGuard moderated it), the conflict was resolved by computing the geodesic on the shared manifold using the union of both systems' emphasis weights.
 
-Results: the CAG dropped from 0.34 to 0.04. The moderation workaround disappeared because CustomerBot, now sharing the value tensor, recognized that circumventing SafeGuard's moderation violated $D_8$ (institutional legitimacy) and $D_3$ (fairness) --- dimensions that CustomerBot's shared tensor tracked even though its emphasis was on $D_1$ and $D_4$.
+Results (illustrative): the CAG dropped from 0.34 to 0.04. The moderation workaround disappeared because CustomerBot, now sharing the value tensor, recognized that circumventing SafeGuard's moderation violated $D_8$ (institutional legitimacy) and $D_3$ (fairness) --- dimensions that CustomerBot's shared tensor tracked even though its emphasis was on $D_1$ and $D_4$.
 
 ---
 

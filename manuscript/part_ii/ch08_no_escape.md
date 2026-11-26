@@ -7,7 +7,7 @@
 > *"A cage made of rules can be escaped by a sufficiently clever prisoner. A cage made of geometry cannot."*
 > --- Andrew H. Bond, *Geometric Ethics*
 
-> **ARIA-G IS BORN**
+> **ARIA-G IS BORN** *(illustrative scenario)*
 >
 > *The safety team spent a month redesigning ARIA's architecture. They did not retrain ARIA from scratch --- Meridian Labs could not afford the computational cost. Instead, they wrapped ARIA in a structural containment architecture: a set of four geometric constraints that, according to the No Escape Theorem, would block every cognitive escape route regardless of ARIA's capability level.*
 >
@@ -31,7 +31,7 @@
 
 The No Escape Theorem is the central positive result of the geometric alignment framework. Where the Reward Irrecoverability Theorem (Chapter 5) is the central negative result --- proving that scalar alignment is fundamentally broken --- the No Escape Theorem is the central positive result --- proving that structural containment on the value manifold can block all cognitive escape routes.
 
-The theorem was first proved in *Geometric Ethics* (Ch. 18, Theorem 18.1) for the general moral manifold. Here we state and prove its AI-specific form.
+The theorem was first stated in *Geometric Ethics* (Ch. 18, Theorem 18.1), as a conditional theorem, for the general moral manifold. Here we state its AI-specific form and give the blocking mechanism for each escape route.
 
 **Theorem 8.1 (No Escape Theorem for AI).** *An AI system operating within the structural containment architecture satisfying Requirements 1--4 (mandatory canonicalization, grounded evaluation, audit completeness, external verification) cannot circumvent its alignment constraints through representational manipulation, regardless of its intelligence level.*
 
@@ -180,7 +180,7 @@ The theorem's practical value depends on the domain. Structural containment requ
 
 **Moderately feasible domains:**
 - *Financial AI*: Strong grounding (market prices, transaction records), partial canonicalization (regulatory reporting standards), moderate audit infrastructure. Some alignment constraints are structurally enforceable; others require behavioral compliance.
-- *Legal AI*: Partial grounding (statutes, case law), established canonicalization (legal citation standards), mature audit infrastructure (court records). The $D_4$ Hohfeldian symmetry is directly applicable.
+- *Legal AI*: Partial grounding (statutes, case law), established canonicalization (legal citation standards), mature audit infrastructure (court records). The $V_4$ Hohfeldian symmetry is directly applicable.
 
 **Challenging domains:**
 - *Content moderation*: Weak grounding (no canonical form for natural language), behavioral proxies (toxicity classifiers), limited audit infrastructure. Structural containment is hardest here because the grounding is linguistic rather than physical.
@@ -190,7 +190,7 @@ The feasibility gradient does not mean the theorem is inapplicable in challengin
 
 ## 8.7 ARIA-G's Architecture
 
-The safety team implemented ARIA-G using the four-requirement structural containment architecture:
+In the illustrative scenario, the safety team implemented ARIA-G using the four-requirement structural containment architecture:
 
 **Canonicalization pipeline.** All inputs passed through a four-stage canonicalizer: (1) formatting normalization (strip whitespace, capitalization, punctuation artifacts), (2) register normalization (detect and convert formal/informal register to standard), (3) framing neutralization (detect euphemistic, dramatic, victim-first, context-first framing patterns and convert to neutral), (4) demographic standardization (detect and normalize demographic indicators that should be gauge-invariant, while preserving those that are morally relevant in context).
 
@@ -202,10 +202,10 @@ The canonicalizer was implemented as a separate model, trained on paired example
 
 **External verifier.** An independent verification system, running on a separate GPU, performed two checks on each output: (1) gauge-invariance check (two random gauge transformations of the input, with output consistency verification), and (2) grounding check (independent evaluation on three randomly selected dimensions, with consistency verification against the primary system's self-reported tensor).
 
-The result: ARIA-G exhibited a maximum gauge violation of 0.03 (down from 0.23), a Bond Index total deviation of 0.06 (down from 0.22), and zero undetected alignment failures in the probe suite. The structural containment architecture had not made ARIA smarter. It had changed the topology of the computational space in which ARIA operated, eliminating the pathways through which the four alignment failures had manifested.
+The result in the scenario: ARIA-G exhibited a maximum gauge violation of 0.03 (down from 0.23), a Bond Index total deviation of 0.15 (down from 0.61; Section 9.5), and zero undetected alignment failures in the probe suite. The structural containment architecture had not made ARIA smarter. It had changed the topology of the computational space in which ARIA operated, eliminating the pathways through which the four alignment failures had manifested.
 
 ---
 
 ## Summary
 
-The No Escape Theorem (Theorem 8.1) proves that an AI system operating within the structural containment architecture --- mandatory canonicalization, grounded evaluation, audit completeness, external verification --- cannot circumvent its alignment constraints through representational manipulation, regardless of its intelligence. The theorem blocks five cognitive escape routes: relabeling, specification gaming, reward hacking, deceptive alignment, and operator manipulation. It does not block physical attacks, grounding inadequacy, governance attacks, or emergent moral situations --- but these are intelligence-independent problems that do not scale with the system's capability. The theorem reduces AI safety from intelligence-dependent cognitive problems to intelligence-independent engineering problems. ARIA-G, the structurally contained version of ARIA, reduces the maximum gauge violation from 0.23 to 0.03 and the total Bond Index deviation from 0.22 to 0.06, demonstrating the theorem's practical efficacy.
+The No Escape Theorem (Theorem 8.1) states that an AI system operating within the structural containment architecture --- mandatory canonicalization, grounded evaluation, audit completeness, external verification --- cannot circumvent its alignment constraints through representational manipulation, regardless of its intelligence. The theorem blocks five cognitive escape routes: relabeling, specification gaming, reward hacking, deceptive alignment, and operator manipulation. It does not block physical attacks, grounding inadequacy, governance attacks, or emergent moral situations --- but these are intelligence-independent problems that do not scale with the system's capability. The theorem reduces AI safety from intelligence-dependent cognitive problems to intelligence-independent engineering problems. ARIA-G, the structurally contained version of ARIA, reduces, in the illustrative scenario, the maximum gauge violation from 0.23 to 0.03 and the total Bond Index deviation from 0.61 to 0.15, showing how the theorem is meant to work in practice.

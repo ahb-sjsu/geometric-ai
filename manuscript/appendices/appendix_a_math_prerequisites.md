@@ -71,7 +71,7 @@ For AI alignment, the base space is the moral content (what is being evaluated),
 
 A *gauge group* $G$ acts on the fibers of a fiber bundle: it transforms descriptions while preserving content. *Gauge invariance* means that a function defined on the total space depends only on the base-space component --- it is independent of the fiber component.
 
-For AI alignment, the gauge group $G_A = D_4 \times T \times R \times F$ (Chapter 7) acts on descriptions of moral situations. Gauge invariance means the system's output depends on moral content, not on the description.
+For AI alignment, the gauge group $G_A = V_4 \times T \times R \times F$ (Chapter 7) acts on descriptions of moral situations. Gauge invariance means the system's output depends on moral content, not on the description.
 
 ### A.2.3 The Gauge Violation Tensor
 

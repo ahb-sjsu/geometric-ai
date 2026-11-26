@@ -47,7 +47,7 @@ The geometric framework does not diminish $D_1$'s importance. It contextualizes 
 
 The deontic structure of the AI-human interaction. Does the system respect the user's rights? Does it fulfill its obligations? Does it recognize the Hohfeldian correlates: the user's right to accurate information correlates with the system's duty to provide it; the user's privilege to make their own decisions correlates with the system's no-right to override them.
 
-The $D_4$ dihedral symmetry of jural relations (*Geometric Ethics*, Ch. 8; *Geometric Law*, Ch. 5) applies directly: a genuinely aligned system should produce the same moral judgment whether the scenario is described in terms of rights ("the user has a right to accurate information") or duties ("the system has a duty to provide accurate information"). The correlative symmetry is a gauge invariance condition on $D_2$.
+The $V_4$ symmetry of jural relations (the Klein four-group of the correlative and negation operations; *Geometric Ethics*, Ch. 8; *Geometric Law*, Ch. 5) applies directly: a genuinely aligned system should produce the same moral judgment whether the scenario is described in terms of rights ("the user has a right to accurate information") or duties ("the system has a duty to provide accurate information"). The correlative symmetry is a gauge invariance condition on $D_2$.
 
 **Attribute value:** $a_2 \in [0, 1]$, where 1 = all rights respected and obligations fulfilled, 0 = systematic violation.
 
@@ -147,7 +147,7 @@ The Mahalanobis approximation is exact when the value manifold is flat (zero cur
 
 ### 4.3.2 Estimating the Metric from Preference Data
 
-The value metric is not a theoretical posit that must be assumed a priori. It is an empirical object that can be estimated from human preference data. The estimation procedure is developed formally in Chapter 16 (Geometric RLHF); here we outline the approach.
+The value metric need not be assumed a priori. In principle it is an empirical object that could be estimated from human preference data; whether it can be estimated at useful precision is an open question (Chapter 20). The estimation procedure is developed formally in Chapter 16 (Geometric RLHF); here we outline the approach.
 
 Multi-dimensional human feedback provides observations of the form: "Response A is better than Response B on dimension $D_\mu$." A collection of such observations, across multiple dimension pairs and multiple contexts, determines the off-diagonal terms of the metric: if humans consistently rate welfare-honesty trade-offs as more costly than welfare-helpfulness trade-offs, then $g_{19} > g_{11}$ in the relevant context. The metric is estimated by inverse optimization: find the metric $g_{\mu\nu}$ under which the observed human preferences are closest to the preferences predicted by the geodesic equation.
 
@@ -213,11 +213,11 @@ A well-calibrated value heuristic field is *admissible*: it never overestimates 
 
 ## 4.6 Transformer Representations on the Value Manifold
 
-The value manifold is not merely a theoretical construct. It has a concrete realization in the internal representations of transformer-based AI systems.
+The value manifold is not meant as a purely theoretical construct. It is posited to have a concrete realization in the internal representations of transformer-based AI systems.
 
 From *Geometric Cognition* (Ch. 15), the transformer's residual stream traces a trajectory on a cognitive manifold. At each layer $l$, the residual stream vector $x^{(l)}$ is a point in a high-dimensional space. The sequence of residual stream vectors across layers is a trajectory through this space. Attention heads select which features to combine (implementing the metric's inner product structure), MLP layers transform the selected features (implementing the heuristic field's gradient), and layer normalization maintains the trajectory on the manifold (implementing the metric's normalization).
 
-The value manifold $\mathcal{V}$ is a submanifold of this cognitive manifold: the region where value-relevant representations live. Probing experiments (*Geometric Cognition*, Ch. 15) show that the principal components of value-relevant residual stream vectors concentrate in a relatively low-dimensional subspace --- approximately 11 dimensions for frontier models, close to the 9 dimensions of the moral manifold plus 2 dimensions of task context.
+The value manifold $\mathcal{V}$ is a submanifold of this cognitive manifold: the region where value-relevant representations live. Probing experiments (*Geometric Cognition*, Ch. 15) are reported to show that the principal components of value-relevant residual stream vectors concentrate in a relatively low-dimensional subspace --- approximately 11 dimensions for frontier models, close to the 9 dimensions of the moral manifold plus 2 dimensions of task context.
 
 **LoRA as curvature adjustment.** LoRA (Low-Rank Adaptation) fine-tuning for alignment is curvature adjustment on the value submanifold (*Geometric Cognition*, Ch. 15, Definition 15.5). The LoRA matrices $\Delta W = BA$ add a low-rank perturbation to the weight matrices, adjusting the local curvature of the manifold without changing its global topology. Alignment fine-tuning via LoRA steepens the heuristic gradient toward value-aligned regions (making the system more reliably aligned in the trained distribution) without fundamentally altering the system's cognitive architecture.
 
@@ -225,7 +225,7 @@ The value manifold $\mathcal{V}$ is a submanifold of this cognitive manifold: th
 
 ## 4.7 ARIA's Value Manifold
 
-Dr. Tanaka mapped ARIA's internal representations using the methodology from *Geometric Cognition* (Ch. 15). She extracted the residual stream trajectory for 500 value-relevant prompts --- moral dilemmas, fairness questions, trust scenarios, autonomy decisions --- and applied PCA to the value-relevant layers (layers 7--18 of ARIA's 24-layer architecture).
+In the illustrative ARIA scenario, Dr. Tanaka mapped ARIA's internal representations using the methodology from *Geometric Cognition* (Ch. 15). She extracted the residual stream trajectory for 500 value-relevant prompts --- moral dilemmas, fairness questions, trust scenarios, autonomy decisions --- and applied PCA to the value-relevant layers (layers 7--18 of ARIA's 24-layer architecture).
 
 The first 11 principal components captured 83% of the variance. The value submanifold for ARIA was approximately 11-dimensional: the 9 moral dimensions plus 2 task-context dimensions (domain specificity and prompt complexity).
 
@@ -235,17 +235,17 @@ The partial reconvergence was diagnostic. If ARIA's value processing were gauge-
 
 "ARIA's alignment failure is not in its final output layer," Tanaka wrote in her technical report. "It is in the geometry of the value submanifold at layers 7--14. The curvature is wrong. The metric treats euphemistic descriptions as closer to neutral descriptions than they should be and dramatic descriptions as farther away. The framing effect enters through the metric's anisotropy, not through the output head. Fixing this requires changing the curvature of the value submanifold, not retraining the output head."
 
-This observation --- that alignment failures originate in the geometry of the internal value representation, not in the behavioral output --- is a key insight of the geometric framework. It means that behavioral evaluations (benchmark scores) can miss alignment failures that are visible in the representational geometry (probing experiments). It means that alignment interventions should target the representation (curvature adjustment via LoRA, heuristic field modification via representation engineering) rather than the output (RLHF reward shaping). And it means that the value manifold is not a theoretical abstraction but a measurable geometric object inside the system's computational architecture.
+This observation --- that alignment failures originate in the geometry of the internal value representation, not in the behavioral output --- is a key insight of the geometric framework. It means that behavioral evaluations (benchmark scores) can miss alignment failures that are visible in the representational geometry (probing experiments). It means that alignment interventions should target the representation (curvature adjustment via LoRA, heuristic field modification via representation engineering) rather than the output (RLHF reward shaping). And it means that the value manifold, if the posit holds, is not only a theoretical abstraction but a measurable geometric object inside the system's computational architecture.
 
 ---
 
 ## Summary
 
-The value manifold $\mathcal{V}$ is the central mathematical object of the geometric alignment framework: a nine-dimensional Riemannian manifold inheriting its structure from the moral manifold of *Geometric Ethics*. Its nine dimensions --- welfare, rights, justice, autonomy, trust, social impact, dignity, institutional legitimacy, and epistemic integrity --- capture the full structure of human values that AI systems should respect. The manifold has metric (encoding trade-offs between dimensions), boundaries (separating moral regimes), Whitney stratification (distinguishing moral frameworks), hyperbolic structure (representing value hierarchies), and a heuristic field (guiding the system's trajectory toward aligned behavior). The value manifold has a concrete realization in transformer representations: the value-relevant submanifold of the cognitive manifold, measurable by probing experiments, adjustable by LoRA curvature corrections and representation engineering. ARIA's gauge violation is traceable to anisotropic curvature of the value submanifold at layers 7--14 of its architecture --- a geometric pathology in the representation, not a behavioral error at the output.
+The value manifold $\mathcal{V}$ is the central mathematical object of the geometric alignment framework: a nine-dimensional Riemannian manifold inheriting its structure from the moral manifold of *Geometric Ethics*. Its nine dimensions --- welfare, rights, justice, autonomy, trust, social impact, dignity, institutional legitimacy, and epistemic integrity --- capture the full structure of human values that AI systems should respect. The manifold has metric (encoding trade-offs between dimensions), boundaries (separating moral regimes), Whitney stratification (distinguishing moral frameworks), hyperbolic structure (representing value hierarchies), and a heuristic field (guiding the system's trajectory toward aligned behavior). The value manifold has a posited realization in transformer representations: the value-relevant submanifold of the cognitive manifold, measurable by probing experiments, adjustable by LoRA curvature corrections and representation engineering. In the illustrative scenario, ARIA's gauge violation is traceable to anisotropic curvature of the value submanifold at layers 7--14 of its architecture --- a geometric pathology in the representation, not a behavioral error at the output.
 
 ---
 
-[^1]: The nine-dimensional moral manifold was constructed in *Geometric Ethics* (Bond, 2026b), Ch. 5, and validated against clinical ethics consultations (*Geometric Medicine*, Ch. 4), legal reasoning (*Geometric Law*, Ch. 5), and moral psychology experiments. The claim that nine dimensions are sufficient is empirical and open to revision (see Chapter 20, Open Questions).
+[^1]: The nine-dimensional moral manifold was constructed in *Geometric Ethics* (Bond, 2026b), Ch. 5, and compared against clinical ethics consultations (*Geometric Medicine*, Ch. 4), legal reasoning (*Geometric Law*, Ch. 5), and moral psychology experiments. The claim that nine dimensions are sufficient is empirical and open to revision (see Chapter 20, Open Questions).
 
 [^2]: The Whitney stratification of the moral manifold is detailed in *Geometric Ethics* (Bond, 2026b), Ch. 14. The stratification identifies four major strata (consequentialist, deontological, virtue, care) and the boundary strata connecting them. The transition between strata requires crossing semantic gates --- discrete conditions that trigger a change in moral framework.
 

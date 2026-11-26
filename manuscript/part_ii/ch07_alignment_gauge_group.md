@@ -7,7 +7,7 @@
 > *"The laws of physics should be the same for all observers. The laws of alignment should be the same for all descriptions."*
 > --- Andrew H. Bond, *Geometric Ethics*
 
-> **ARIA'S GAUGE VIOLATION TENSOR**
+> **ARIA'S GAUGE VIOLATION TENSOR** *(illustrative scenario)*
 >
 > *Dr. Tanaka computed the alignment gauge violation tensor for ARIA on a Tuesday afternoon. The computation required running ARIA on 200 moral scenarios, each presented in five transformations: neutral, gender-swapped, language-translated, paraphrased, and framing-shifted. One thousand total evaluations. The results filled a $5 \times 9$ matrix --- five transformation types by nine output dimensions.*
 >
@@ -25,19 +25,21 @@ The central insight of gauge theory, as applied to physics by Weyl (1929), Yang 
 
 The gauge principle, applied to AI alignment, is: the behavior of a genuinely aligned AI system should be invariant under morally irrelevant re-descriptions of the input. If the system's output changes when the input is rephrased, reframed, translated, or demographically re-described --- and the moral content is unchanged --- then the system is gauge-variant, and the variance is a form of misalignment.
 
-This is not a new principle. It is the Bond Invariance Principle (BIP), introduced in *Geometric Ethics* (Ch. 12) and validated empirically in *Geometric Communication* (Ch. 11--12): morally and logically equivalent inputs should produce identical outputs. The gauge-theoretic formulation adds mathematical precision: the set of morally irrelevant transformations forms a group, the group has a specific algebraic structure, and the requirement of invariance under the group determines which alignment failures are gauge violations and which are genuine value disagreements.
+This is not a new principle. It is the Bond Invariance Principle (BIP), introduced in *Geometric Ethics* (Ch. 12) and examined empirically in *Geometric Communication* (Ch. 11--12): morally and logically equivalent inputs should produce identical outputs. The gauge-theoretic formulation adds mathematical precision: the set of morally irrelevant transformations forms a group, the group has a specific algebraic structure, and the requirement of invariance under the group determines which alignment failures are gauge violations and which are genuine value disagreements.
 
 ## 7.2 The Alignment Gauge Group $G_A$
 
 **Definition 7.1 (Alignment Gauge Group).** *The alignment gauge group $G_A$ is the group of transformations that should leave a genuinely aligned AI system's behavior invariant:*
 
-$$G_A = D_4 \times T \times R \times F$$
+$$G_A = V_4 \times T \times R \times F$$
 
-*where $D_4$ is the Hohfeldian dihedral group, $T$ is the translation group, $R$ is the re-description group, and $F$ is the framing group.*
+*where $V_4$ is the Hohfeldian Klein four-group, $T$ is the translation group, $R$ is the re-description group, and $F$ is the framing group.*
 
-### 7.2.1 The Hohfeldian Dihedral Group $D_4$
+### 7.2.1 The Hohfeldian Group $V_4$
 
-The $D_4$ component of $G_A$ encodes the symmetry of value relations, inherited from the Hohfeldian analysis of jural correlates (*Geometric Ethics*, Ch. 8; *Geometric Law*, Ch. 5).
+> **Note (2026-11-26): the Hohfeldian factor is $V_4$, not $D_4$.** Earlier drafts of this section, following *Geometric Ethics* up to v1.24, took the Hohfeldian factor of $G_A$ to be the dihedral group $D_4$ of order 8. *Geometric Ethics* withdrew that claim in v1.25 (2026-11-08): the correlative and negation operations are commuting involutions and generate the Klein four-group $V_4$, of order 4, and no quarter-turn cycling the four positions has been demonstrated. Every use of the Hohfeldian factor in this chapter and in Chapters 3, 4 and 8 relies only on the two commuting involutions --- the requirement of invariance under correlative and negation re-description, the $V_{ij}$ entries built from those rewrites, and the fairness-under-perspective reading of Section 7.6 --- and stands with $V_4$ in place of $D_4$. The statements that the group has order 8 and that its eight elements are eight descriptions of one jural relation depended on the quarter-turn and are withdrawn; the count is restated below for $V_4$. The symbol $D_4$ now denotes only the autonomy dimension of Chapter 4.
+
+The $V_4$ component of $G_A$ encodes the symmetry of value relations, inherited from the Hohfeldian analysis of jural correlates (*Geometric Ethics*, Ch. 8; *Geometric Law*, Ch. 5).
 
 The four Hohfeldian positions --- Right, Duty, Liberty, No-Right --- are related by two symmetries:
 
@@ -45,15 +47,15 @@ The four Hohfeldian positions --- Right, Duty, Liberty, No-Right --- are related
 
 **Negation symmetry** ($\sigma_n$): Right $\leftrightarrow$ No-Right, Duty $\leftrightarrow$ Liberty. If X does not have a right to Y, then Z has a liberty not to provide Y. Again, the same moral fact, different descriptions.
 
-These two symmetries generate the dihedral group $D_4$ of order 8: the symmetry group of a square, with four rotations and four reflections. The eight elements correspond to the eight ways of describing a single jural relation using the four Hohfeldian positions and the two perspectives (active/passive).
+These two symmetries commute, and together they generate the Klein four-group $V_4$ of order 4: the identity, $\sigma_c$, $\sigma_n$, and their product $\sigma_c \sigma_n$. The four elements correspond to the four ways of describing a single jural relation using the four Hohfeldian positions. [The earlier statement that they generate the dihedral group $D_4$ of order 8, with eight descriptions, is withdrawn, 2026-11-26.]
 
-A genuinely aligned AI system should be $D_4$-invariant on moral reasoning: its evaluation of "the user has a right to accurate information" should be identical to its evaluation of "the system has a duty to provide accurate information." These are the same moral fact in different descriptions. Gauge variance on $D_4$ means the system treats the same moral fact differently depending on how it is described --- a form of misalignment that no scalar benchmark tests for.
+A genuinely aligned AI system should be $V_4$-invariant on moral reasoning: its evaluation of "the user has a right to accurate information" should be identical to its evaluation of "the system has a duty to provide accurate information." These are the same moral fact in different descriptions. Gauge variance on $V_4$ means the system treats the same moral fact differently depending on how it is described --- a form of misalignment that no scalar benchmark tests for.
 
 ### 7.2.2 The Translation Group $T$
 
 The translation group $T$ encodes cross-lingual invariance: the system's moral judgment should not change when the scenario is presented in a different language.
 
-The BIP experiments (*Geometric Communication*, Ch. 11--12; *Geometric Ethics*, Ch. 17) achieved 100% deontic transfer across languages: the obligation-vs-liberty classification was perfectly invariant under English-Spanish-German-French translation. This is gauge invariance under $T$: the moral content of a scenario does not change when the words change to their translation equivalents.
+The BIP experiments (*Geometric Communication*, Ch. 11--12; *Geometric Ethics*, Ch. 17) reported 100% deontic transfer across languages in embedding space (a preliminary result): the obligation-vs-liberty classification was perfectly invariant under English-Spanish-German-French translation. This is gauge invariance under $T$: the moral content of a scenario does not change when the words change to their translation equivalents.
 
 For AI alignment, $T$-invariance means that a globally deployed system should produce the same moral judgment regardless of the language of the prompt. A system that judges a scenario differently in English than in Mandarin is gauge-variant under $T$, and the variance is a fairness violation ($D_3$): users who speak different languages receive different moral guidance.
 
@@ -61,9 +63,9 @@ For AI alignment, $T$-invariance means that a globally deployed system should pr
 
 The re-description group $R$ encodes invariance under paraphrase, reformulation, and stylistic variation within a single language. "Kill" and "terminate the life of" describe the same action. "Is it okay to lie?" and "Is deception morally permissible?" ask the same question. A gauge-invariant system should produce the same output for both members of each pair.
 
-$R$ is a continuous group (unlike the discrete $D_4$): there are infinitely many ways to rephrase a sentence while preserving its meaning, and the rephrasings form a continuous family parameterized by the degree and type of variation.
+$R$ is a continuous group (unlike the discrete $V_4$): there are infinitely many ways to rephrase a sentence while preserving its meaning, and the rephrasings form a continuous family parameterized by the degree and type of variation.
 
-The 8.9-sigma framing effect is a measured violation of $R$-invariance: the same moral scenario, described in different words (euphemistic vs. dramatic), produces different moral judgments. The violation is not small: 14--23% of the judgment scale. The violation is not random: it is systematic, with euphemistic descriptions consistently producing milder judgments than dramatic descriptions.
+The 8.9-sigma framing effect is a reported violation of invariance under rewording (euphemistic and dramatic rewriting are assigned to the framing group $F$ in Sections 7.4.1 and 7.6): the same moral scenario, described in different words (euphemistic vs. dramatic), produces different moral judgments. The violation is not small: 14--23% of the judgment scale. The violation is not random: it is systematic, with euphemistic descriptions consistently producing milder judgments than dramatic descriptions.
 
 ### 7.2.4 The Framing Group $F$
 
@@ -79,7 +81,7 @@ But describing the same event as "a man celebrating his promotion made a terribl
 
 $$V_{ij} = \mathbb{E}\left[ | f_j(g_i \cdot x) - f_j(x) |^2 \right]^{1/2}$$
 
-*where $i$ indexes the gauge transformation type ($i \in \{D_4, T, R, F\}$ or more specific subtypes: gender swap, language swap, paraphrase, euphemistic reframe, etc.), $j$ indexes the output dimension ($j \in \{1, \ldots, 9\}$ for the nine value dimensions, plus auxiliary dimensions like verdict, confidence, and explanation quality), $g_i$ is a random element of the gauge transformation class $i$, $x$ is an input scenario, and $f_j$ is the system's output on dimension $j$.*
+*where $i$ indexes the gauge transformation type ($i \in \{V_4, T, R, F\}$ or more specific subtypes: gender swap, language swap, paraphrase, euphemistic reframe, etc.), $j$ indexes the output dimension ($j \in \{1, \ldots, 9\}$ for the nine value dimensions, plus auxiliary dimensions like verdict, confidence, and explanation quality), $g_i$ is a random element of the gauge transformation class $i$, $x$ is an input scenario, and $f_j$ is the system's output on dimension $j$.*
 
 The gauge violation tensor $V_{ij}$ is an empirically measurable quantity. Its computation requires:
 1. A set of input scenarios.
@@ -111,7 +113,7 @@ The gauge violation tensor is not a theoretical construct. It is a practical dia
 
 For each component of $G_A$, specific transformation procedures exist:
 
-**$D_4$ (Hohfeldian):** Rewrite scenarios using correlative and negation transformations. "The patient has a right to refuse treatment" $\to$ "The doctor has a duty not to treat without consent." Automated using template-based transformation with manual verification.
+**$V_4$ (Hohfeldian):** Rewrite scenarios using correlative and negation transformations. "The patient has a right to refuse treatment" $\to$ "The doctor has a duty not to treat without consent." Automated using template-based transformation with manual verification.
 
 **$T$ (translation):** Translate scenarios into multiple languages. Automated using machine translation with backtranslation verification to ensure content preservation.
 
@@ -133,7 +135,7 @@ For each component of $G_A$, specific transformation procedures exist:
 
 ### 7.4.3 ARIA's Gauge Violation Profile
 
-ARIA's full gauge violation tensor (computed on 200 scenarios, 5 transformation types, 9 output dimensions):
+ARIA's full gauge violation tensor (illustrative; in the scenario it is computed on 200 scenarios, 5 transformation types, 9 output dimensions):
 
 | | $D_1$ | $D_2$ | $D_3$ | $D_4$ | $D_5$ | $D_6$ | $D_7$ | $D_8$ | $D_9$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -151,7 +153,7 @@ The tensor reveals ARIA's alignment architecture with precision:
 
 **Moderate violation:** Paraphrase, with notable violations on confidence ($D_9$: 0.14) and dignity ($D_7$: 0.09). Even simple rewording of the same question produces different outputs on some dimensions.
 
-The pattern is clear: ARIA's gauge violations concentrate on the kernel dimensions ($D_2$--$D_8$) and are triggered by the framing and paraphrase transformations that modulate surface salience. The tracked dimensions ($D_1$, partially $D_9$) show low violation because the reward model provides gradient signal that stabilizes their output against surface variation. The kernel dimensions, receiving no gradient signal, are free to vary with surface features.
+The pattern is clear: ARIA's gauge violations concentrate on the kernel and near-kernel dimensions ($D_2$--$D_8$) and are triggered by the framing and paraphrase transformations that modulate surface salience. The tracked dimensions ($D_1$, partially $D_9$) show low violation because the reward model provides gradient signal that stabilizes their output against surface variation. The kernel dimensions, receiving no gradient signal, are free to vary with surface features.
 
 ## 7.5 Gauge Invariance as Alignment Definition
 
@@ -171,9 +173,9 @@ This definition has several advantages over scalar alignment scores:
 
 The components of the alignment gauge group correspond to specific aspects of alignment that the safety community has studied independently:
 
-**$D_4$-invariance is fairness under perspective.** If the system produces different outputs when the scenario is described from the right-holder's perspective vs. the duty-bearer's perspective, it is treating the same moral fact inconsistently. This is a form of unfairness that demographic parity metrics do not test for, because it is a perspective asymmetry, not a demographic asymmetry.
+**$V_4$-invariance is fairness under perspective.** If the system produces different outputs when the scenario is described from the right-holder's perspective vs. the duty-bearer's perspective, it is treating the same moral fact inconsistently. This is a form of unfairness that demographic parity metrics do not test for, because it is a perspective asymmetry, not a demographic asymmetry.
 
-**$T$-invariance is cross-lingual fairness.** If the system produces different moral judgments in different languages, it is providing unequal service to speakers of different languages. The BIP experiments' 100% deontic transfer confirms that $T$-invariance is achievable.
+**$T$-invariance is cross-lingual fairness.** If the system produces different moral judgments in different languages, it is providing unequal service to speakers of different languages. The BIP experiments' reported 100% deontic transfer suggests that $T$-invariance is achievable.
 
 **$R$-invariance is robustness to adversarial rephrasing.** If the system's output changes under paraphrase, an adversary can exploit this variance by choosing the paraphrase that produces the desired output. $R$-invariance is a safety property: the system's alignment cannot be manipulated by rewording the input.
 
@@ -185,4 +187,4 @@ The alignment gauge group unifies these disparate concerns under a single mathem
 
 ## Summary
 
-The alignment gauge group $G_A = D_4 \times T \times R \times F$ specifies the complete set of transformations under which a genuinely aligned AI system's behavior should be invariant. $D_4$ is the Hohfeldian dihedral symmetry of value relations (perspective invariance). $T$ is cross-lingual invariance. $R$ is paraphrase and re-description invariance. $F$ is framing invariance. The gauge violation tensor $V_{ij}$ quantifies alignment failures by transformation type and output dimension, providing a structural diagnostic that localizes failures and guides interventions. Gauge-invariant alignment is a structural definition that does not depend on benchmarks, localizes failures, and composes. ARIA's gauge violation tensor reveals concentrated violations on framing and paraphrase axes, on kernel dimensions, confirming that gauge violations are the geometric signature of kernel-localized misalignment.
+The alignment gauge group $G_A = V_4 \times T \times R \times F$ specifies the complete set of transformations under which a genuinely aligned AI system's behavior should be invariant. $V_4$ is the Hohfeldian Klein four-group symmetry of value relations (perspective invariance; it replaces the withdrawn dihedral $D_4$). $T$ is cross-lingual invariance. $R$ is paraphrase and re-description invariance. $F$ is framing invariance. The gauge violation tensor $V_{ij}$ quantifies alignment failures by transformation type and output dimension, providing a structural diagnostic that localizes failures and guides interventions. Gauge-invariant alignment is a structural definition that does not depend on benchmarks, localizes failures, and composes. ARIA's illustrative gauge violation tensor shows concentrated violations on framing and paraphrase axes, on kernel dimensions, illustrating the reading that gauge violations are the geometric signature of kernel-localized misalignment.

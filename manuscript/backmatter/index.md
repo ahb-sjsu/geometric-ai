@@ -5,7 +5,7 @@
 ## A
 A* search, App. A
 Alignment gauge group ($G_A$), Ch. 7
-  - $D_4$ Hohfeldian component, 7.2.1
+  - $V_4$ Hohfeldian component, 7.2.1
   - translation group $T$, 7.2.2
   - re-description group $R$, 7.2.3
   - framing group $F$, 7.2.4
@@ -71,7 +71,7 @@ Curvature
   - sectional, App. A
 
 ## D
-$D_4$ dihedral group, 7.2.1
+$D_4$ dihedral group (withdrawn in favour of the Klein four-group $V_4$), 7.2.1
 Dark space (kernel metaphor), 5.3.1
 Deceptive alignment, 6.4
 DEME V3 architecture, App. B
