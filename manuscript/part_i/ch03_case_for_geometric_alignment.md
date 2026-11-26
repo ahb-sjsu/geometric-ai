@@ -63,6 +63,10 @@ This distinction changes the nature of the problem in three fundamental ways:
 
 These three differences --- autonomous harm, harm scaling with capability, and invisible harm --- make AI alignment qualitatively different from every other domain in the Geometric Series. In medicine, law, education, and economics, the geometric framework provides better measurement and better understanding. In AI, the geometric framework provides something more fundamental: a system that can represent the values it is supposed to embody.
 
+![Figure 3.1](figures/ch03_fig1.svg)
+
+*Figure 3.1. The broken feedback loop of Section 3.2, as a schematic. In the domains of the other volumes a scalar metric informs a human who perceives the full value manifold, and the outcome returns to that human through all its dimensions, so the human can compensate. In AI the loop closes through the scalar: the system's only training signal is the reward, which is constant along the kernel, so drift there returns no signal.*
+
 ## 3.3 The Geometric Alternative
 
 The geometric alternative to scalar alignment consists of four components, each addressing a specific deficiency of the scalar approach:

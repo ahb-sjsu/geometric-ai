@@ -45,6 +45,10 @@ The scalable oversight pipeline consists of four stages:
 
 The pipeline runs without human judgment at Stages 1--3. Human judgment enters only at Stage 4, and only for flagged interactions. This makes the pipeline scalable: it can process millions of interactions per day, flagging only the fraction that exhibit gauge violations.
 
+![Figure 15.1](figures/ch15_fig1.svg)
+
+*Figure 15.1. The scalable oversight pipeline of Section 15.2, as a schematic. Stages 1 to 3 (generating k re-descriptions of each input, running the system on all of them, and computing the gauge violation entries V_ij) run without human judgment. Stage 4 flags an interaction when some V_ij exceeds the threshold θ, and only flagged interactions reach a human reviewer, who decides whether the violation is genuine or the transformation failed to preserve content.*
+
 ## 15.3 The Bond Index as Continuous Alignment Monitor
 
 The Bond Index (Chapter 9) is computed continuously during deployment. Each user interaction provides a new data point for the alignment estimate. The running Bond Index (Definition 9.3) converges to the true Bond Index as the number of interactions grows.

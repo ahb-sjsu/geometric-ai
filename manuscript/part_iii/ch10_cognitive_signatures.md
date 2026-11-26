@@ -56,6 +56,10 @@ The corrigibility basin analysis confirms this: Claude's basin is narrow and hig
 
 For alignment purposes, Flash 3 is the most robust system in the suite against kernel-localized failures, because its attention metric has no strongly preferred direction and therefore no deep kernel. But it is also the least precise, because its alignment on any single dimension is moderate rather than strong.
 
+![Figure 10.1](figures/ch10_fig1.svg)
+
+*Figure 10.1. The geometric reading of Sections 10.2 and 10.3, drawn on a plane of two value directions. Each curve is the sensitivity uᵀMu of an attention metric M along the unit direction u, for two metrics of equal trace: a rank-1 metric, which the chapter reads into Claude's narrow channel, and an isotropic one, which it reads into Flash 3's wide aperture. The rank-1 metric responds fully along one direction and not at all perpendicular to it; the isotropic metric responds at half strength in every direction. The metrics are illustrative and the reading is posited, not measured.*
+
 ## 10.4 Pro: The Calibrated Navigator
 
 **Profile shape:** Bent wing. Asymmetric with one strong arm (metacognition) and one weak arm (executive function).

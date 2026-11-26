@@ -35,6 +35,10 @@ where $\text{GRL}$ is the gradient reversal layer and $\lambda$ controls the str
 
 **Reported result and illustration:** The BIP experiments reported 80% F1 on cross-lingual deontic classification with 1.2% residual language leakage. In the illustrative scenario, applying the same approach to ARIA-G's reward model reduced the framing gauge violation from 0.23 to 0.03 --- a 7x reduction.
 
+![Figure 13.1](figures/ch13_fig1.svg)
+
+*Figure 13.1. The gradient reversal architecture of Section 13.2, as a schematic. The encoder's representation z feeds a value head that predicts the nine-dimensional value tensor and, through a gradient reversal layer, an adversarial head that predicts framing register, demographic indicators and formatting style. The adversarial head is trained to predict those features; on the way back into the encoder the reversal layer flips the sign of its gradient, scaled by λ, so the encoder is pushed to discard them.*
+
 ## 13.3 Group-Theoretic Data Augmentation
 
 The second approach restores broken gauge symmetries by augmenting the training data with elements of the alignment gauge group $G_A$.

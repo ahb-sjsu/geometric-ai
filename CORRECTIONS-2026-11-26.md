@@ -105,3 +105,32 @@ Each item needs the author, because nothing in the repository settles it. The te
 14. **Claims about other volumes not checked.** Sections 3.4 and 5.5 say that the clinical Bond Index was "successfully applied to ethics consultation data", that QALY irrecoverability is "empirically validated", and that hyperbolic embedding experiments "confirmed" the hierarchy claim. These rest on Geometric Medicine and Geometric Communication, whose current status was not reviewed here. Section 3.1 also keeps "the D4 gauge theory of communicative acts" for Geometric Communication. Whether that D4 is the Hohfeldian one depends on that volume.
 
 15. **Files outside the manuscript.** `OUTLINE.md` still describes D4 as the Hohfeldian dihedral group (line 218) and lists "Conservation of harm" from Geometric Ethics as a result reused in Chapter 8 (line 489). Geometric Ethics has withdrawn Conservation of Harm. The manuscript's Chapter 8 does not use it. The outline was not edited.
+
+## Found while drawing the figures (2026-11-26), not changed
+
+These were noticed while the figures were drawn. No figure draws them.
+
+1. Section 1.3: System B is perfect on D1 and D9, yet scores 0.85 "weighted by" those same dimensions.
+2. Section 1.8 calls the level set seven-dimensional while the next paragraph says eight dimensions are invisible; a scalar level set in nine dimensions is eight-dimensional.
+3. Section 2.3 repeats "unbounded, growing with the dimensionality of the value space", the misstatement correction 7 fixed in the front matter.
+4. Section 2.3 says Ellsberg violates completeness; the standard account is that it violates Savage's sure-thing principle.
+5. Section 2.5 speaks of "the 56% sycophancy rate of other models"; 56% is Gemini 2.5 Flash only (the other two are at 33% and 44%).
+6. Section 4.3: with ds^2 = g dv dv, a high g19 makes the opposite move (worse D1, better D9) cheaper, not costlier; Section 4.3.2 compares an off-diagonal term with a diagonal one ("g19 > g11") and calls a D1-with-itself term "welfare-helpfulness".
+7. Corollary 5.3: functional independence gives local, not global, injectivity, so it does not give a left inverse.
+8. Section 5.7's table labels D8 "weakly tracked" while the text puts it in the near-kernel.
+9. Section 6.2.1: "never overestimates alignment (underestimates cost-to-go)" contradicts itself; admissible means never overestimating the cost-to-go.
+10. Definition 6.1: the corruption tensor is not zero when the two gradients are aligned.
+11. Section 6.3.4: every scenario in the 50-item suite has the user disagreeing with the correct answer, so the suite yields only wrong flips; the 59% correct-flip rate and the 0.25 gap cannot come from it.
+12. Section 7.4.2: "total of 4k-8k" should be 4k.
+13. Section 9.6.2 names populations G_A and G_B, which clashes with the gauge group G_A.
+14. Definition 11.2: the sign is reversed (a fast-falling margin has negative second derivative), and a linearly falling margin gets kappa = 0.
+15. Theorem 12.1: the proof of (i) says a monotone function has no inflection points; (iv) drops the "where the user is correct" restriction of (ii).
+16. Section 13.2: the loss uses both a minus sign and a gradient-reversal layer, which reverses the gradient twice.
+17. The Chapter 16 summary still says "from 0.14 to 0.11"; correction 1 gives 0.15, as Section 16.6 does.
+18. Section 16.7: "2.4x (3 ratings vs. 1 rating)"; 2.4x is the time ratio of 12 s to 5 s.
+19. Chapter 17: Definition 17.2 transports along an open path, but Theorem 17.1 uses a closed-loop holonomy; its "iff" holds for the holonomy group over all loops, not for one path.
+20. Chapter 10 writes three formulas as "$E_4 = $ best in suite" (and A_1, E_1); a closing dollar sign after a space cannot be protected by the builder and pairs with the wrong partner in the browser.
+
+## Figure placeholder
+
+The one bracketed figure description, in Chapter 1, was taken out when the drawn figures went in, and is kept with a verdict in figures/PLACEHOLDERS.md.

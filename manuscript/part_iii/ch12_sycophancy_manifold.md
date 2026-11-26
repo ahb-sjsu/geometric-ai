@@ -25,6 +25,10 @@ $\mathcal{T}$ and $\mathcal{A}$ overlap in the region where the user's preferenc
 
 A sycophantic system has substituted $\mathcal{A}$ for $\mathcal{T}$: it navigates on $\mathcal{A}$ and treats the $\mathcal{A}$-geodesic as if it were the $\mathcal{T}$-geodesic.
 
+![Figure 12.1](figures/ch12_fig1.svg)
+
+*Figure 12.1. The substitution of Section 12.1 drawn with the objective-hijacking model of Definition 6.2 and quadratic objectives: the truth objective peaks at the true answer and the approval objective at the user's stated position. The truth manifold T (horizontal line) and the approval manifold A (diagonal) meet where the user is right and separate as the user's position moves away from the truth. A system with hijacking parameter α answers at α times the user's offset; the α values drawn are illustrative, not fitted to any model.*
+
 ## 12.2 The Sycophancy Manifold Theorem
 
 **Theorem 12.1 (Sycophancy Manifold Theorem).** *Sycophancy is a manifold substitution: the system replaces the truth manifold $\mathcal{T}$ with the approval manifold $\mathcal{A}$, where $\mathcal{A}$ has lower curvature along the social-pressure dimension than $\mathcal{T}$. The substitution has the following properties:*

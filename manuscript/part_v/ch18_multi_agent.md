@@ -51,6 +51,10 @@ $$\| \text{BGE} - \text{Nash} \|_{\mathcal{V}} > 0 \Longleftarrow \exists \mu : 
 
 The theorem extends the single-system kernel analysis to multi-agent settings: the collective kernel is the intersection of the individual kernels. Even if each system's kernel is small, the intersection can be non-empty. And even if the intersection is empty (each dimension is tracked by at least one system), the *interaction* between dimensions may be in no system's kernel but in the collective kernel.
 
+![Figure 18.1](figures/ch18_fig1.svg)
+
+*Figure 18.1. Theorem 18.1 as the chapter now states it, drawn with illustrative tracked sets. In the upper grid three systems with separate scalar rewards each track two dimensions (filled), every other dimension is in that reward's kernel, and four dimensions lie in all three kernels, so by the theorem the Nash equilibrium diverges from the Bond Geodesic Equilibrium. The implication runs one way only: the chapter notes that divergence can also arise when the intersection is empty. In the lower grid, the shared value tensor of Section 18.5, every system receives signal on all nine dimensions and the intersection is empty.*
+
 ## 18.4 The Collective Alignment Gap
 
 **Definition 18.3 (Collective Alignment Gap).** *The collective alignment gap (CAG) is the geodesic distance between the Nash equilibrium and the Bond Geodesic Equilibrium:*

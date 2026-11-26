@@ -85,6 +85,10 @@ $$\pi_G^* \approx \arg\max_\pi \sum_\mu w_\mu \mathbb{E}[r^\mu(\pi)] - \lambda \
 
 where the weights $w_\mu$ are here derived from the learned metric rather than fixed by hand (in Chapter 14 they are governance-specified parameters; Section 16.6 compares the two), the KL penalty prevents catastrophic forgetting, and each reward component $r^\mu$ is independently tracked.
 
+![Figure 16.1](figures/ch16_fig1.svg)
+
+*Figure 16.1. Where the contraction happens, as a schematic. In scalar RLHF (upper row, Section 16.1) the rater's evaluation is compressed to one number at the interface, before anything is learned. In Geometric RLHF (lower row, Sections 16.2 to 16.5) the rater gives ratings on a few dimensions chosen by active learning, the system learns a tensor reward and the value metric, and the weighted contraction is the last, explicit step. Section 16.5 derives its weights from the learned metric, where Chapter 14 takes them from governance.*
+
 ## 16.6 ARIA-G's Geometric RLHF
 
 In the illustrative scenario, the team trained ARIA-G using Geometric RLHF over 10,000 interactions with 15 human raters.

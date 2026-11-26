@@ -77,6 +77,10 @@ where $K_{\mathcal{V}\mathcal{V}'}$ is the sectional curvature in the plane conn
 
 High curvature means large holonomy: small differences in the transport path produce large differences in the transported values. This is the pessimistic case: the AI's value space has trade-offs between human-perceivable and human-imperceivable dimensions, and these trade-offs distort the human values during transport.
 
+![Figure 17.1](figures/ch17_fig1.svg)
+
+*Figure 17.1. The holonomy of Section 17.4, drawn on two surfaces to illustrate |Hol| ≈ |K| · Area. A vector carried by parallel transport around a closed loop in a plane (curvature 0) comes back unchanged. On the unit sphere (curvature 1), carried around the circle 45 degrees from the pole, it comes back turned by the enclosed area, 2π(1 − cos 45°) = 1.84 radians, about 105 degrees; the angle is computed here by integrating the transport equation. The chapter's value manifolds are not spheres: the picture shows only the mechanism.*
+
 ### 17.4.3 The Alignment Tax as Curvature Cost
 
 The cost of maintaining alignment increases with the curvature of $\mathcal{V}'$. High curvature means:

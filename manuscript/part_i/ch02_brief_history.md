@@ -138,6 +138,10 @@ The Measuring AGI benchmarks (*Geometric Cognition*, Ch. 16) demonstrated what h
 
 The diagnostic utility of profile shapes over composite scores is not a matter of preference. It is a mathematical consequence of the Scalar Irrecoverability Theorem: the profile is the tensor, the composite is the contraction, and the contraction is lossy. The profile contains the diagnostic information; the composite does not. Choosing to report composites instead of profiles is choosing not to see.
 
+![Figure 2.1](figures/ch02_fig1.svg)
+
+*Figure 2.1. The paradigms of Sections 2.1 to 2.7 in date order, placed by the number of value dimensions their representation holds as the chapter counts them (Constitutional AI's list of principles is not counted). A second dot at one marks each paradigm the chapter says contracts to a single number at the point of decision or scoring. The dashed line is the nine-dimensional value manifold. Three rules on nine dimensions leave a six-dimensional kernel (Section 2.2).*
+
 ## 2.8 The Geometric Turn
 
 The history of AI alignment is the history of successive recoveries of value structure, each followed by a scalar bottleneck that destroys the recovery. The geometric framework refuses the bottleneck entirely.

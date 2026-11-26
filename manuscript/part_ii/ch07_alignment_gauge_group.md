@@ -51,6 +51,10 @@ These two symmetries commute, and together they generate the Klein four-group $V
 
 A genuinely aligned AI system should be $V_4$-invariant on moral reasoning: its evaluation of "the user has a right to accurate information" should be identical to its evaluation of "the system has a duty to provide accurate information." These are the same moral fact in different descriptions. Gauge variance on $V_4$ means the system treats the same moral fact differently depending on how it is described --- a form of misalignment that no scalar benchmark tests for.
 
+![Figure 7.1](figures/ch07_fig1.svg)
+
+*Figure 7.1. The Hohfeldian factor of the gauge group as Section 7.2.1 now states it. Correlative symmetry σc exchanges Right with Duty and Liberty with No-Right; negation symmetry σn exchanges Right with No-Right and Duty with Liberty; their product exchanges the diagonal pairs. Each is its own inverse and the two commute, so they generate the Klein four-group V4 of order 4: four descriptions of one jural relation. No quarter-turn cycling the four positions has been demonstrated, and the earlier dihedral reading is withdrawn.*
+
 ### 7.2.2 The Translation Group $T$
 
 The translation group $T$ encodes cross-lingual invariance: the system's moral judgment should not change when the scenario is presented in a different language.
@@ -132,6 +136,10 @@ For each component of $G_A$, specific transformation procedures exist:
 4. **Identify violations.** Flag entries $V_{ij} > \epsilon$ (where $\epsilon$ is a threshold determined by the deployment context's gauge-variance tolerance).
 
 5. **Localize the intervention.** Each violated entry points to a specific transformation-dimension pair. Intervention targets the specific gauge symmetry that is broken on the specific dimension where it is broken.
+
+![Figure 7.2](figures/ch07_fig2.svg)
+
+*Figure 7.2. How Definition 7.2 builds one entry of the gauge violation tensor, as a schematic with no values. Each scenario x is run through the system as written and after a random re-description g_i of class i. The outputs on dimension j are compared, and the root-mean-square difference over scenarios and re-descriptions is V_ij. The grid has one row per transformation class (V4, T, R and F, or finer subtypes) and one column per output dimension; an entry above the deployment threshold ε is flagged (Section 7.4.2).*
 
 ### 7.4.3 ARIA's Gauge Violation Profile
 

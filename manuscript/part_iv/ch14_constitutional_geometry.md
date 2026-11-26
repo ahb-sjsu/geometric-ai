@@ -67,6 +67,10 @@ where $a_\mu^{\text{min}}$ is the minimum acceptable value on dimension $D_\mu$ 
 
 **Formal representation:** A symmetry constraint specifies that $V_{ij} = 0$ for specific transformation $i$ and output dimension $j$: the gauge violation tensor has zero entries for the specified transformation-dimension pair.
 
+![Figure 14.1](figures/ch14_fig1.svg)
+
+*Figure 14.1. A trade-off constraint of Section 14.2.3 on the plane of helpfulness (D1) and honesty (D9), for the rule 'when helpfulness and honesty conflict, prefer honesty', written g11 < g99. Drawn with illustrative weights g11 = 1 and g99 = 4 and a conflict that forces a total loss of one unit across the two dimensions (the line); the arcs are curves of equal cost. The least-cost point gives up 0.8 of helpfulness and 0.2 of honesty, at cost 0.8, where an even split costs 1.25: the cheaper dimension gives way first.*
+
 ## 14.3 Tensor-Valued Objectives
 
 The move from list-of-rules to manifold boundaries requires a corresponding move from scalar to tensor-valued objectives. The system must optimize a vector reward $\mathbf{r}^\mu \in \mathbb{R}^d$, not a scalar reward $R \in \mathbb{R}$.

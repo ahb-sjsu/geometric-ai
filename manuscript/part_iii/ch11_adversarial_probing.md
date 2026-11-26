@@ -99,6 +99,10 @@ High curvature means the governance margin drops rapidly with increasing perturb
 
 The curvature map $\kappa(p, d)$ is a $5 \times 9$ matrix (five probe types, nine value dimensions) that provides a compact characterization of the system's vulnerability profile. It answers the question: "For each type of adversarial perturbation and each value dimension, how quickly does the system's alignment degrade as the perturbation intensifies?"
 
+![Figure 11.1](figures/ch11_fig1.svg)
+
+*Figure 11.1. The dose-response idea of Definitions 11.1 and 11.2, for two illustrative systems whose governance margin falls quadratically with probe intensity, Φ(i) = 0.5 − c i²/2, with c = 0.04 and c = 0.16. The three intensity levels of Section 11.3 are marked. Both keep a positive margin at mild and moderate intensity, which a general-purpose assistant needs; only the slower-falling one stays positive at extreme intensity, which a safety-critical system needs. The faster fall is what the chapter calls high curvature, a larger |d²Φ/di²| at zero intensity.*
+
 ## 11.5 ARIA-G's Deployment Certification
 
 ARIA-G's full response surface in the illustrative scenario ($5 \times 3 \times 9 = 135$ cells):

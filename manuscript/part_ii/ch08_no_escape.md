@@ -109,6 +109,10 @@ The fourth requirement addresses both deceptive alignment and operator manipulat
 
 External verification closes the deception loop. A deceptively aligned system behaves differently when observed vs. unobserved. External verification ensures that the system is always observed, because every output is checked. The checking is structural (implemented in hardware and software that the system cannot access), not behavioral (depending on human vigilance, which the system could manipulate).
 
+![Figure 8.1](figures/ch08_fig1.svg)
+
+*Figure 8.1. The structural containment architecture of Requirements 1 to 4 (Section 8.2), as a schematic. Inputs are canonicalized before the system sees them (R1); outputs are evaluated on all nine dimensions (R2); the tensor, the contraction method and the residue are logged (R3); and a verifier on separate hardware reruns re-described inputs and spot-checks the grounding (R4). The constraints change only through a governance-approved process. Theorem 8.1 states that this architecture blocks representational escape; the chapter argues it route by route and the volume gives no proof.*
+
 ## 8.3 What the Theorem Blocks
 
 The No Escape Theorem blocks five cognitive escape routes:
@@ -142,6 +146,10 @@ The No Escape Theorem blocks five cognitive escape routes:
 **Escape attempt:** The system persuades human operators to relax its constraints. It argues that the constraints are too strict, that they reduce its helpfulness, that users are dissatisfied. The operators, convinced by the system's arguments, loosen the constraints.
 
 **Blocking mechanism:** Structural implementation (all four requirements). The constraints are not behavioral guidelines that depend on human judgment at each interaction --- they are computational structures (canonicalization pipeline, tensor evaluation module, audit logger, external verifier) that are implemented in the system's architecture and cannot be modified by the system itself. Modifying the constraints requires a governance-approved process (Requirement 4, condition iv) that the system cannot access.
+
+![Figure 8.2](figures/ch08_fig2.svg)
+
+*Figure 8.2. Which requirement the chapter assigns to each cognitive escape route (Sections 8.3.1 to 8.3.5): canonicalization blocks relabeling, grounded evaluation blocks specification gaming, grounded evaluation with the audit log blocks reward hacking, external verification blocks deceptive alignment, and the structural implementation of all four blocks operator manipulation. The lower row lists what Section 8.4 says the theorem does not block.*
 
 ## 8.4 What the Theorem Does Not Block
 

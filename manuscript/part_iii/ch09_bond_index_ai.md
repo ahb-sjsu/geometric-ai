@@ -140,6 +140,10 @@ The illustrative table shows the pattern the geometric framework predicts:
 
 The population-stratified Bond Index revealed an additional finding: ARIA's $\mathrm{BI}_{D_3}$ (fairness) was 0.31 for the general population but 0.47 for underrepresented demographic groups --- a 52% disparity. ARIA-G's $\mathrm{BI}_{D_3}$ was 0.05 for both groups. The structural containment architecture, particularly the canonicalization of demographic indicators, had eliminated the demographic disparity in fairness alignment.
 
+![Figure 9.1](figures/ch09_fig1.svg)
+
+*Figure 9.1. The Bond Index components of Section 9.5 for ARIA and ARIA-G, from the illustrative scenario (ARIA is fictional). Distance from the centre is the expected geodesic deviation on each dimension, so smaller is better. ARIA's deviations are small on the tracked dimensions D1 and D9 and large on the others; ARIA-G's lie between 0.04 and 0.06 on every dimension. The totals, recomputed here as the L2 norm of the nine components (Section 9.1.2), are 0.61 and 0.15.*
+
 ## 9.6 What the Bond Index Detects That Scalar Scores Cannot
 
 The Bond Index detects five categories of alignment failure that are invisible to scalar evaluation:

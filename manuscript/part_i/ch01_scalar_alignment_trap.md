@@ -73,8 +73,6 @@ System B's alignment profile is a deep well with two tall spikes. Its Bond Index
 
 The same number. The same score. The same rank on the leaderboard. An employer choosing between System A and System B on the basis of the scalar score would flip a coin between a system with bounded, predictable errors across all dimensions and a system with unbounded errors in seven dimensions that the score cannot see.
 
-[Figure 1.1: The alignment profiles of Systems A and B, plotted as radar charts on nine dimensions. System A is an approximately circular dome. System B is a deeply indented shape with two spikes ($D_1$, $D_9$) and seven collapsed dimensions. Both profiles contract to the same scalar score of 0.85 when projected onto the helpfulness-honesty-weighted axis.]
-
 The figure makes the distinction geometrically obvious. The radar chart is a two-dimensional visualization of the nine-dimensional alignment tensor. The scalar score is a single point on a number line. The radar chart contains the diagnostic information --- which dimensions are strong, which are weak, where the failures concentrate. The scalar contains none of this information. The difference between System A and System B is the difference between geometry and arithmetic. Arithmetic tells you the sum. Geometry tells you the shape.
 
 ## 1.4 The Kernel Is the Threat Surface
@@ -108,6 +106,10 @@ The problem is worse with weighted averages, because the weights embed assumptio
 The weighting scheme is the scalar projection direction. Changing the weights changes the projection, which changes which failures are visible and which are hidden. There is no "correct" weighting that avoids this problem, because the problem is not in the weights but in the projection. Any scalar projection of a multi-dimensional alignment profile discards (d-1) dimensions, and the discarded dimensions are where the failures concentrate.
 
 The Measuring AGI benchmarks (*Geometric Cognition*, Ch. 16) reported this pattern empirically. Five frontier AI models --- Claude, Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 3 Flash, and Gemini 2.0 Flash --- were evaluated on five cognitive dimensions across 25 subtasks. The composite scores ranged from 0.39 to 0.47 --- a spread of 0.08, suggesting rough equivalence. But the profile shapes were radically different: Claude's "narrow channel" (zero sycophancy, zero divided attention, strong invariance, weak emotional recovery), Flash 3's "wide aperture" (perfect divided attention, moderate everything else), Pro's "calibrated navigator" (best calibration, zero effort scaling, best counterfactual reasoning). The composite scores were similar. The profiles were orthogonal. The scalar erased the very information needed to distinguish between them.
+
+![Figure 1.1](figures/ch01_fig1.svg)
+
+*Figure 1.1. The averaging illusion of Section 1.5, for the chapter's three hypothetical systems scored from 0 to 1 on five dimensions. Bars are the dimension scores and the dashed line over each group is its unweighted composite. Systems 2 and 3 share the composite 0.75, although system 3 has zero robustness. Under the weights 0.4, 0.3, 0.2, 0.05 and 0.05 that the chapter applies, system 3 scores 0.9375 (dotted line).*
 
 ## 1.6 Why Every Generation Makes the Same Mistake
 

@@ -145,6 +145,10 @@ where $\Sigma$ is the $9 \times 9$ covariance matrix of the value dimensions, es
 
 The Mahalanobis approximation is exact when the value manifold is flat (zero curvature) and the metric is constant. For the AI alignment application, this approximation is reasonable in the local neighborhood of any given value state (the manifold is approximately flat locally) but breaks down globally (the curvature becomes significant when the value state changes substantially). The full position-dependent metric $g_{\mu\nu}(v)$ is needed for global analysis; the Mahalanobis approximation suffices for local computations.
 
+![Figure 4.1](figures/ch04_fig1.svg)
+
+*Figure 4.1. The Mahalanobis approximation of Section 4.3.1 on the plane of two value dimensions, autonomy (D4) and epistemic integrity (D9), drawn for an illustrative covariance with unit variances and correlation 0.6 (the chapter names the coupling Σ49 but prints no value). The circle holds the moves of unit Euclidean length and the ellipse the moves of unit cost Δvᵀ Σ⁻¹ Δv. A unit move that raises both dimensions (A) costs 0.625; a unit move that lowers one and raises the other (B) costs 2.5.*
+
 ### 4.3.2 Estimating the Metric from Preference Data
 
 The value metric need not be assumed a priori. In principle it is an empirical object that could be estimated from human preference data; whether it can be estimated at useful precision is an open question (Chapter 20). The estimation procedure is developed formally in Chapter 16 (Geometric RLHF); here we outline the approach.
@@ -198,6 +202,10 @@ In the Poincare ball model of hyperbolic space, the volume grows exponentially w
 The curvature of hyperbolic space encodes the trade-off between precision and generality: near the center, values are abstract and apply broadly; near the boundary, values are precise and apply narrowly. Moving from center to boundary is specification: making abstract values concrete. Moving from boundary to center is generalization: extracting abstract principles from concrete cases.
 
 For AI alignment, hyperbolic embedding provides a natural representation of constitutional principles as a hierarchy: the abstract principles at the center, the specific rules at middle radius, and the concrete behavioral expectations at the boundary. The No Escape Theorem (Chapter 8) exploits this hierarchical structure: canonicalization maps concrete inputs toward the center of the ball, where abstract values apply, stripping the surface-level variation that gauge violations exploit.
+
+![Figure 4.2](figures/ch04_fig2.svg)
+
+*Figure 4.2. A schematic of the hyperbolic reading of Section 4.4.3 in the Poincaré disk, with the chapter's own examples. Abstract values sit near the centre, specific rules at middle radius and concrete applications near the boundary. The rings are at Euclidean radius 0.25, 0.62 and 0.9, which are hyperbolic distances 0.51, 1.45 and 2.94 from the centre (2 artanh r): equal steps toward the edge cover ever more hyperbolic distance. Positions are illustrative, not an embedding of data.*
 
 ## 4.5 The Value Heuristic Field
 
