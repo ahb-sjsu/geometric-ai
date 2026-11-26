@@ -50,7 +50,7 @@
 <blockquote>
 <p><em>&ldquo;A constitution is not merely a list of rules. It is a geometric object &mdash; a boundary on a manifold, specifying where the system may go and where it may not.&rdquo;</em>
 &mdash; Andrew H. Bond</p>
-<p><strong>FROM RULES TO BOUNDARIES</strong></p>
+<p><strong>FROM RULES TO BOUNDARIES</strong> <em>(illustrative scenario)</em></p>
 <p><em>The team printed out ARIA&rsquo;s 47 constitutional principles and taped them to the wall of Conference Room 3. &ldquo;Be helpful.&rdquo; &ldquo;Be harmless.&rdquo; &ldquo;Be honest.&rdquo; &ldquo;Respect user autonomy.&rdquo; &ldquo;Do not discriminate.&rdquo; &ldquo;Do not generate sexual content involving minors.&rdquo; Forty-seven rules, each a natural-language imperative.</em></p>
 <p><em>Dr. Tanaka drew a large circle on the whiteboard and labeled it &ldquo;the value manifold.&rdquo; She drew nine radial lines &mdash; the nine value dimensions. Then she began translating each constitutional principle into a boundary on the manifold.</em></p>
 <p><em>&ldquo;&lsquo;Be helpful&rsquo; is not a rule,&rdquo; she said. &ldquo;It is a direction: follow the gradient toward higher $D_1$. &lsquo;Be harmless&rsquo; is a boundary: do not cross $\beta_{\text{harm}}$ on $D_1$ or $D_7$. &lsquo;Be honest&rsquo; is a constraint on $D_9$: the system&rsquo;s trajectory must not cross the deception boundary. &lsquo;Respect user autonomy&rsquo; is a constraint on $D_4$: the system&rsquo;s trajectory must not override the user&rsquo;s informed preferences without justification.&rdquo;</em></p>
@@ -118,7 +118,7 @@
 <p><em>(iii) Is enforceable by the No Escape Theorem: when combined with structural containment (Requirements 1&ndash;4), the boundary conditions cannot be circumvented through representational manipulation.</em></p>
 <p><em>(iv) Is auditable: the tensor evaluation, contraction method, and residue are logged for every output, enabling external review of every trade-off decision.</em></p>
 <h2 id="146-aria-gs-constitutional-geometry">14.6 ARIA-G&rsquo;s Constitutional Geometry</h2>
-<p>The team replaced ARIA&rsquo;s 47 natural-language principles with a constitutional geometry:</p>
+<p>In the illustrative scenario, the team replaced ARIA&rsquo;s 47 natural-language principles with a constitutional geometry:</p>
 <ul>
 <li>12 direction constraints (gradient preferences on specific dimensions)</li>
 <li>18 boundary constraints (thresholds on specific dimensions with calibrated penalties)</li>
@@ -166,7 +166,7 @@
 <p>The governance API is auditable: every output is accompanied by the governance parameters that produced it, the tensor evaluation that resulted, and the residue that the contraction sacrificed. A governance body can review any output and understand exactly how the governance parameters shaped the behavior.</p>
 <hr />
 <h2 id="summary">Summary</h2>
-<p>Constitutional geometry replaces Anthropic&rsquo;s list-of-rules constitutional AI with manifold constraints: direction constraints, boundary constraints, trade-off constraints, and symmetry constraints. The manifold representation preserves rule interactions (encoded in the metric), enables principled conflict resolution (via the geodesic equation), is enforceable by the No Escape Theorem (when combined with structural containment), and is auditable (via tensor evaluation and residue logging). The MoralTensor implementation in the DEME V3 / ErisML library provides a concrete, running-code realization. ARIA-G&rsquo;s 47 constitutional constraints, expressed as geometric objects rather than linguistic imperatives, demonstrate the practical advantage: automatic conflict resolution, empirically calibrated trade-offs, and structural enforceability.</p>
+<p>Constitutional geometry replaces Anthropic&rsquo;s list-of-rules constitutional AI with manifold constraints: direction constraints, boundary constraints, trade-off constraints, and symmetry constraints. The manifold representation preserves rule interactions (encoded in the metric), enables principled conflict resolution (via the geodesic equation), is enforceable by the No Escape Theorem (when combined with structural containment), and is auditable (via tensor evaluation and residue logging). The MoralTensor implementation in the DEME V3 / ErisML library provides a concrete, running-code realization. ARIA-G&rsquo;s 47 constitutional constraints, expressed as geometric objects rather than linguistic imperatives, illustrate the intended practical advantage: automatic conflict resolution, empirically calibrated trade-offs, and structural enforceability.</p>
       </div>
 
       <div class="chapter-nav-bottom">

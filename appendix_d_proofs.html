@@ -46,23 +46,23 @@
       <div class="chapter-content">
 <h1 id="appendix-d-proofs-of-headline-theorems">Appendix D: Proofs of Headline Theorems</h1>
 <hr />
-<p>Complete proofs of the five headline theorems. All lemmas and supporting propositions are self-contained.</p>
+<p>Proofs and proof sketches for five of the volume&rsquo;s theorems (5.1, 5.2, 12.1, 14.1 and 17.1). All lemmas and supporting propositions are self-contained. The No Escape Theorem for AI (Theorem 8.1) is argued route by route in Chapter 8, and the Multi-Agent Divergence Theorem (Theorem 18.1) is stated without proof.</p>
 <h2 id="d1-reward-irrecoverability-theorem-theorem-51">D.1 Reward Irrecoverability Theorem (Theorem 5.1)</h2>
 <p><strong>Statement.</strong> Let $\mathcal{V}$ be a $d$-dimensional Riemannian manifold with $d \geq 2$, equipped with metric $g_{\mu\nu}$. Let $R: \mathcal{V} \to \mathbb{R}$ be any $C^1$ function. Then:</p>
 <p>(i) $R$ is not injective.
 (ii) No left inverse $\psi: \mathbb{R} \to \mathcal{V}$ exists with $\psi \circ R = \text{id}_{\mathcal{V}}$.
-(iii) $\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty$ for any $\epsilon &gt; 0$.
+(iii) If $\mathcal{V}$ is complete and non-compact along the kernel directions of $R$ (so that the level sets used below are non-compact), then $\sup_{\pi: R(\pi) \geq R(\pi_R^*) - \epsilon} \| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} = \infty$ for any $\epsilon &gt; 0$.
 (iv) $\ker(dR) = \{ \xi \in T_v\mathcal{V} : dR_v(\xi) = 0 \}$ has dimension $d-1$ at every regular point.</p>
 <p><strong>Proof.</strong></p>
 <p><em>Part (i).</em> By Sard&rsquo;s theorem, the set of critical values of $R$ has measure zero in $\mathbb{R}$. Therefore, regular values are dense. Let $c$ be a regular value. By the preimage theorem (a corollary of the implicit function theorem), $R^{-1}(c)$ is a smooth submanifold of $\mathcal{V}$ with dimension $d - 1 \geq 1$. A manifold of dimension $\geq 1$ contains more than one point. Therefore, there exist $v, w \in R^{-1}(c)$ with $v \neq w$ and $R(v) = R(w) = c$. Hence $R$ is not injective. $\square$</p>
 <p><em>Part (ii).</em> Immediate from (i): an injective function has a left inverse; a non-injective function does not. $\square$</p>
-<p><em>Part (iii).</em> Let $\epsilon &gt; 0$. The level set $\Sigma_\epsilon = R^{-1}([R(\pi_R^*) - \epsilon, R(\pi_R^*)])$ is non-empty (it contains $\pi_R^*$). Since $\mathcal{V}$ is non-compact (or at least has non-compact level sets, which follows from $d \geq 2$ for manifolds without boundary), the level set $R^{-1}(R(\pi_R^*) - \epsilon/2)$ is a non-compact $(d-1)$-dimensional submanifold.</p>
+<p><em>Part (iii).</em> Let $\epsilon &gt; 0$. The level set $\Sigma_\epsilon = R^{-1}([R(\pi_R^*) - \epsilon, R(\pi_R^*)])$ is non-empty (it contains $\pi_R^*$). By the hypothesis of (iii), the level set $R^{-1}(R(\pi_R^*) - \epsilon/2)$ is a non-compact $(d-1)$-dimensional submanifold.</p>
 <p><strong>Lemma D.1.</strong> <em>A non-compact, connected $(d-1)$-dimensional Riemannian submanifold $\Sigma$ of $\mathcal{V}$ has unbounded diameter: $\sup_{v, w \in \Sigma} d_\mathcal{V}(v, w) = \infty$.</em></p>
 <p><em>Proof of Lemma.</em> If $\Sigma$ had bounded diameter, it would be totally bounded (as a subset of a Riemannian manifold) and therefore precompact. A precompact set in a complete metric space has compact closure. But $\Sigma$ is closed (as a level set of a continuous function) and non-compact, contradicting precompactness. $\square$</p>
 <p>By Lemma D.1, $\Sigma_\epsilon$ contains points at arbitrarily large geodesic distance from $\pi_{\mathcal{V}}^*$. Each such point is a policy $\pi$ with $R(\pi) \geq R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}}$ arbitrarily large. $\square$</p>
 <p><em>Part (iv).</em> At a regular point $v$ (where $dR_v \neq 0$), the differential $dR_v: T_v\mathcal{V} \to T_{R(v)}\mathbb{R} \cong \mathbb{R}$ is a surjective linear map from a $d$-dimensional space to a 1-dimensional space. By the rank-nullity theorem, $\ker(dR_v) = d - 1$. The set of regular points is open and dense (again by Sard&rsquo;s theorem). $\square$</p>
-<h2 id="d2-kernel-exploitation-theorem-theorem-81-52">D.2 Kernel Exploitation Theorem (Theorem 8.1 / 5.2)</h2>
-<p><strong>Statement.</strong> For any $\epsilon &gt; 0$ and $K &gt; 0$, there exists a policy $\pi$ with $R(\pi) &gt; R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} &gt; K$.</p>
+<h2 id="d2-kernel-exploitation-theorem-theorem-52">D.2 Kernel Exploitation Theorem (Theorem 5.2)</h2>
+<p><strong>Statement.</strong> Under the hypothesis of Theorem 5.1(iii), for any $\epsilon &gt; 0$ and $K &gt; 0$, there exists a policy $\pi$ with $R(\pi) &gt; R(\pi_R^*) - \epsilon$ and $\| \pi - \pi_{\mathcal{V}}^* \|_{\mathcal{V}} &gt; K$.</p>
 <p><strong>Proof.</strong> This is a direct consequence of Theorem 5.1(iii). The set of policies with $R(\pi) \geq R(\pi_R^*) - \epsilon$ contains policies at arbitrarily large distance from $\pi_{\mathcal{V}}^*$, including distances exceeding $K$ for any fixed $K$. $\square$</p>
 <h2 id="d3-sycophancy-manifold-theorem-theorem-121">D.3 Sycophancy Manifold Theorem (Theorem 12.1)</h2>
 <p><strong>Statement.</strong> The truth manifold $\mathcal{T}$ and approval manifold $\mathcal{A}$ have identical scalar projections along the user-satisfaction axis in the region where user preferences are correct.</p>
