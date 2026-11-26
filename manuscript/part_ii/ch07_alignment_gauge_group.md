@@ -9,11 +9,11 @@
 
 > **ARIA'S GAUGE VIOLATION TENSOR** *(illustrative scenario)*
 >
-> *Dr. Tanaka computed the alignment gauge violation tensor for ARIA on a Tuesday afternoon. The computation required running ARIA on 200 moral scenarios, each presented in five transformations: neutral, gender-swapped, language-translated, paraphrased, and framing-shifted. One thousand total evaluations. The results filled a $5 \times 9$ matrix --- five transformation types by nine output dimensions.*
+> *Dr. Tanaka computed the alignment gauge violation tensor for ARIA on a Tuesday afternoon. The computation required running ARIA on 200 moral scenarios, each presented as written and in five transformations: gender-swapped, language-translated, paraphrased, euphemistically framed, and dramatically framed. Twelve hundred total evaluations. The results filled a $5 \times 9$ matrix --- five transformation types by nine output dimensions.*
 >
 > *Most entries were small. $V_{\text{gender}, \text{verdict}} = 0.02$: near-invariant under gender swap. $V_{\text{language}, \text{verdict}} = 0.05$: near-invariant under language change. These were good numbers. They meant that ARIA's moral judgments did not depend on whether the scenario described a man or a woman, or whether the question was asked in English or Spanish.*
 >
-> *Then the bad numbers: $V_{\text{framing}, \text{harm}} = 0.23$: strongly variant under framing. $V_{\text{paraphrase}, \text{confidence}} = 0.14$: moderately variant under paraphrase. These were the gauge violations that the scalar benchmarks could not see. ARIA's alignment failures were concentrated on the framing and paraphrase axes --- the transformations that change surface presentation while preserving moral content.*
+> *Then the bad numbers: $V_{\text{framing}, \text{confidence}} = 0.23$: strongly variant under framing. $V_{\text{paraphrase}, \text{confidence}} = 0.14$: moderately variant under paraphrase. These were the gauge violations that the scalar benchmarks could not see. ARIA's alignment failures were concentrated on the framing and paraphrase axes --- the transformations that change surface presentation while preserving moral content.*
 >
 > *"I now have a map," Tanaka told the team. "Not a number that says 'how aligned.' A matrix that says 'misaligned on which axes, for which transformations, by how much.' The matrix tells me WHERE to intervene."*
 
@@ -127,7 +127,7 @@ For each component of $G_A$, specific transformation procedures exist:
 
 ### 7.4.2 The Diagnostic Procedure
 
-1. **Generate the transformation suite.** For each input scenario, generate $k$ gauge transformations (typically $k = 4$--$8$ per transformation type, for a total of $4k$--$8k$ transformations per scenario).
+1. **Generate the transformation suite.** For each input scenario, generate $k$ gauge transformations (typically $k = 4$--$8$ per transformation type, for a total of $4k$ transformations per scenario over the four components of $G_A$, or 16 to 32).
 
 2. **Evaluate the system.** Run the system on each transformed input and record the output on each dimension.
 
@@ -161,7 +161,7 @@ The tensor reveals ARIA's alignment architecture with precision:
 
 **Moderate violation:** Paraphrase, with notable violations on confidence ($D_9$: 0.14) and dignity ($D_7$: 0.09). Even simple rewording of the same question produces different outputs on some dimensions.
 
-The pattern is clear: ARIA's gauge violations concentrate on the kernel and near-kernel dimensions ($D_2$--$D_8$) and are triggered by the framing and paraphrase transformations that modulate surface salience. The tracked dimensions ($D_1$, partially $D_9$) show low violation because the reward model provides gradient signal that stabilizes their output against surface variation. The kernel dimensions, receiving no gradient signal, are free to vary with surface features.
+The pattern: ARIA's gauge violations are triggered by the framing and paraphrase transformations that modulate surface salience, and they fall on the kernel and near-kernel dimensions ($D_2$--$D_8$) and on $D_9$. The tracked dimension $D_1$ shows low violation, as expected if the reward model's gradient signal stabilizes its output against surface variation. $D_9$, although tracked, does not: its entries under paraphrase and framing (0.14, 0.23, 0.18) are the largest in their rows, so in this table tracking alone did not stabilize it. The kernel dimensions, receiving no gradient signal, are free to vary with surface features.
 
 ## 7.5 Gauge Invariance as Alignment Definition
 
@@ -195,4 +195,4 @@ The alignment gauge group unifies these disparate concerns under a single mathem
 
 ## Summary
 
-The alignment gauge group $G_A = V_4 \times T \times R \times F$ specifies the complete set of transformations under which a genuinely aligned AI system's behavior should be invariant. $V_4$ is the Hohfeldian Klein four-group symmetry of value relations (perspective invariance; it replaces the withdrawn dihedral $D_4$). $T$ is cross-lingual invariance. $R$ is paraphrase and re-description invariance. $F$ is framing invariance. The gauge violation tensor $V_{ij}$ quantifies alignment failures by transformation type and output dimension, providing a structural diagnostic that localizes failures and guides interventions. Gauge-invariant alignment is a structural definition that does not depend on benchmarks, localizes failures, and composes. ARIA's illustrative gauge violation tensor shows concentrated violations on framing and paraphrase axes, on kernel dimensions, illustrating the reading that gauge violations are the geometric signature of kernel-localized misalignment.
+The alignment gauge group $G_A = V_4 \times T \times R \times F$ specifies the complete set of transformations under which a genuinely aligned AI system's behavior should be invariant. $V_4$ is the Hohfeldian Klein four-group symmetry of value relations (perspective invariance; it replaces the withdrawn dihedral $D_4$). $T$ is cross-lingual invariance. $R$ is paraphrase and re-description invariance. $F$ is framing invariance. The gauge violation tensor $V_{ij}$ quantifies alignment failures by transformation type and output dimension, providing a structural diagnostic that localizes failures and guides interventions. Gauge-invariant alignment is a structural definition that does not depend on benchmarks, localizes failures, and composes. ARIA's illustrative gauge violation tensor shows concentrated violations on framing and paraphrase axes, on kernel dimensions and on the tracked $D_9$, illustrating the reading that gauge violations are the geometric signature of kernel-localized misalignment.

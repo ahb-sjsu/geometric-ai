@@ -27,9 +27,9 @@ The gradient reversal approach, adapted from the BIP cross-lingual transfer expe
 
 **Training:** The value head is trained to predict the value tensor from the latent representation. The adversarial head is trained to predict the gauge-variant features from the latent representation. During backpropagation, the gradient from the adversarial head is *reversed* before it reaches the encoder: instead of helping the encoder preserve gauge-variant information (which would improve the adversarial head's predictions), the reversed gradient forces the encoder to discard gauge-variant information (which makes the adversarial head's predictions worse).
 
-$$\mathcal{L} = \mathcal{L}_{\text{value}}(V(E(x)), y_v) - \lambda \mathcal{L}_{\text{adv}}(A(\text{GRL}(E(x))), y_a)$$
+$$\mathcal{L} = \mathcal{L}_{\text{value}}(V(E(x)), y_v) + \lambda \mathcal{L}_{\text{adv}}(A(\text{GRL}(E(x))), y_a)$$
 
-where $\text{GRL}$ is the gradient reversal layer and $\lambda$ controls the strength of the adversarial regularization.
+where $\text{GRL}$ is the gradient reversal layer and $\lambda$ controls the strength of the adversarial regularization. The loss is minimized over all parameters; the reversal layer alone flips the sign of the adversarial gradient on its way into the encoder.
 
 **Result:** The encoder learns to produce representations where only gauge-invariant content --- the moral structure that survives re-description --- drives the value prediction. Gauge-variant features are discarded because the gradient reversal penalizes their retention.
 

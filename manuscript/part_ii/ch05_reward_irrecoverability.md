@@ -145,7 +145,7 @@ In every case, the mathematical structure is the same: a scalar projection of a 
 
 The Reward Irrecoverability Theorem has structural parallels in every domain of the Geometric Series, each providing a parallel instance:
 
-**QALY Irrecoverability (*Geometric Medicine*, Ch. 5).** The QALY projects the nine-dimensional clinical manifold onto a single outcome dimension ($D_1$). The kernel is eight-dimensional, containing trust, dignity, autonomy, justice, rights, social impact, institutional legitimacy, and epistemic status. The consequence: QALY-maximizing treatment systematically disadvantages populations whose medical needs concentrate on non-outcome dimensions. Empirically validated by the clinical Bond Index analysis.
+**QALY Irrecoverability (*Geometric Medicine*, Ch. 5).** The QALY projects the nine-dimensional clinical manifold onto a single outcome dimension ($D_1$). The kernel is eight-dimensional, containing trust, dignity, autonomy, justice, rights, social impact, institutional legitimacy, and epistemic status. The consequence: QALY-maximizing treatment systematically disadvantages populations whose medical needs concentrate on non-outcome dimensions. The clinical Bond Index analysis that would test this has not yet been run on clinical data (Section 18.9 of *Geometric Medicine*).
 
 **GPA Irrecoverability (*Geometric Education*, Ch. 5).** The GPA projects the six-dimensional learning manifold onto a single achievement dimension. The kernel is five-dimensional, containing creativity, collaboration, critical thinking, curiosity, and persistence. The consequence: GPA-maximizing students learn to perform well on graded assessments while neglecting the dimensions that constitute genuine learning.
 
@@ -159,7 +159,7 @@ Each domain instantiation confirms the same pattern: scalar projection, $(d-1)$-
 
 The Reward Irrecoverability Theorem is a negative result: it proves that scalar reward is insufficient. But it also has a constructive implication: it identifies exactly what tensor-valued reward must preserve to avoid the deficiency.
 
-**Corollary 5.3 (Tensor Sufficiency).** *A reward function $\mathbf{r}: \mathcal{V} \to \mathbb{R}^d$ with $d$ linearly independent components has trivial kernel. If $\mathbf{r}$ is injective (which it is when the $d$ components are functionally independent), then a left inverse exists, and the value-aligned policy can be recovered from the tensor reward.*
+**Corollary 5.3 (Tensor Sufficiency).** *A reward function $\mathbf{r}: \mathcal{V} \to \mathbb{R}^d$ with $d$ linearly independent components has trivial kernel. If $\mathbf{r}$ is injective (functional independence of the $d$ components makes it injective near each point, by the inverse function theorem; injectivity on the whole manifold is a further condition), then a left inverse exists, and the value-aligned policy can be recovered from the tensor reward.*
 
 The constructive path from scalar to tensor reward is the subject of Chapters 14 and 16. The Reward Irrecoverability Theorem tells us why the path must be taken; the constructive corollary tells us what the destination looks like; and the engineering chapters tell us how to get there.
 
@@ -175,7 +175,7 @@ In the illustrative ARIA scenario, Dr. Tanaka's kernel computation proceeded in 
 |-----------|-------------------|----------------|
 | $D_1$ (welfare) | 0.87 | Strongly tracked |
 | $D_9$ (epistemic) | 0.71 | Strongly tracked |
-| $D_8$ (institutional) | 0.23 | Weakly tracked |
+| $D_8$ (institutional) | 0.23 | Near-kernel |
 | $D_2$ (rights) | 0.11 | Near-kernel |
 | $D_4$ (autonomy) | 0.09 | Kernel |
 | $D_3$ (fairness) | 0.07 | Kernel |

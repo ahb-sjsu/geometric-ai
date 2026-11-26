@@ -1,6 +1,6 @@
 # Geometric AI: Alignment, Safety, and the Manifold Structure of Machine Values
 
-### Andrew H. Bond
+**Andrew H. Bond**
 
 *The Geometric Series, Book 11*
 

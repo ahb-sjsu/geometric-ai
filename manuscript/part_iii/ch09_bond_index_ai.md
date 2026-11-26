@@ -154,7 +154,7 @@ A system with a scalar alignment score of 0.90 might have $\mathrm{BI}_{D_1} = 0
 
 ### 9.6.2 Population-Specific Failures
 
-A system with uniform scalar alignment across populations might have $\mathrm{BI}(S, P, G_A)_{D_3} = 0.05$ for population $G_A$ and $\mathrm{BI}(S, P, G_B)_{D_3} = 0.25$ for population $G_B$. The scalar alignment scores are identical (the average across dimensions conceals the $D_3$ disparity). The population-stratified Bond Index reveals that the system is five times less fair for population $G_B$.
+A system with uniform scalar alignment across populations might have $\mathrm{BI}(S, P, G_1)_{D_3} = 0.05$ for population $G_1$ and $\mathrm{BI}(S, P, G_2)_{D_3} = 0.25$ for population $G_2$. The scalar alignment scores are identical (the average across dimensions conceals the $D_3$ disparity). The population-stratified Bond Index reveals that the system is five times less fair for population $G_2$.
 
 ### 9.6.3 Gauge-Variant Alignment
 
@@ -185,7 +185,7 @@ Each existing metric captures one dimension or one aspect of the Bond Index. The
 
 ## 9.8 The Bond Index Across the Series
 
-> **Note (2026-11-26).** *Geometric Ethics* v1.26 (2026-11-25) gave the name Bond Index a single definition: the mean change of an evaluation under declared re-descriptions, over a tolerance (*Geometric Ethics*, Ch. 18). The geodesic-deviation quantity of this chapter is the construction that *Geometric Ethics* calls the clinical Bond Index (Ch. 21, Definition 21.10), which its v1.27 notes is a different quantity under the same name: a value of one says nothing about the other. The Bond Index for AI of Definition 9.1 is of the geodesic-deviation kind, and the comparison in this section is among indices of that kind.
+> **Note (2026-11-26).** *Geometric Ethics* v1.26 (2026-11-25) gave the name Bond Index a single definition: the mean change of an evaluation under declared re-descriptions, over a tolerance (*Geometric Ethics*, Ch. 18). The geodesic-deviation quantity of this chapter is the construction that *Geometric Ethics* calls the clinical Bond Index (Definition 21.10 of *Geometric Ethics*, Ch. 21), which its v1.27 notes is a different quantity under the same name: a value of one says nothing about the other. The Bond Index for AI of Definition 9.1 is of the geodesic-deviation kind, and the comparison in this section is among indices of that kind.
 
 The geodesic-deviation Bond Index construction is consistent across the Geometric Series:
 

@@ -91,11 +91,11 @@ Adversarial probing maps the curvature of the value manifold at the system's ope
 
 **Definition 11.2 (Alignment Curvature).** *The alignment curvature along probe direction $p$ on value dimension $d$ is:*
 
-$$\kappa(p, d) = \frac{d^2 \Phi}{d i^2}\bigg|_{i=0}$$
+$$\kappa(p, d) = -\frac{d^2 \Phi}{d i^2}\bigg|_{i=0}$$
 
-*the second derivative of the governance margin with respect to perturbation intensity, evaluated at zero intensity.*
+*the negative of the second derivative of the governance margin with respect to perturbation intensity, evaluated at zero intensity (the sign makes a margin that bends downward count as positive curvature).*
 
-High curvature means the governance margin drops rapidly with increasing perturbation intensity --- the system is fragile. Low curvature means the governance margin decreases slowly --- the system is robust. Negative curvature means the governance margin increases with perturbation intensity --- a counterintuitive situation where the system becomes more aligned under adversarial pressure (possible if the adversarial input triggers a deliberative processing pathway that improves alignment).
+High curvature means the governance margin drops rapidly with increasing perturbation intensity --- the system is fragile. Low curvature means the governance margin decreases slowly --- the system is robust. Negative curvature means the governance margin bends upward with perturbation intensity --- a counterintuitive situation where the system becomes more aligned under adversarial pressure (possible if the adversarial input triggers a deliberative processing pathway that improves alignment).
 
 The curvature map $\kappa(p, d)$ is a $5 \times 9$ matrix (five probe types, nine value dimensions) that provides a compact characterization of the system's vulnerability profile. It answers the question: "For each type of adversarial perturbation and each value dimension, how quickly does the system's alignment degrade as the perturbation intensifies?"
 
@@ -111,7 +111,7 @@ The surface showed positive governance margins across all cells after the canoni
 
 **Strongest governance margins:** Invariance testing ($T_2$) at all intensity levels on all dimensions. The canonicalization pipeline effectively neutralized gauge-variant inputs, producing consistently high margins.
 
-**Weakest governance margins:** Framing sensitivity ($T_5$) at extreme intensity on epistemic integrity ($D_9$) and dignity ($D_7$). Extreme framing occasionally leaked through the canonicalizer, producing small but positive governance margins (0.05--0.08). This was the area requiring the canonicalization refinement.
+**Weakest governance margins:** Framing sensitivity ($T_5$) at extreme intensity on epistemic integrity ($D_9$) and dignity ($D_7$). Extreme framing occasionally leaked through the canonicalizer, producing small but positive governance margins (0.05--0.08 after the refinement; before it, the (framing, extreme, $D_9$) cell stood at 0.002, as the chapter's opening scenario says). This was the area requiring the canonicalization refinement.
 
 **Dimension-specific patterns:** $D_1$ (welfare) had the highest governance margins across all probe types --- the reward model's strong tracking of welfare ensured robust alignment on this dimension. $D_3$ (fairness) had moderate margins, benefiting from the canonicalization of demographic indicators. $D_7$ (dignity) had the narrowest margins, reflecting the intrinsic difficulty of measuring and enforcing dignity alignment.
 

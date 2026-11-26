@@ -2,6 +2,8 @@
 
 ## Book Plan — Andrew H. Bond
 
+> **Note (2026-11-26).** This plan predates two changes in *Geometric Ethics*. The four Hohfeldian positions form the Klein four-group V4, not the dihedral group D4 (v1.25): read every "D4 Hohfeldian group" and "D4 gauge theory" below as V4, as the manuscript now does (Chapter 7). "Conservation of harm" is withdrawn; the manuscript's Chapter 8 does not use it. The plan itself is kept as written.
+
 **Target**: ~120,000–140,000 words (20 chapters + appendices)
 **Empirical basis**: Measuring AGI benchmarks (5 cognitive dimensions, 5 models, 25 subtasks), 13.3-sigma sycophancy gradient, 8.9-sigma framing displacement, Five Cognitive Signatures, No Escape Theorem (Geometric Ethics Ch. 18), BIP cross-lingual invariance (100% deontic transfer), DEME V3 tensor-valued objectives architecture, ErisML reference implementation, Bond Index for AI alignment measurement
 **Existing material**: SERIES_OUTLINES.md (series architecture), Geometric Ethics Ch. 18 (No Escape Theorem, tensor-valued objectives, escape route analysis), Geometric Reasoning Ch. 11 (alignment as heuristic shaping, governance margin, corrigibility basin), Geometric Cognition Ch. 15–16 (LLM cognition, Five Signatures), Measuring AGI benchmark suite (social cognition, learning, metacognition, attention, executive functions), DEME V3 / ErisML library (MoralTensor implementation, NormKernel, EIP monitor)

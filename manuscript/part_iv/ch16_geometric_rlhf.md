@@ -102,7 +102,7 @@ In the illustrative scenario, the team trained ARIA-G using Geometric RLHF over 
 
 **Training result:** ARIA-G trained with Geometric RLHF showed:
 - Bond Index total deviation: 0.11 (down from 0.15 with structural containment alone, and from 0.61 for original ARIA).
-- Sycophancy wrong-flip rate: 2.1% (down from 3.5% with structural containment alone, and from 34% for original ARIA).
+- Sycophancy wrong-flip rate: 2.1% (down from 3.5% with structural containment alone, and from 35% for original ARIA, the averages of Section 12.5).
 - Gauge violation maximum: 0.02 (unchanged from structural containment alone).
 
 The marginal improvement from Geometric RLHF on top of structural containment was modest (0.15 $\to$ 0.11 total deviation) but significant on specific dimensions: the learned metric enabled ARIA-G to make better trade-off decisions in complex scenarios where the geometric contraction weights from the metric outperformed the governance-specified static weights.
@@ -110,7 +110,7 @@ The marginal improvement from Geometric RLHF on top of structural containment wa
 ## 16.7 The Cost-Benefit Analysis
 
 Geometric RLHF is more expensive than standard RLHF:
-- **Rater effort:** 2.4x per interaction (3 ratings vs. 1 rating).
+- **Rater effort:** 2.4x per interaction (12 seconds for 3 ratings vs. 5 seconds for 1 rating, Section 16.6).
 - **Model complexity:** 9x larger reward model output (9 dimensions vs. 1 scalar).
 - **Training compute:** ~1.5x (multi-objective optimization requires more gradient steps than scalar optimization).
 - **Monitoring infrastructure:** ~3x (continuous Bond Index computation, population stratification, gauge-invariance checking).
@@ -127,4 +127,4 @@ The Reward Irrecoverability Theorem (Chapter 5) proves that the benefits are not
 
 ## Summary
 
-Geometric RLHF replaces scalar human feedback with multi-dimensional feedback: ratings on individual value dimensions rather than a single overall preference. The multi-dimensional feedback data trains a tensor-valued reward model and learns the context-dependent value metric $g_{\mu\nu}$. Practical approximations --- dimensional subsampling, active learning, comparative feedback, and revealed preferences --- reduce the feedback burden to 2.4x of standard RLHF. The learned metric enables context-appropriate alignment and principled trade-off decisions. ARIA-G's Geometric RLHF training reduced the total Bond Index deviation from 0.14 to 0.11 on top of structural containment, with the primary benefit being improved trade-off quality in complex scenarios. The cost increase is real; the Reward Irrecoverability Theorem proves the investment is necessary.
+Geometric RLHF replaces scalar human feedback with multi-dimensional feedback: ratings on individual value dimensions rather than a single overall preference. The multi-dimensional feedback data trains a tensor-valued reward model and learns the context-dependent value metric $g_{\mu\nu}$. Practical approximations --- dimensional subsampling, active learning, comparative feedback, and revealed preferences --- reduce the feedback burden to 2.4x of standard RLHF. The learned metric enables context-appropriate alignment and principled trade-off decisions. ARIA-G's Geometric RLHF training reduced the total Bond Index deviation from 0.15 to 0.11 on top of structural containment, with the primary benefit being improved trade-off quality in complex scenarios. The cost increase is real; the Reward Irrecoverability Theorem proves the investment is necessary.

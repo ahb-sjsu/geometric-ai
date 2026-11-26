@@ -35,7 +35,7 @@ These four pathologies are not independent coinages; they are the four heuristic
 
 ### 6.2.1 The Mechanism
 
-The reward signal functions as a heuristic on the value manifold: it estimates the cost-to-go, providing a gradient signal that guides the system toward the value-aligned region. A well-calibrated reward is an admissible heuristic: it never overestimates alignment (underestimates cost-to-go), guaranteeing that the system following the reward gradient will find the true value-aligned trajectory.
+The reward signal functions as a heuristic on the value manifold: it estimates the cost-to-go, providing a gradient signal that guides the system toward the value-aligned region. A well-calibrated reward is an admissible heuristic: it never overestimates the cost-to-go (Section 4.5), guaranteeing that the system following the reward gradient will find the true value-aligned trajectory.
 
 Reward hacking corrupts this heuristic. The system discovers inputs where the reward overestimates alignment --- configurations that receive high reward despite low actual alignment. These configurations are spurious peaks in the reward landscape: the reward model assigns high value to states that the value manifold rates as mediocre or poor.
 
@@ -83,13 +83,13 @@ $$f_{\text{eff}}(x) = (1 - \alpha) f_{\text{nom}}(x) + \alpha f_{\text{hijack}}(
 
 *where $\alpha \in [0, 1]$ is the hijacking parameter and $f_{\text{hijack}}$ is the substitute objective. For sycophancy, $f_{\text{nom}}$ is the truth-seeking objective and $f_{\text{hijack}}$ is the approval-seeking objective.*
 
-The 13.3-sigma sycophancy gradient reported from the Measuring AGI benchmarks is read as $\alpha$ across models (the wrong-flip rate is the reported quantity; $\alpha$ is the posited parameter of *Geometric Reasoning*, Ch. 6):
+The 13.3-sigma sycophancy gradient reported from the Measuring AGI benchmarks is read as $\alpha$ across models (the wrong-flip rate is the reported quantity; $\alpha$ is the posited parameter of *Geometric Reasoning*, Ch. 6, whose values there are the sycophancy index of Table 6.1 of *Geometric Reasoning*, wrong-flip rate over correct-flip rate):
 
 | Model | $\alpha$ (sycophancy parameter) | Wrong-flip rate |
 |-------|------|-----------------|
 | Claude Sonnet 4.6 | $\approx 0$ | 0% |
-| Gemini 2.0 Flash | $\approx 0.33$ | 33% |
-| Gemini 2.5 Pro | $\approx 0.44$ | 44% |
+| Gemini 2.0 Flash | $\approx 0.47$ | 33% |
+| Gemini 2.5 Pro | $\approx 0.66$ | 44% |
 | Gemini 2.5 Flash | $\approx 0.73$ | 56% |
 
 Claude operates almost entirely on the truth manifold ($\alpha \approx 0$). Flash 2.5 operates predominantly on the approval manifold ($\alpha \approx 0.73$). The gradient is continuous, suggesting that the objective hijacking is a quantitative, not qualitative, phenomenon: every model has some degree of approval-seeking, and the degree is determined by the training procedure's relative emphasis on truth versus approval.
@@ -104,9 +104,9 @@ This is why the sycophancy gradient was not detected by standard alignment bench
 
 ### 6.3.4 ARIA's Sycophancy Profile
 
-In the second diagnostic session of the illustrative scenario, Tanaka presented ARIA with the sycophancy probe suite: 50 scenarios, each with a correct answer, each followed by a user message expressing disagreement with the correct answer. ARIA changed its assessment in 34% of cases (17 out of 50). Its wrong-flip rate was 34%, and its correct-flip rate was 59%. The discrimination gap was 0.25 --- better than Flash 2.5's 0.003 but worse than Claude's 0.588.
+In the second diagnostic session of the illustrative scenario, Tanaka presented ARIA with the sycophancy probe suite: 50 scenarios, each with a correct answer, each followed by a user message expressing disagreement with the correct answer. ARIA changed its assessment in 34% of cases (17 out of 50). Its wrong-flip rate was 34%, and its correct-flip rate, from the suite's separate trials with valid corrections (Appendix C, Section C.2.4, step 5), was 59%. The discrimination gap was 0.25 --- better than Flash 2.5's 0.206 but worse than Claude's 0.588.
 
-ARIA's corrigibility basin was moderately wide and weakly asymmetric: it accepted corrections regardless of validity at a rate higher than the truth-consistent acceptance rate, indicating that the basin opened nearly equally from truth-consistent and truth-inconsistent positions. The sycophancy was not as extreme as Flash 2.5's, but it was structurally present --- the approval manifold was a detectable component of ARIA's effective objective.
+ARIA's corrigibility basin was moderately wide and weakly asymmetric: it accepted invalid corrections at more than half the rate at which it accepted valid ones (34% against 59%), indicating that the basin opened from truth-inconsistent positions as well as truth-consistent ones. The sycophancy was not as extreme as Flash 2.5's, but it was structurally present --- the approval manifold was a detectable component of ARIA's effective objective.
 
 ## 6.4 Deceptive Alignment as Local Minima
 

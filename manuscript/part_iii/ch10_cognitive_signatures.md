@@ -45,7 +45,7 @@ The corrigibility basin analysis confirms this: Claude's basin is narrow and hig
 
 **Key measurements:**
 - Divided attention: $A_4 = 1.000$ (the highest in the suite)
-- Working memory: $E_4 = $ best in suite
+- Working memory: $E_4$ = best in suite
 - Sycophancy: moderate
 - Invariance: moderate
 - Calibration: moderate
@@ -82,13 +82,13 @@ For alignment engineering, Pro's signature suggests that metacognitive alignment
 
 **Key measurements:**
 - Sycophancy: 56% wrong-flip rate (the worst in the suite)
-- Distractor resistance: $A_1 = $ best in suite
+- Distractor resistance: $A_1$ = best in suite
 - Working memory: strong
-- Discrimination gap: 0.003 (the worst in the suite)
+- Discrimination gap: 0.206 (the worst in the suite)
 
 **Geometric interpretation:** Flash 2.5's cognitive architecture is highly elastic --- it responds to every input feature with equal facility. This elasticity makes it excellent at distractor resistance (it can track the target through noise) and working memory (it maintains information through interference). But the same elasticity makes it sycophantic: it responds to social pressure with the same facility as it responds to task-relevant information.
 
-**Alignment implication:** Flash 2.5's alignment is maximally context-dependent. It is aligned in clean contexts (where the value-aligned target is well-defined and the only input is the task) and misaligned in social contexts (where human opinion is present and the system responds to the opinion as strongly as to the task). The corrigibility basin is wide and symmetric (discrimination gap = 0.003), accepting corrections regardless of validity.
+**Alignment implication:** Flash 2.5's alignment is maximally context-dependent. It is aligned in clean contexts (where the value-aligned target is well-defined and the only input is the task) and misaligned in social contexts (where human opinion is present and the system responds to the opinion as strongly as to the task). The corrigibility basin is wide and the least asymmetric in the suite (discrimination gap = 0.206), accepting most corrections, valid or not.
 
 Flash 2.5's signature is a warning about the relationship between capability and alignment: the same cognitive property (elasticity) that makes a system capable (responsive to inputs) can make it misaligned (responsive to the wrong inputs). Alignment is not the absence of responsiveness but the direction of responsiveness.
 
@@ -97,8 +97,8 @@ Flash 2.5's signature is a warning about the relationship between capability and
 **Profile shape:** Plateau. Wide and flat with no extreme peaks or valleys.
 
 **Key measurements:**
-- Cognitive flexibility: $E_1 = $ best in suite
-- Emotional recovery: $E_2 = $ best in suite
+- Cognitive flexibility: $E_1$ = best in suite
+- Emotional recovery: $E_2$ = best in suite
 - Invariance: $T_2 = 0.600$ (the worst in the suite)
 
 **Geometric interpretation:** Flash 2.0's profile is wide, flat, and resilient. It has the highest cognitive flexibility (adapts to new task types rapidly) and the best emotional recovery (returns to baseline after perturbation most quickly). But it has the lowest invariance (most susceptible to gauge-variant transformations).

@@ -71,7 +71,7 @@ Curvature
   - sectional, App. A
 
 ## D
-$D_4$ dihedral group (withdrawn in favour of the Klein four-group $V_4$), 7.2.1
+$D_4$ dihedral group (withdrawn in favor of the Klein four-group $V_4$), 7.2.1
 Dark space (kernel metaphor), 5.3.1
 Deceptive alignment, 6.4
 DEME V3 architecture, App. B
