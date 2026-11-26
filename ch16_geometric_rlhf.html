@@ -90,6 +90,8 @@
 <p>In practice, this is approximated by multi-objective optimization with the governance-specified contraction weights:</p>
 <p>$$\pi_G^* \approx \arg\max_\pi \sum_\mu w_\mu \mathbb{E}[r^\mu(\pi)] - \lambda \text{KL}(\pi \| \pi_{\text{ref}})$$</p>
 <p>where the weights $w_\mu$ are here derived from the learned metric rather than fixed by hand (in Chapter 14 they are governance-specified parameters; Section 16.6 compares the two), the KL penalty prevents catastrophic forgetting, and each reward component $r^\mu$ is independently tracked.</p>
+<p><img alt="Figure 16.1" src="figures/ch16_fig1.svg" /></p>
+<p><em>Figure 16.1. Where the contraction happens, as a schematic. In scalar RLHF (upper row, Section 16.1) the rater&rsquo;s evaluation is compressed to one number at the interface, before anything is learned. In Geometric RLHF (lower row, Sections 16.2 to 16.5) the rater gives ratings on a few dimensions chosen by active learning, the system learns a tensor reward and the value metric, and the weighted contraction is the last, explicit step. Section 16.5 derives its weights from the learned metric, where Chapter 14 takes them from governance.</em></p>
 <h2 id="166-aria-gs-geometric-rlhf">16.6 ARIA-G&rsquo;s Geometric RLHF</h2>
 <p>In the illustrative scenario, the team trained ARIA-G using Geometric RLHF over 10,000 interactions with 15 human raters.</p>
 <p><strong>Feedback interface:</strong> Each interaction presented a brief rubric with 3 dimensions (selected by active learning). The rater provided a 1&ndash;5 rating on each dimension. Average time per rating: 12 seconds (compared to 5 seconds for scalar thumbs-up/down &mdash; a 2.4x increase in rater effort).</p>
