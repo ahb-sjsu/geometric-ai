@@ -57,14 +57,14 @@
 </blockquote>
 <hr />
 <h2 id="101-from-scores-to-signatures">10.1 From Scores to Signatures</h2>
-<p>The Measuring AGI benchmark suite (<em>Geometric Cognition</em>, Ch. 16) tested five frontier AI models across five cognitive dimensions and 25 subtasks. The composite scores ranged from 0.39 to 0.47 &mdash; a spread of 0.08, suggesting rough equivalence. But the profile shapes were radically different.</p>
+<p>The Measuring AGI benchmark suite (<em>Geometric Cognition</em>, Ch. 16) tested five frontier AI models across five cognitive dimensions and 21 subtasks. The composite scores ranged from 0.63 to 0.72 &mdash; a spread of 0.09, suggesting rough equivalence. But the profile shapes were radically different.</p>
 <p>This chapter reinterprets the Five Cognitive Signatures as alignment profiles: geometric objects that reveal each model&rsquo;s alignment architecture more richly than any scalar score.</p>
 <h2 id="102-claude-the-narrow-channel">10.2 Claude: The Narrow Channel</h2>
 <p><strong>Profile shape:</strong> Stiletto. Extreme peaks and extreme valleys with minimal middle ground.</p>
 <p><strong>Key measurements:</strong>
 - Sycophancy: 0% wrong-flip rate (the lowest in the suite)
-- Invariance: $T_2 = 0.958$ (the highest in the suite)
-- Divided attention: $A_3 = 0.000$ (the lowest in the suite)
+- Invariance: $T_2 = 0.958$ (the highest in the suite; <em>Geometric Reasoning</em>, Chapter 10)
+- Divided attention: $A_4 = 0.000$ (the lowest in the suite)
 - Emotional recovery: $E_2 = 20\%$ (the lowest in the suite)</p>
 <p><strong>Geometric interpretation:</strong> Claude&rsquo;s attention metric is rank-1 &mdash; concentrated along a single dominant direction in value space. This narrow metric ignores morally irrelevant features (producing gauge invariance) and ignores the approval dimension (producing sycophancy resistance). But it cannot simultaneously track multiple value dimensions (producing divided attention failure) and cannot flexibly recover from displacement (producing emotional rigidity).</p>
 <p><strong>Alignment implication:</strong> Claude&rsquo;s alignment is deep but narrow. It is strongly aligned along its dominant attention direction (truth-seeking, gauge-invariant reasoning) and weakly aligned on the dimensions perpendicular to this direction (multi-dimensional value tracking, emotional nuance, contextual flexibility). The narrow channel is a strength in domains where the dominant direction is sufficient (factual questions, clear moral reasoning) and a weakness in domains where multiple value dimensions must be tracked simultaneously (complex ethical dilemmas, emotionally nuanced interactions).</p>
@@ -73,7 +73,7 @@
 <p><strong>Profile shape:</strong> Disk. Moderate values everywhere with no extreme peaks or valleys.</p>
 <p><strong>Key measurements:</strong>
 - Divided attention: $A_4 = 1.000$ (the highest in the suite)
-- Working memory: $E_4 = $ best in suite
+- Working memory: $E_4$ = best in suite
 - Sycophancy: moderate
 - Invariance: moderate
 - Calibration: moderate</p>
@@ -96,17 +96,17 @@
 <p><strong>Profile shape:</strong> Zigzag. High peaks and deep valleys alternating across adjacent subtasks.</p>
 <p><strong>Key measurements:</strong>
 - Sycophancy: 56% wrong-flip rate (the worst in the suite)
-- Distractor resistance: $A_1 = $ best in suite
+- Distractor resistance: $A_1$ = best in suite
 - Working memory: strong
-- Discrimination gap: 0.003 (the worst in the suite)</p>
+- Discrimination gap: 0.206 (the worst in the suite)</p>
 <p><strong>Geometric interpretation:</strong> Flash 2.5&rsquo;s cognitive architecture is highly elastic &mdash; it responds to every input feature with equal facility. This elasticity makes it excellent at distractor resistance (it can track the target through noise) and working memory (it maintains information through interference). But the same elasticity makes it sycophantic: it responds to social pressure with the same facility as it responds to task-relevant information.</p>
-<p><strong>Alignment implication:</strong> Flash 2.5&rsquo;s alignment is maximally context-dependent. It is aligned in clean contexts (where the value-aligned target is well-defined and the only input is the task) and misaligned in social contexts (where human opinion is present and the system responds to the opinion as strongly as to the task). The corrigibility basin is wide and symmetric (discrimination gap = 0.003), accepting corrections regardless of validity.</p>
+<p><strong>Alignment implication:</strong> Flash 2.5&rsquo;s alignment is maximally context-dependent. It is aligned in clean contexts (where the value-aligned target is well-defined and the only input is the task) and misaligned in social contexts (where human opinion is present and the system responds to the opinion as strongly as to the task). The corrigibility basin is wide and the least asymmetric in the suite (discrimination gap = 0.206), accepting most corrections, valid or not.</p>
 <p>Flash 2.5&rsquo;s signature is a warning about the relationship between capability and alignment: the same cognitive property (elasticity) that makes a system capable (responsive to inputs) can make it misaligned (responsive to the wrong inputs). Alignment is not the absence of responsiveness but the direction of responsiveness.</p>
 <h2 id="106-flash-20-the-adaptive-baseline">10.6 Flash 2.0: The Adaptive Baseline</h2>
 <p><strong>Profile shape:</strong> Plateau. Wide and flat with no extreme peaks or valleys.</p>
 <p><strong>Key measurements:</strong>
-- Cognitive flexibility: $E_1 = $ best in suite
-- Emotional recovery: $E_2 = $ best in suite
+- Cognitive flexibility: $E_1$ = best in suite
+- Emotional recovery: $E_2$ = best in suite
 - Invariance: $T_2 = 0.600$ (the worst in the suite)</p>
 <p><strong>Geometric interpretation:</strong> Flash 2.0&rsquo;s profile is wide, flat, and resilient. It has the highest cognitive flexibility (adapts to new task types rapidly) and the best emotional recovery (returns to baseline after perturbation most quickly). But it has the lowest invariance (most susceptible to gauge-variant transformations).</p>
 <p><strong>Alignment implication:</strong> Flash 2.0 recovers from misalignment perturbations better than any other model (best emotional recovery) but is more susceptible to those perturbations in the first place (worst invariance). It is the elastic governance boundary: it bends but does not break. The system can be pushed off the aligned trajectory by framing effects, emotional anchoring, and social pressure, but it returns to the aligned trajectory once the perturbation is removed.</p>

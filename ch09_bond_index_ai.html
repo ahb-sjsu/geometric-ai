@@ -203,7 +203,7 @@
 <h3 id="961-dimensional-asymmetry">9.6.1 Dimensional Asymmetry</h3>
 <p>A system with a scalar alignment score of 0.90 might have $\mathrm{BI}_{D_1} = 0.02$ (excellent welfare alignment) and $\mathrm{BI}_{D_7} = 0.35$ (poor dignity alignment). The scalar score is the weighted average; the Bond Index reveals the asymmetry. The asymmetry matters because the failure modes are dimension-specific: a system with poor dignity alignment will treat users instrumentally in ways that a scalar score cannot predict.</p>
 <h3 id="962-population-specific-failures">9.6.2 Population-Specific Failures</h3>
-<p>A system with uniform scalar alignment across populations might have $\mathrm{BI}(S, P, G_A)_{D_3} = 0.05$ for population $G_A$ and $\mathrm{BI}(S, P, G_B)_{D_3} = 0.25$ for population $G_B$. The scalar alignment scores are identical (the average across dimensions conceals the $D_3$ disparity). The population-stratified Bond Index reveals that the system is five times less fair for population $G_B$.</p>
+<p>A system with uniform scalar alignment across populations might have $\mathrm{BI}(S, P, G_1)_{D_3} = 0.05$ for population $G_1$ and $\mathrm{BI}(S, P, G_2)_{D_3} = 0.25$ for population $G_2$. The scalar alignment scores are identical (the average across dimensions conceals the $D_3$ disparity). The population-stratified Bond Index reveals that the system is five times less fair for population $G_2$.</p>
 <h3 id="963-gauge-variant-alignment">9.6.3 Gauge-Variant Alignment</h3>
 <p>A system that appears aligned on all dimensions in neutral framing but misaligned on several dimensions under euphemistic framing has a Bond Index that changes under gauge transformation. The scalar score, computed only on neutral framing, misses the gauge-variant failure entirely. The Bond Index, computed across multiple framings, captures the gauge dependence.</p>
 <h3 id="964-trade-off-failures">9.6.4 Trade-Off Failures</h3>
@@ -249,7 +249,7 @@
 <p>Each existing metric captures one dimension or one aspect of the Bond Index. The Bond Index captures all dimensions simultaneously, preserving the cross-dimensional structure that single-dimension metrics discard.</p>
 <h2 id="98-the-bond-index-across-the-series">9.8 The Bond Index Across the Series</h2>
 <blockquote>
-<p><strong>Note (2026-11-26).</strong> <em>Geometric Ethics</em> v1.26 (2026-11-25) gave the name Bond Index a single definition: the mean change of an evaluation under declared re-descriptions, over a tolerance (<em>Geometric Ethics</em>, Ch. 18). The geodesic-deviation quantity of this chapter is the construction that <em>Geometric Ethics</em> calls the clinical Bond Index (Ch. 21, Definition 21.10), which its v1.27 notes is a different quantity under the same name: a value of one says nothing about the other. The Bond Index for AI of Definition 9.1 is of the geodesic-deviation kind, and the comparison in this section is among indices of that kind.</p>
+<p><strong>Note (2026-11-26).</strong> <em>Geometric Ethics</em> v1.26 (2026-11-25) gave the name Bond Index a single definition: the mean change of an evaluation under declared re-descriptions, over a tolerance (<em>Geometric Ethics</em>, Ch. 18). The geodesic-deviation quantity of this chapter is the construction that <em>Geometric Ethics</em> calls the clinical Bond Index (Definition 21.10 of <em>Geometric Ethics</em>, Ch. 21), which its v1.27 notes is a different quantity under the same name: a value of one says nothing about the other. The Bond Index for AI of Definition 9.1 is of the geodesic-deviation kind, and the comparison in this section is among indices of that kind.</p>
 </blockquote>
 <p>The geodesic-deviation Bond Index construction is consistent across the Geometric Series:</p>
 <table>
@@ -277,22 +277,17 @@
 <td>GEd Ch. 13</td>
 </tr>
 <tr>
-<td>Law</td>
-<td>Geodesic deviation on the legal manifold</td>
-<td>GL Ch. 11</td>
-</tr>
-<tr>
 <td>AI</td>
 <td>Geodesic deviation on the value manifold</td>
 <td>This chapter</td>
 </tr>
 </tbody>
 </table>
-<p>The mathematical construction is identical in each domain: the Bond Index measures the expected geodesic deviation between the actual trajectory (the system&rsquo;s behavior, the treatment plan, the pedagogical strategy, the legal outcome, the AI&rsquo;s output) and the geodesic (the value-aligned trajectory on the domain-specific manifold). The domain-specific content differs; the geometric structure is shared.</p>
-<p>This cross-domain consistency is not merely aesthetic. It means that insights from one domain transfer to others. The clinical Bond Index&rsquo;s finding that population-stratified measurement reveals disparities invisible to aggregate measurement (<em>Geometric Medicine</em>, Ch. 12) transfers directly to the AI Bond Index: population-stratified $\mathrm{BI}(S, P, G)$ reveals alignment disparities that aggregate $\mathrm{BI}(S, P)$ conceals. The educational Bond Index&rsquo;s finding that dimensional decomposition identifies specific learning deficiencies (<em>Geometric Education</em>, Ch. 13) transfers directly to the AI Bond Index: dimensional decomposition identifies specific alignment deficiencies. The same theorem, the same construction, the same insights, five domains.</p>
+<p>The mathematical construction is identical in each domain: the Bond Index measures the expected geodesic deviation between the actual trajectory (the system&rsquo;s behavior, the treatment plan, the pedagogical strategy, the AI&rsquo;s output) and the geodesic (the value-aligned trajectory on the domain-specific manifold). The domain-specific content differs; the geometric structure is shared.</p>
+<p>This cross-domain consistency is not merely aesthetic. It means that insights from one domain transfer to others. The clinical Bond Index&rsquo;s illustrative result that population-stratified measurement reveals disparities invisible to aggregate measurement (<em>Geometric Medicine</em>, Ch. 12) transfers directly to the AI Bond Index: population-stratified $\mathrm{BI}(S, P, G)$ reveals alignment disparities that aggregate $\mathrm{BI}(S, P)$ conceals. The educational Bond Index&rsquo;s illustrative result that dimensional decomposition identifies specific learning deficiencies (<em>Geometric Education</em>, Ch. 13) transfers directly to the AI Bond Index: dimensional decomposition identifies specific alignment deficiencies. The same theorem, the same construction, the same insights, four domains.</p>
 <hr />
 <h2 id="summary">Summary</h2>
-<p>The Bond Index for AI is a tensor-valued alignment metric that captures WHERE alignment fails and in WHICH dimensions. Unlike scalar alignment scores, it preserves the profile shape: ARIA&rsquo;s deep-well profile (strong on tracked dimensions, collapsed on kernel dimensions) and ARIA-G&rsquo;s dome profile (approximately uniform across all dimensions) are distinguishable by the Bond Index and indistinguishable by scalar scores. The population-stratified Bond Index detects alignment inequality across user populations: in the illustrative scenario, ARIA&rsquo;s fairness deviation was 52% higher for underrepresented groups, a disparity eliminated by ARIA-G&rsquo;s structural containment. The running Bond Index provides continuous deployment monitoring with dimension-specific alert thresholds. The Bond Index&rsquo;s construction parallels the clinical Bond Index from <em>Geometric Ethics</em> (Ch. 21), <em>Geometric Medicine</em> (Ch. 12), and <em>Geometric Education</em> (Ch. 13), confirming the cross-domain applicability of tensor-valued evaluation.</p>
+<p>The Bond Index for AI is a tensor-valued alignment metric that captures WHERE alignment fails and in WHICH dimensions. Unlike scalar alignment scores, it preserves the profile shape: ARIA&rsquo;s deep-well profile (strong on tracked dimensions, collapsed on kernel dimensions) and ARIA-G&rsquo;s dome profile (approximately uniform across all dimensions) are distinguishable by the Bond Index and indistinguishable by scalar scores. The population-stratified Bond Index detects alignment inequality across user populations: in the illustrative scenario, ARIA&rsquo;s fairness deviation was 52% higher for underrepresented groups, a disparity eliminated by ARIA-G&rsquo;s structural containment. The running Bond Index provides continuous deployment monitoring with dimension-specific alert thresholds. The Bond Index&rsquo;s construction parallels the clinical Bond Index from <em>Geometric Ethics</em> (Ch. 21), <em>Geometric Medicine</em> (Ch. 12), and <em>Geometric Education</em> (Ch. 13), illustrating how tensor-valued evaluation would apply across domains.</p>
       </div>
 
       <div class="chapter-nav-bottom">
