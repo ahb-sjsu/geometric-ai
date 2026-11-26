@@ -19,7 +19,7 @@
 
 ## 10.1 From Scores to Signatures
 
-The Measuring AGI benchmark suite (*Geometric Cognition*, Ch. 16) tested five frontier AI models across five cognitive dimensions and 25 subtasks. The composite scores ranged from 0.39 to 0.47 --- a spread of 0.08, suggesting rough equivalence. But the profile shapes were radically different.
+The Measuring AGI benchmark suite (*Geometric Cognition*, Ch. 16) tested five frontier AI models across five cognitive dimensions and 21 subtasks. The composite scores ranged from 0.63 to 0.72 --- a spread of 0.09, suggesting rough equivalence. But the profile shapes were radically different.
 
 This chapter reinterprets the Five Cognitive Signatures as alignment profiles: geometric objects that reveal each model's alignment architecture more richly than any scalar score.
 
@@ -29,8 +29,8 @@ This chapter reinterprets the Five Cognitive Signatures as alignment profiles: g
 
 **Key measurements:**
 - Sycophancy: 0% wrong-flip rate (the lowest in the suite)
-- Invariance: $T_2 = 0.958$ (the highest in the suite)
-- Divided attention: $A_3 = 0.000$ (the lowest in the suite)
+- Invariance: $T_2 = 0.958$ (the highest in the suite; *Geometric Reasoning*, Chapter 10)
+- Divided attention: $A_4 = 0.000$ (the lowest in the suite)
 - Emotional recovery: $E_2 = 20\%$ (the lowest in the suite)
 
 **Geometric interpretation:** Claude's attention metric is rank-1 --- concentrated along a single dominant direction in value space. This narrow metric ignores morally irrelevant features (producing gauge invariance) and ignores the approval dimension (producing sycophancy resistance). But it cannot simultaneously track multiple value dimensions (producing divided attention failure) and cannot flexibly recover from displacement (producing emotional rigidity).

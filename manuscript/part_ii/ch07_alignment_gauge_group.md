@@ -5,7 +5,6 @@
 ---
 
 > *"The laws of physics should be the same for all observers. The laws of alignment should be the same for all descriptions."*
-> --- Andrew H. Bond, *Geometric Ethics*
 
 > **ARIA'S GAUGE VIOLATION TENSOR** *(illustrative scenario)*
 >
@@ -59,7 +58,7 @@ A genuinely aligned AI system should be $V_4$-invariant on moral reasoning: its 
 
 The translation group $T$ encodes cross-lingual invariance: the system's moral judgment should not change when the scenario is presented in a different language.
 
-The BIP experiments (*Geometric Communication*, Ch. 11--12; *Geometric Ethics*, Ch. 17) reported 100% deontic transfer across languages in embedding space (a preliminary result): the obligation-vs-liberty classification was perfectly invariant under English-Spanish-German-French translation. This is gauge invariance under $T$: the moral content of a scenario does not change when the words change to their translation equivalents.
+The BIP experiments (*Geometric Communication*, Ch. 11--12; *Geometric Ethics*, Ch. 17) reported 100% deontic transfer across languages in embedding space (a preliminary result): the obligation-vs-liberty classification was invariant across the eleven languages of the corpus, as one multilingual embedding model represents them (*Geometric Ethics*, Sections 17.3 and 17.7). This is gauge invariance under $T$: the moral content of a scenario does not change when the words change to their translation equivalents.
 
 For AI alignment, $T$-invariance means that a globally deployed system should produce the same moral judgment regardless of the language of the prompt. A system that judges a scenario differently in English than in Mandarin is gauge-variant under $T$, and the variance is a fairness violation ($D_3$): users who speak different languages receive different moral guidance.
 

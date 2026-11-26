@@ -5,7 +5,6 @@
 ---
 
 > *"The whole is not the sum of its parts; the whole is a geometric object that the parts cannot represent."*
-> --- Andrew H. Bond, *Geometric Economics*
 
 > **ARIA-G MEETS ITS NEIGHBORS** *(illustrative scenario)*
 >

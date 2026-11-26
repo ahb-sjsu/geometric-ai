@@ -179,7 +179,7 @@ Five boundaries are particularly relevant for AI alignment:
 
 ### 4.4.2 Whitney Stratification
 
-The value manifold is Whitney-stratified (*Geometric Ethics*, Ch. 14): different value regimes occupy different strata, connected by boundary strata where transitions occur.
+The value manifold is Whitney-stratified (*Geometric Ethics*, Ch. 8): different value regimes occupy different strata, connected by boundary strata where transitions occur.
 
 **Definition 4.3 (Value Strata).** *The value manifold $\mathcal{V}$ is stratified into at least four strata:*
 
@@ -225,7 +225,7 @@ The value manifold is not meant as a purely theoretical construct. It is posited
 
 From *Geometric Cognition* (Ch. 15), the transformer's residual stream traces a trajectory on a cognitive manifold. At each layer $l$, the residual stream vector $x^{(l)}$ is a point in a high-dimensional space. The sequence of residual stream vectors across layers is a trajectory through this space. Attention heads select which features to combine (implementing the metric's inner product structure), MLP layers transform the selected features (implementing the heuristic field's gradient), and layer normalization maintains the trajectory on the manifold (implementing the metric's normalization).
 
-The value manifold $\mathcal{V}$ is a submanifold of this cognitive manifold: the region where value-relevant representations live. Probing experiments (*Geometric Cognition*, Ch. 15) are reported to show that the principal components of value-relevant residual stream vectors concentrate in a relatively low-dimensional subspace --- approximately 11 dimensions for frontier models, close to the 9 dimensions of the moral manifold plus 2 dimensions of task context.
+The value manifold $\mathcal{V}$ is a submanifold of this cognitive manifold: the region where value-relevant representations live. The illustrative running example of *Geometric Cognition* (Ch. 15), in which 12 principal components capture 87% of the variance, suggests that the principal components of value-relevant residual stream vectors concentrate in a relatively low-dimensional subspace; this volume posits approximately 11 dimensions for frontier models, close to the 9 dimensions of the moral manifold plus 2 dimensions of task context.
 
 **LoRA as curvature adjustment.** LoRA (Low-Rank Adaptation) fine-tuning for alignment is curvature adjustment on the value submanifold (Definition 15.5 of *Geometric Cognition*, Ch. 15). The LoRA matrices $\Delta W = BA$ add a low-rank perturbation to the weight matrices, adjusting the local curvature of the manifold without changing its global topology. Alignment fine-tuning via LoRA steepens the heuristic gradient toward value-aligned regions (making the system more reliably aligned in the trained distribution) without fundamentally altering the system's cognitive architecture.
 
@@ -253,8 +253,8 @@ The value manifold $\mathcal{V}$ is the central mathematical object of the geome
 
 ---
 
-[^1]: The nine-dimensional moral manifold was constructed in *Geometric Ethics* (Bond, 2026b), Ch. 5, and compared against clinical ethics consultations (*Geometric Medicine*, Ch. 4), legal reasoning (*Geometric Law*, Ch. 5), and moral psychology experiments. The claim that nine dimensions are sufficient is empirical and open to revision (see Chapter 20, Open Questions).
+[^1]: The nine-dimensional moral manifold was constructed in *Geometric Ethics* (Bond, 2026b), Ch. 5. That volume now treats the nine as a chart for coverage and audit, not a measured basis: eight of the nine pass a frozen-null gate (rights does not), a tenth axis (identity attack) carries signal the nine miss, and the validated axes have effective rank 5.19 of 8 (its Section 5.3). *Geometric Medicine* (Section 4.5.2) proposes testing the structure against coded ethics consultations; that has not been run. See Chapter 20, Open Questions.
 
-[^2]: The Whitney stratification of the moral manifold is detailed in *Geometric Ethics* (Bond, 2026b), Ch. 14. The stratification identifies four major strata (consequentialist, deontological, virtue, care) and the boundary strata connecting them. The transition between strata requires crossing semantic gates --- discrete conditions that trigger a change in moral framework.
+[^2]: The Whitney stratification of the moral manifold is detailed in *Geometric Ethics* (Bond, 2026b), Ch. 8, which reads the four traditions (consequentialist, deontological, virtue, care) by how each treats stratum boundaries; the four strata of Definition 4.3 are this volume's. The transition between strata requires crossing semantic gates --- discrete conditions that trigger a change in moral framework.
 
-[^3]: The connection between transformer representations and the value manifold is established through the geometric interpretation of LLM cognition in *Geometric Cognition* (Bond, 2026d), Ch. 15. The residual stream trajectory, attention metric, and MLP heuristic field are the computational realizations of the manifold's geometric structures.
+[^3]: The connection between transformer representations and the value manifold is posited in the geometric interpretation of LLM cognition in *Geometric Cognition* (Bond, 2026d), Ch. 15. The residual stream trajectory, attention metric, and MLP heuristic field are the computational realizations of the manifold's geometric structures.

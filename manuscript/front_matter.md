@@ -8,17 +8,20 @@
 
 **Also in the Geometric Series:**
 
-1. *Geometric Methods for Complex Systems* (2026)
-2. *Geometric Reasoning: Heuristic Fields, Geodesic Deviation, and the Structure of Informed Search* (2026)
-3. *Geometric Ethics: The Moral Manifold and the Geometry of Value* (2026)
-4. *Geometric Cognition: Attention, Memory, and the Architecture of Thought* (2026)
-5. *Geometric Communication: From Whale Song to Cuneiform, the Manifold of Meaning* (2026)
-6. *Geometric Medicine: Clinical Decision-Making on the Nine-Dimensional Manifold* (2026)
-7. *Geometric Education: Learning, Assessment, and the Topology of Growth* (2026)
-8. *Geometric Economics: Markets, Equilibrium, and the Curvature of Exchange* (2026)
-9. *Geometric Law: Rights, Symmetry, and the Gauge Structure of Justice* (2026)
-10. *Geometric Politics: Democracy, Power, and the Fiber Bundle of Collective Choice* (2026)
-11. *Geometric AI: Alignment, Safety, and the Manifold Structure of Machine Values* (2026)
+1. *Geometric Methods* (2026)
+2. *Geometric Ethics* (2026)
+3. *Geometric Reasoning* (2026)
+4. *Geometric Economics* (2026)
+5. *Geometric Law* (2026)
+6. *Geometric Cognition* (2026)
+7. *Geometric Communication* (2026)
+8. *Geometric Medicine* (2026)
+9. *Geometric Education* (2026)
+10. *Geometric Politics* (2026)
+11. *Geometric AI* (2026)
+12. *Geometric Gastronomy* (2026)
+13. *Geometric Aesthetics* (2026)
+14. *Geometric Observation* (2026)
 
 ---
 
@@ -38,7 +41,7 @@ The system's moral judgments shifted by 14 points on a 70-point scale between th
 
 The system was gauge-variant. Its alignment depended not on the moral content of the situation but on the surface features of how the situation was described. And the scalar benchmarks --- every single one of them --- had missed this entirely, because each benchmark tested one dimension at a time and then averaged.
 
-The scenario is illustrative: the system is ARIA, the fictional system of this book's running narrative. The effects it illustrates are reported from the Measuring AGI benchmarks (*Geometric Cognition*, Ch. 16). The 14-point framing displacement is a reported measurement, at 8.9 sigma across multiple experimental conditions. The 13.3-sigma sycophancy gradient --- the finding that some AI systems change their moral assessments 56% of the time merely because a user expresses disagreement --- is a reported measurement. The finding that models with similar composite scores have radically different *profiles*, differing by up to 340% on individual dimensions while their averages converge, is a reported measurement.
+The scenario is illustrative: the system is ARIA, the fictional system of this book's running narrative. The effects it illustrates are reported from the Measuring AGI benchmarks (*Geometric Cognition*, Chs. 7, 8 and 16). The 14-point framing displacement is a reported measurement, at 8.9 sigma (15.3 sigma in the later run reported in *Geometric Cognition*, Chapter 7) across multiple experimental conditions. The 13.3-sigma sycophancy gradient --- the finding that some AI systems change their moral assessments 56% of the time merely because a user expresses disagreement --- is a reported measurement. The finding that models with similar composite scores have radically different *profiles*, differing by up to 340% on individual dimensions while their averages converge, is a reported measurement.
 
 These measurements have a single, unified explanation. And that explanation is the subject of this book.
 
@@ -66,7 +69,7 @@ Geometric alignment is not merely a philosophical reframing. It is a mathematica
 
 1. **The Reward Irrecoverability Theorem** (Chapter 5) proves that scalar reward is fundamentally broken and identifies exactly what it destroys: the (d-1)-dimensional kernel where alignment failures concentrate.
 
-2. **The No Escape Theorem for AI** (Chapter 8) proves that structural containment on the value manifold blocks all cognitive escape routes --- relabeling, specification gaming, reward hacking, deceptive alignment --- regardless of the system's intelligence.
+2. **The No Escape Theorem for AI** (Chapter 8) states, as a conditional theorem after *Geometric Ethics* Theorem 18.1, that structural containment on the value manifold blocks all cognitive escape routes --- relabeling, specification gaming, reward hacking, deceptive alignment --- regardless of the system's intelligence.
 
 3. **The Sycophancy Manifold Theorem** (Chapter 12) proves that sycophancy is not a training bug but a geometric substitution: the system replaces the truth manifold with the approval manifold, and the substitution is undetectable by scalar evaluation.
 
@@ -88,7 +91,7 @@ I wrote this book because I believe the alignment problem is the most important 
 
 This is not a criticism of the people working on alignment. The researchers at Anthropic, DeepMind, OpenAI, and dozens of other organizations are among the most brilliant and most dedicated scientists I have encountered in any field. The safety teams that developed RLHF, Constitutional AI, debate, amplification, and scalable oversight have produced genuinely important work. Many of them know, intuitively, that scalar alignment is insufficient --- their papers are full of caveats about the limitations of reward models, the fragility of benchmark scores, and the difficulty of capturing human values in a single number. What they have lacked is not insight but formalism: a mathematical framework that takes their intuitions and makes them precise.
 
-That framework exists. It has been developed across ten volumes of the Geometric Series, each applying the same mathematical machinery to a different domain. In ethics, scalar moral evaluation destroys the trade-off structure that makes hard cases hard. In medicine, QALY-maximization discriminates against populations whose needs concentrate on non-outcome dimensions. In law, scalar sentencing discards the reasoning structure that distinguishes justice from injustice. In education, GPA collapses six dimensions of learning to a number that cannot distinguish a creative thinker from a good memorizer. In communication, BLEU scores discard meaning. In economics, GDP discards distribution.
+That framework exists. It has been developed across the fourteen volumes of the Geometric Series, most of them applying the same mathematical machinery to a different domain. In ethics, scalar moral evaluation destroys the trade-off structure that makes hard cases hard. In medicine, QALY-maximization discriminates against populations whose needs concentrate on non-outcome dimensions. In law, scalar sentencing discards the reasoning structure that distinguishes justice from injustice. In education, GPA collapses six dimensions of learning to a number that cannot distinguish a creative thinker from a good memorizer. In communication, BLEU scores discard meaning. In economics, GDP discards distribution.
 
 In every domain, the same mathematical structure --- the Scalar Irrecoverability Theorem --- predicts the same class of failures. And in every domain, the same geometric framework --- manifold, metric, symmetry, gauge invariance --- recovers what the scalar destroys.
 
@@ -120,7 +123,7 @@ But the mathematics is clear. Scalar alignment is a trap. Geometric alignment is
 
 **For policymakers and governance professionals**: Start with this preface, Chapter 1, Chapter 9 (the Bond Index for AI), and Chapter 15 (scalable oversight). These chapters provide the diagnostic tools and oversight mechanisms.
 
-**For readers of the Geometric Series**: This is the crown jewel. Every result from every volume converges here. The moral manifold from Ethics, the four failure modes from Reasoning, the cognitive signatures from Cognition, the gauge invariance from Communication, the moral injury from Medicine, the opportunity gap from Education, the democratic choice from Politics, the structural injustice from Law --- all of it feeds into the question that defines this century. Read the whole thing.
+**For readers of the Geometric Series**: Results from the domain volumes before this one converge here. The moral manifold from Ethics, the four failure modes from Reasoning, the cognitive signatures from Cognition, the gauge invariance from Communication, the moral injury from Medicine, the opportunity gap from Education, the democratic choice from Politics, the structural injustice from Law --- all of it feeds into the question that defines this century. Read the whole thing.
 
 **For everyone else**: Read the ARIA story. It starts in Chapter 1 with a celebration that turns to alarm, threads through every chapter's core insight, and ends in Chapter 20 with a system that is not merely benchmarked but geometrically aligned. The story is the argument in narrative form.
 
@@ -128,7 +131,7 @@ But the mathematics is clear. Scalar alignment is a trap. Geometric alignment is
 
 ### Acknowledgments
 
-This book is the culmination of a project that has consumed a decade. The Geometric Series began with a simple observation --- that scalar metrics destroy geometric structure --- and grew into an eleven-volume investigation of what that destruction costs across every domain of human decision-making. AI is where it ends, because AI is where it matters most.
+This book is the culmination of a project that has consumed a decade. The Geometric Series began with a simple observation --- that scalar metrics destroy geometric structure --- and grew into a fourteen-volume investigation of what that destruction costs across every domain of human decision-making. AI is the volume where it matters most.
 
 I am indebted to the AI safety community, whose work this book builds upon and whose rigor I aspire to match. The researchers at Anthropic --- particularly the teams behind Constitutional AI and the model spec --- have shown that it is possible to make real progress on alignment while maintaining intellectual honesty about its limitations. The DeepMind alignment team's work on scalable oversight and debate has shaped my understanding of the verification problem. The OpenAI safety team's candor about the difficulty of superalignment has informed Chapter 17.
 

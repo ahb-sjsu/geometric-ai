@@ -158,7 +158,7 @@ The geometric turn consists of three commitments:
 
 These three commitments define what it means to do alignment geometrically. The rest of this book develops their mathematical foundations, their engineering implementations, and their governance implications.
 
-Dr. Tanaka's whiteboard message --- "The alignment problem is not that we haven't found the right scalar. It is that there is no right scalar." --- is the historical conclusion of this chapter and the mathematical starting point of the next. Chapter 3 makes the case for geometric alignment by surveying what the Geometric Series has proved across nine domains and showing why AI is the domain where the geometric framework matters most.
+Dr. Tanaka's whiteboard message --- "The alignment problem is not that we haven't found the right scalar. It is that there is no right scalar." --- is the historical conclusion of this chapter and the mathematical starting point of the next. Chapter 3 makes the case for geometric alignment by surveying what the Geometric Series has proved across its other volumes and showing why AI is the domain where the geometric framework matters most.
 
 ---
 

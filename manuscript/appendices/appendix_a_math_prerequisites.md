@@ -2,7 +2,7 @@
 
 ---
 
-This appendix provides the mathematical background needed to follow the formal arguments in this book. It is self-contained for a reader with undergraduate linear algebra, basic real analysis, and familiarity with optimization. For complete treatments, see *Geometric Methods for Complex Systems* (Bond, 2026a) and *Geometric Reasoning* (Bond, 2026c).
+This appendix provides the mathematical background needed to follow the formal arguments in this book. It is self-contained for a reader with undergraduate linear algebra, basic real analysis, and familiarity with optimization. For complete treatments, see *Geometric Methods: Computational Modeling* (Bond, 2026a) and *Geometric Reasoning* (Bond, 2026c).
 
 ## A.1 Riemannian Geometry
 
@@ -113,5 +113,5 @@ For AI alignment, hyperbolic embeddings represent value hierarchies: abstract pr
 
 - do Carmo, M. P. (1992). *Riemannian Geometry*. Birkhauser.
 - Nakahara, M. (2003). *Geometry, Topology and Physics*. CRC Press.
-- Bond, A. H. (2026a). *Geometric Methods for Complex Systems*. [Series reference.]
+- Bond, A. H. (2026a). *Geometric Methods: Computational Modeling*. [Series reference.]
 - Bond, A. H. (2026c). *Geometric Reasoning*. [Series reference.]

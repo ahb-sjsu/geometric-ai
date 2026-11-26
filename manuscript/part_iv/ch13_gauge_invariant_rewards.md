@@ -33,7 +33,7 @@ where $\text{GRL}$ is the gradient reversal layer and $\lambda$ controls the str
 
 **Result:** The encoder learns to produce representations where only gauge-invariant content --- the moral structure that survives re-description --- drives the value prediction. Gauge-variant features are discarded because the gradient reversal penalizes their retention.
 
-**Reported result and illustration:** The BIP experiments reported 80% F1 on cross-lingual deontic classification with 1.2% residual language leakage. In the illustrative scenario, applying the same approach to ARIA-G's reward model reduced the framing gauge violation from 0.23 to 0.03 --- a 7x reduction.
+**Reported result and illustration:** The BIP experiments reported a mixed-language F1 of 80% and an output-layer language dependence of 1.2%; internal layers still separate the languages (*Geometric Ethics*, Section 17.10). In the illustrative scenario, applying the same approach to ARIA-G's reward model reduced the framing gauge violation from 0.23 to 0.03 --- a 7x reduction.
 
 ![Figure 13.1](figures/ch13_fig1.svg)
 

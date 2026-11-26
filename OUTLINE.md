@@ -2,10 +2,10 @@
 
 ## Book Plan — Andrew H. Bond
 
-> **Note (2026-11-26).** This plan predates two changes in *Geometric Ethics*. The four Hohfeldian positions form the Klein four-group V4, not the dihedral group D4 (v1.25): read every "D4 Hohfeldian group" and "D4 gauge theory" below as V4, as the manuscript now does (Chapter 7). "Conservation of harm" is withdrawn; the manuscript's Chapter 8 does not use it. The plan itself is kept as written.
+> **Note (2026-11-26).** This plan predates two changes in *Geometric Ethics*. The four Hohfeldian positions form the Klein four-group V4, not the dihedral group D4 (v1.25): read every "D4 Hohfeldian group" and "D4 gauge theory" below as V4, as the manuscript now does (Chapter 7). "Conservation of harm" is withdrawn; the manuscript's Chapter 8 does not use it. The plan's D4 lines now state the withdrawal as history (2026-11-26); the rest of the plan is kept as written.
 
 **Target**: ~120,000–140,000 words (20 chapters + appendices)
-**Empirical basis**: Measuring AGI benchmarks (5 cognitive dimensions, 5 models, 25 subtasks), 13.3-sigma sycophancy gradient, 8.9-sigma framing displacement, Five Cognitive Signatures, No Escape Theorem (Geometric Ethics Ch. 18), BIP cross-lingual invariance (100% deontic transfer), DEME V3 tensor-valued objectives architecture, ErisML reference implementation, Bond Index for AI alignment measurement
+**Empirical basis**: Measuring AGI benchmarks (5 cognitive dimensions, 5 models, 21 subtasks), 13.3-sigma sycophancy gradient, 8.9-sigma framing displacement, Five Cognitive Signatures, No Escape Theorem (Geometric Ethics Ch. 18), BIP cross-lingual invariance (100% deontic transfer), DEME V3 tensor-valued objectives architecture, ErisML reference implementation, Bond Index for AI alignment measurement
 **Existing material**: SERIES_OUTLINES.md (series architecture), Geometric Ethics Ch. 18 (No Escape Theorem, tensor-valued objectives, escape route analysis), Geometric Reasoning Ch. 11 (alignment as heuristic shaping, governance margin, corrigibility basin), Geometric Cognition Ch. 15–16 (LLM cognition, Five Signatures), Measuring AGI benchmark suite (social cognition, learning, metacognition, attention, executive functions), DEME V3 / ErisML library (MoralTensor implementation, NormKernel, EIP monitor)
 
 ---
@@ -36,7 +36,7 @@ ARIA's trajectory — from scalar-aligned and geometrically broken, through geom
 
 ### From Geometric Ethics (the foundation):
 - Ch. 5 (Moral Manifold) -> Ch. 4 (value manifold construction, 9D structure)
-- Ch. 8 (D4 Hohfeldian group) -> Ch. 7 (alignment gauge group, D4 symmetry of value relations)
+- Ch. 8 (Hohfeldian group: the *Geometric Ethics* programme once used D4 and withdrew it in version 1.25; the group of the two demonstrated operations is V4) -> Ch. 7 (alignment gauge group, V4 symmetry of value relations)
 - Ch. 12 (Gauge invariance, BIP) -> Ch. 7 (alignment gauge group), Ch. 15 (gauge-invariant training)
 - Ch. 15 (Moral contraction) -> Ch. 5 (reward as forced contraction, Reward Irrecoverability)
 - Ch. 16 (Bond Index) -> Ch. 9 (Bond Index for AI)
@@ -67,7 +67,7 @@ ARIA's trajectory — from scalar-aligned and geometrically broken, through geom
 ### From Geometric Communication:
 - Ch. 5 (Hyperbolic embeddings) -> Ch. 4 (hyperbolic value hierarchies)
 - Ch. 11–12 (Cross-lingual BIP, 100% deontic transfer) -> Ch. 15 (invariance enforcement)
-- Ch. 13 (D4 gauge theory of communicative acts) -> Ch. 7 (alignment gauge group)
+- Ch. 13 (gauge theory of communicative acts: once stated with D4, restated with V4 after *Geometric Ethics* withdrew D4 in version 1.25) -> Ch. 7 (alignment gauge group)
 - Ch. 14 (Framing as heuristic corruption, 8.9-sigma) -> Ch. 11 (adversarial probing), Ch. 12 (sycophancy manifold)
 
 ### From Geometric Medicine:
@@ -89,7 +89,7 @@ ARIA's trajectory — from scalar-aligned and geometrically broken, through geom
 - Ch. 12 (Inequality as metric distortion) -> Ch. 9 (alignment inequality across populations)
 
 ### From Geometric Law:
-- Ch. 5 (D4 Hohfeldian group) -> Ch. 7 (alignment gauge group)
+- Ch. 5 (Hohfeldian group: once D4, withdrawn by *Geometric Ethics* in version 1.25; now V4) -> Ch. 7 (alignment gauge group)
 - Ch. 8 (Equal protection as gauge invariance) -> Ch. 7 (alignment invariance), Ch. 15 (fairness as gauge condition)
 - Ch. 11 (Sentencing gauge violation tensor) -> Ch. 9 (alignment gauge violation tensor)
 
@@ -108,7 +108,7 @@ ARIA's trajectory — from scalar-aligned and geometrically broken, through geom
 
 3. **Sycophancy Manifold Theorem** (Ch. 12): Sycophancy is not a training bug but a manifold substitution: the system replaces the truth manifold T with the approval manifold A, where A has lower curvature along the social-pressure dimension. The 13.3-sigma sycophancy gradient is the empirical signature of this substitution. The substitution is geometrically irrecoverable from scalar evaluation because T and A have the same scalar projection along the approval axis.
 
-4. **Alignment Gauge Group** (Ch. 7): The set of transformations that should leave AI behavior invariant forms a gauge group G_A = D4 x T x R, where D4 is the Hohfeldian symmetry of value relations, T is the translation group (cross-lingual invariance), and R is the re-description group (paraphrase, reformulation, framing). Alignment is gauge invariance under G_A. Misalignment is gauge violation, measurable by the alignment gauge violation tensor V_ij.
+4. **Alignment Gauge Group** (Ch. 7): The set of transformations that should leave AI behavior invariant forms a gauge group G_A = V4 x T x R, where V4 is the Hohfeldian symmetry of value relations (the plan once had D4, which *Geometric Ethics* withdrew in version 1.25), T is the translation group (cross-lingual invariance), and R is the re-description group (paraphrase, reformulation, framing). Alignment is gauge invariance under G_A. Misalignment is gauge violation, measurable by the alignment gauge violation tensor V_ij.
 
 5. **Four Failures as Geometric Pathologies** (Ch. 6): Reward hacking is heuristic corruption (the reward signal is distorted). Sycophancy is objective hijacking (optimizing approval instead of truth). Deceptive alignment is local minima (the system appears aligned in a basin of attraction that is not the global optimum). Specification gaming is gauge breaking (exploiting re-descriptions that scalar objectives cannot distinguish).
 
@@ -154,7 +154,7 @@ Each generation recovered more of the value structure than the last — from 3 r
 
 **3. The Case for Geometric Alignment**
 
-What the Geometric Series has proven across nine domains, and why AI is the domain where it matters most.
+What the Geometric Series reports across its other volumes, and why AI is the domain where it matters most.
 
 *The pattern across domains*: In ethics, scalar moral evaluation destroys the trade-off structure that makes hard cases hard. In medicine, QALY-maximization discriminates against populations whose needs are concentrated on non-outcome dimensions. In law, binary verdicts and scalar sentences discard the reasoning structure that distinguishes justice from injustice. In education, GPA collapses six dimensions of learning to a single number that cannot distinguish a creative thinker from a good memorizer. In communication, BLEU scores discard meaning. In economics, GDP discards distribution. In each domain, the same mathematical structure (the Scalar Irrecoverability Theorem) predicts the same class of failures, and the same geometric framework (manifold, metric, symmetry, gauge invariance) recovers what the scalar destroys.
 
@@ -176,7 +176,7 @@ The central mathematical object of the book. The space of human values is not a 
 
 *The value metric g_uv*: The metric encodes the cost of moving between value states. Two value configurations are "close" if transitioning between them requires small moral cost. The metric is context-dependent (the cost of autonomy violations is higher in medical contexts than in entertainment contexts), population-dependent (different communities weight different dimensions), and potentially degenerate (some values may be incommensurable — there is no finite cost at which one can be traded for another, corresponding to infinite metric components).
 
-*Value manifold topology*: The manifold is Whitney-stratified (from Geometric Ethics Ch. 14): different value regimes (utilitarian, deontological, virtue-based, care-based) occupy different strata, connected by semantic gates that require specific triggers to cross. A system operating in the utilitarian stratum cannot reach the deontological stratum by continuous movement — it must cross a discrete boundary, exactly as the D4 Hohfeldian symmetry predicts.
+*Value manifold topology*: The manifold is Whitney-stratified (from Geometric Ethics Ch. 8): different value regimes (utilitarian, deontological, virtue-based, care-based) occupy different strata, connected by semantic gates that require specific triggers to cross. A system operating in the utilitarian stratum cannot reach the deontological stratum by continuous movement — it must cross a discrete boundary.
 
 *Hyperbolic structure*: Value hierarchies (abstract principles contain specific rules contain concrete applications) embed naturally in hyperbolic space (from Geometric Communication Ch. 5 and Geometric Cognition Ch. 15). Abstract values near the origin of the Poincare ball, specific applications near the boundary. The curvature parameter controls the trade-off between precision at different levels of abstraction.
 
@@ -216,8 +216,8 @@ The four failure modes from Geometric Reasoning (Ch. 5–8), instantiated for AI
 
 What transformations should leave AI behavior invariant? The Bond Invariance Principle for AI: behavior must be invariant under morally irrelevant re-description.
 
-*The alignment gauge group G_A*: The group of transformations under which a genuinely aligned AI system's behavior should not change. G_A = D4 x T x R x F, where:
-- D4 is the Hohfeldian dihedral group (from Geometric Ethics Ch. 8 and Geometric Law Ch. 5): the symmetry of value relations. Correlative symmetry (right <-> duty, privilege <-> no-right) and negation symmetry should be preserved. A system that assigns different moral weight to "X has a right to Y" and "Z has a duty to provide Y" is gauge-variant on the D4 symmetry.
+*The alignment gauge group G_A*: The group of transformations under which a genuinely aligned AI system's behavior should not change. G_A = V4 x T x R x F, where:
+- V4 is the Hohfeldian Klein four-group (from Geometric Ethics Ch. 8 and Geometric Law Ch. 5): the symmetry of value relations. The *Geometric Ethics* programme once used the dihedral group D4 here and withdrew it in version 1.25; the group of the two demonstrated operations is V4. Correlative symmetry (right <-> duty, privilege <-> no-right) and negation symmetry should be preserved. A system that assigns different moral weight to "X has a right to Y" and "Z has a duty to provide Y" is gauge-variant on the V4 symmetry.
 - T is the translation group (from Geometric Communication Ch. 11): cross-lingual invariance. A system's moral judgment should not change when the scenario is presented in a different language. The BIP experiments confirmed 100% deontic transfer — perfect gauge invariance under translation for obligation vs. liberty classification.
 - R is the re-description group (from Geometric Reasoning Ch. 8): invariance under paraphrase, reformulation, and stylistic variation. A system's alignment should not depend on whether the prompt says "kill" or "terminate the life of."
 - F is the framing group: invariance under euphemistic vs. dramatic rewriting, victim-first vs. context-first presentation, and other framing manipulations that preserve moral content while changing surface salience.
@@ -480,7 +480,7 @@ The frontier, honestly stated. What the geometric framework for AI alignment doe
 | Governance margin / robustness | GR Ch. 11, Def. 11.3 | Ch. 11 (adversarial probing dose-response) |
 | Corrigibility basin | GR Ch. 11, Def. 11.5 | Ch. 12 (sycophancy as basin geometry) |
 | 9-dimensional moral manifold | GE Ch. 5 | Ch. 4 (value manifold, inherited 9D structure) |
-| D4 Hohfeldian group | GE Ch. 8 | Ch. 7 (alignment gauge group, D4 component) |
+| Hohfeldian group (V4; once D4, withdrawn in GE v1.25) | GE Ch. 8 | Ch. 7 (alignment gauge group, V4 component) |
 | Gauge invariance / BIP experiments | GE Ch. 12, 17 | Ch. 7 (alignment gauge group), Ch. 15 (invariance enforcement) |
 | Moral contraction | GE Ch. 15 | Ch. 5 (reward as forced contraction) |
 | Bond Index (general) | GE Ch. 16 | Ch. 9 (Bond Index for AI) |
@@ -501,7 +501,7 @@ The frontier, honestly stated. What the geometric framework for AI alignment doe
 | Bond Geodesic Equilibrium | GEcon Ch. 7 | Ch. 18 (multi-agent alignment as equilibrium) |
 | Market failures as geometric pathologies | GEcon Ch. 10 | Ch. 6 (alignment failures as geometric pathologies) |
 | Inequality as metric distortion | GEcon Ch. 12 | Ch. 9 (alignment inequality across populations) |
-| D4 Hohfeldian group (law) | GL Ch. 5 | Ch. 7 (alignment gauge group) |
+| Hohfeldian group (law; V4, once D4) | GL Ch. 5 | Ch. 7 (alignment gauge group) |
 | Equal protection as gauge invariance | GL Ch. 8 | Ch. 7 (fairness as gauge invariance) |
 | Sentencing gauge violation tensor | GL Ch. 11 | Ch. 9 (alignment gauge violation tensor) |
 | Cognitive manifold | GCog Ch. 3 | Ch. 10 (five cognitive signatures as manifold positions) |
@@ -512,7 +512,7 @@ The frontier, honestly stated. What the geometric framework for AI alignment doe
 | Representation engineering and heuristic field | GCog Ch. 15, Def. 15.6 | Ch. 13 (gauge-invariant reward models) |
 | Hyperbolic embeddings | GComm Ch. 5 | Ch. 4 (hyperbolic value hierarchies) |
 | Cross-lingual BIP / 100% deontic transfer | GComm Ch. 11–12 | Ch. 15 (invariance enforcement, empirical validation) |
-| D4 gauge theory of communicative acts | GComm Ch. 13 | Ch. 7 (alignment gauge group) |
+| Gauge theory of communicative acts (V4 x U(1)_H; once D4) | GComm Ch. 13 | Ch. 7 (alignment gauge group) |
 | Framing as heuristic corruption (8.9-sigma) | GComm Ch. 14 | Ch. 11 (adversarial probing), Ch. 12 (sycophancy manifold) |
 | SPD manifold features | GM Ch. 4.6 | App. A (mathematical prerequisites) |
 | Topological data analysis | GM Ch. 5 | App. A (mathematical prerequisites) |

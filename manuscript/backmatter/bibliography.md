@@ -60,25 +60,25 @@ Von Neumann, J., & Morgenstern, O. (1944). *Theory of Games and Economic Behavio
 
 ## The Geometric Series
 
-Bond, A. H. (2026a). *Geometric Methods for Complex Systems*. [Series Book 1.]
+Bond, A. H. (2026a). *Geometric Methods: Computational Modeling*. [Series Book 1.]
 
-Bond, A. H. (2026b). *Geometric Ethics: The Moral Manifold and the Geometry of Value*. [Series Book 3.]
+Bond, A. H. (2026b). *Geometric Ethics: The Mathematical Structure of Moral Reasoning*. [Series Book 2.]
 
-Bond, A. H. (2026c). *Geometric Reasoning: Heuristic Fields, Geodesic Deviation, and the Structure of Informed Search*. [Series Book 2.]
+Bond, A. H. (2026c). *Geometric Reasoning: From Search to Manifolds*. [Series Book 3.]
 
-Bond, A. H. (2026d). *Geometric Cognition: Attention, Memory, and the Architecture of Thought*. [Series Book 4.]
+Bond, A. H. (2026d). *Geometric Cognition: The Mathematical Structure of Human and Artificial Thought*. [Series Book 6.]
 
-Bond, A. H. (2026e). *Geometric Communication: From Whale Song to Cuneiform, the Manifold of Meaning*. [Series Book 5.]
+Bond, A. H. (2026e). *Geometric Communication: Language, Signal, and the Topology of Meaning*. [Series Book 7.]
 
-Bond, A. H. (2026f). *Geometric Medicine: Clinical Decision-Making on the Nine-Dimensional Manifold*. [Series Book 6.]
+Bond, A. H. (2026f). *Geometric Medicine: Clinical Reasoning, Triage, and the Ethics of Allocation*. [Series Book 8.]
 
-Bond, A. H. (2026g). *Geometric Education: Learning, Assessment, and the Topology of Growth*. [Series Book 7.]
+Bond, A. H. (2026g). *Geometric Education: Learning, Assessment, and the Topology of Understanding*. [Series Book 9.]
 
-Bond, A. H. (2026h). *Geometric Economics: Markets, Equilibrium, and the Curvature of Exchange*. [Series Book 8.]
+Bond, A. H. (2026h). *Geometric Economics: Decision Manifolds, Equilibria, and the Geometry of Markets*. [Series Book 4.]
 
-Bond, A. H. (2026i). *Geometric Law: Rights, Symmetry, and the Gauge Structure of Justice*. [Series Book 9.]
+Bond, A. H. (2026i). *Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning*. [Series Book 5.]
 
-Bond, A. H. (2026j). *Geometric Politics: Democracy, Power, and the Fiber Bundle of Collective Choice*. [Series Book 10.]
+Bond, A. H. (2026j). *Geometric Politics: Representation, Polarization, and the Topology of Democratic Choice*. [Series Book 10.]
 
 ## Behavioral Economics and Decision Theory
 

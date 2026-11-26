@@ -34,7 +34,7 @@
 - 3.1 The Pattern Across Domains
 - 3.2 Why AI Is Different
 - 3.3 The Geometric Alternative
-- 3.4 What the Series Has Proved
+- 3.4 What the Series Reports
 - 3.5 The Road Ahead
 
 ## Part II: The Framework

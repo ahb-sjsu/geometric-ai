@@ -5,7 +5,6 @@
 ---
 
 > *"A cage made of rules can be escaped by a sufficiently clever prisoner. A cage made of geometry cannot."*
-> --- Andrew H. Bond, *Geometric Ethics*
 
 > **ARIA-G IS BORN** *(illustrative scenario)*
 >
